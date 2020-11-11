@@ -1,5 +1,0 @@
-1 jednou
-2 dvakrat
-3 trikrat
-4 ctrikrat
-5 petkrat

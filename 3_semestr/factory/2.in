@@ -1,8 +1,0 @@
-make A
-make B
-add nuzky
-add vrtacka
-add vrtacka
-start Nora nuzky
-start Vojta vrtacka
-start Vasek vrtacka
