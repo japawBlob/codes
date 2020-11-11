@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : 16.605
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 50.249
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : -4.469
+TNS   : -40.221
+
+Type  : Slow 1200mV 85C Model Removal 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 3.797
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.645
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 26.836
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : 16.974
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 50.576
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 0.411
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : -3.906
+TNS   : -35.154
+
+Type  : Slow 1200mV 0C Model Removal 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 3.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.636
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 26.837
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : 18.330
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 52.212
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 0.198
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : -2.267
+TNS   : -20.403
+
+Type  : Fast 1200mV 0C Model Removal 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 2.016
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.266
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst8|inst_de2beeper|b2v_inst_clockGenrator|audioPllClockGen|altpll_component|pll|clk[0]'
+Slack : 26.906
+TNS   : 0.000
+
+------------------------------------------------------------

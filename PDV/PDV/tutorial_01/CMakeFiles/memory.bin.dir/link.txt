@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -O3 -fopenmp -pthread   CMakeFiles/memory.bin.dir/memory.cpp.o  -o memory.bin 

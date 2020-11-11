@@ -1,0 +1,1 @@
+/usr/bin/c++   -fopenmp -g   CMakeFiles/mult.dir/main.cpp.o CMakeFiles/mult.dir/multiply.cpp.o  -o mult 

@@ -1,0 +1,162 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 240 240)
+	(text "DisplayLogic2Mux_BDF" (rect 5 0 138 14)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 208 25 220)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "ACLRN" (rect 0 0 41 14)(font "Arial" (font_size 8)))
+		(text "ACLRN" (rect 21 27 62 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "yrow_g[9..0]" (rect 0 0 73 14)(font "Arial" (font_size 8)))
+		(text "yrow_g[9..0]" (rect 21 43 94 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "xcolumn_g[9..0]" (rect 0 0 89 14)(font "Arial" (font_size 8)))
+		(text "xcolumn_g[9..0]" (rect 21 59 110 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "VGA_CLK_g" (rect 0 0 73 14)(font "Arial" (font_size 8)))
+		(text "VGA_CLK_g" (rect 21 75 94 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "VGA_BLANK_g" (rect 0 0 90 14)(font "Arial" (font_size 8)))
+		(text "VGA_BLANK_g" (rect 21 91 111 105)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "VGA_HS_g" (rect 0 0 66 14)(font "Arial" (font_size 8)))
+		(text "VGA_HS_g" (rect 21 107 87 121)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "VGA_VS_g" (rect 0 0 67 14)(font "Arial" (font_size 8)))
+		(text "VGA_VS_g" (rect 21 123 88 137)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "VGA_SYNC_g" (rect 0 0 83 14)(font "Arial" (font_size 8)))
+		(text "VGA_SYNC_g" (rect 21 139 104 153)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "CLOCK_50" (rect 0 0 62 14)(font "Arial" (font_size 8)))
+		(text "CLOCK_50" (rect 21 155 83 169)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "VGA_R[7..0]" (rect 0 0 71 14)(font "Arial" (font_size 8)))
+		(text "VGA_R[7..0]" (rect 132 27 203 41)(font "Arial" (font_size 8)))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
+	)
+	(port
+		(pt 224 48)
+		(output)
+		(text "VGA_G[7..0]" (rect 0 0 73 14)(font "Arial" (font_size 8)))
+		(text "VGA_G[7..0]" (rect 130 43 203 57)(font "Arial" (font_size 8)))
+		(line (pt 224 48)(pt 208 48)(line_width 3))
+	)
+	(port
+		(pt 224 64)
+		(output)
+		(text "VGA_B[7..0]" (rect 0 0 71 14)(font "Arial" (font_size 8)))
+		(text "VGA_B[7..0]" (rect 132 59 203 73)(font "Arial" (font_size 8)))
+		(line (pt 224 64)(pt 208 64)(line_width 3))
+	)
+	(port
+		(pt 224 80)
+		(output)
+		(text "VGA_CLK" (rect 0 0 59 14)(font "Arial" (font_size 8)))
+		(text "VGA_CLK" (rect 144 75 203 89)(font "Arial" (font_size 8)))
+		(line (pt 224 80)(pt 208 80))
+	)
+	(port
+		(pt 224 96)
+		(output)
+		(text "VGA_BLANK" (rect 0 0 76 14)(font "Arial" (font_size 8)))
+		(text "VGA_BLANK" (rect 127 91 203 105)(font "Arial" (font_size 8)))
+		(line (pt 224 96)(pt 208 96))
+	)
+	(port
+		(pt 224 112)
+		(output)
+		(text "VGA_HS" (rect 0 0 51 14)(font "Arial" (font_size 8)))
+		(text "VGA_HS" (rect 152 107 203 121)(font "Arial" (font_size 8)))
+		(line (pt 224 112)(pt 208 112))
+	)
+	(port
+		(pt 224 128)
+		(output)
+		(text "VGA_VS" (rect 0 0 53 14)(font "Arial" (font_size 8)))
+		(text "VGA_VS" (rect 150 123 203 137)(font "Arial" (font_size 8)))
+		(line (pt 224 128)(pt 208 128))
+	)
+	(port
+		(pt 224 144)
+		(output)
+		(text "VGA_SYNC" (rect 0 0 69 14)(font "Arial" (font_size 8)))
+		(text "VGA_SYNC" (rect 134 139 203 153)(font "Arial" (font_size 8)))
+		(line (pt 224 144)(pt 208 144))
+	)
+	(port
+		(pt 224 160)
+		(output)
+		(text "yrow[9..0]" (rect 0 0 59 14)(font "Arial" (font_size 8)))
+		(text "yrow[9..0]" (rect 144 155 203 169)(font "Arial" (font_size 8)))
+		(line (pt 224 160)(pt 208 160)(line_width 3))
+	)
+	(port
+		(pt 224 176)
+		(output)
+		(text "xcolumn[9..0]" (rect 0 0 75 14)(font "Arial" (font_size 8)))
+		(text "xcolumn[9..0]" (rect 128 171 203 185)(font "Arial" (font_size 8)))
+		(line (pt 224 176)(pt 208 176)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 208 208))
+	)
+)

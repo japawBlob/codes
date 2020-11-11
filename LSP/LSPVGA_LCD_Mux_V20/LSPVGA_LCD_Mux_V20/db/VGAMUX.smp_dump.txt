@@ -1,0 +1,16 @@
+
+State Machine - |DemoMux_LCD|DisplayLogic2Mux_LCD:instDL2M|VideoMuxCalculate:iVMCalc|\fsm:state_next
+Name \fsm:state_next.STATE_WAIT2 \fsm:state_next.STATE_DOWN \fsm:state_next.STATE_WAIT1 \fsm:state_next.STATE_UP \fsm:state_next.STATE_INIT 
+\fsm:state_next.STATE_INIT 0 0 0 0 0 
+\fsm:state_next.STATE_UP 0 0 0 1 1 
+\fsm:state_next.STATE_WAIT1 0 0 1 0 1 
+\fsm:state_next.STATE_DOWN 0 1 0 0 1 
+\fsm:state_next.STATE_WAIT2 1 0 0 0 1 
+
+State Machine - |DemoMux_LCD|DisplayLogic2Mux_LCD:instDL2M|VideoMuxCalculate:iVMCalc|\fsm:state
+Name \fsm:state.STATE_WAIT2 \fsm:state.STATE_DOWN \fsm:state.STATE_WAIT1 \fsm:state.STATE_UP \fsm:state.STATE_INIT 
+\fsm:state.STATE_INIT 0 0 0 0 0 
+\fsm:state.STATE_UP 0 0 0 1 1 
+\fsm:state.STATE_WAIT1 0 0 1 0 1 
+\fsm:state.STATE_DOWN 0 1 0 0 1 
+\fsm:state.STATE_WAIT2 1 0 0 0 1 

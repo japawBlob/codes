@@ -1,0 +1,1 @@
+/usr/bin/c++   -fopenmp -Wall -std=c++14 -O3 -g   CMakeFiles/hw.dir/main.cpp.o CMakeFiles/hw.dir/sort.cpp.o  -o hw 

@@ -1,0 +1,4 @@
+/mnt/c/Codes/PDV/tutorial_04/CMakeFiles/rebuild_cache.dir
+/mnt/c/Codes/PDV/tutorial_04/CMakeFiles/main.bin.dir
+/mnt/c/Codes/PDV/tutorial_04/CMakeFiles/edit_cache.dir
+/mnt/c/Codes/PDV/tutorial_04/CMakeFiles/main.dir

@@ -1,0 +1,69 @@
+/*1*/
+/*Show all registered customers without test@mail.com*/
+/*return names of customers*/
+(
+	(
+		LoyaltyCard[ID]<ID->Card>
+		*
+		Customer
+	)
+	\
+	Customer(email='test@mail.com')
+)[name]
+
+/*2*/
+/*Show all possible combinations of people available to prepare the order*/
+/*return card IDs, names of products, names of employees*/
+(
+	(
+		Order
+		x
+		Employee
+	)<product->ID, name->employee>[card, ID, employee]
+	*
+	Product
+) [card, name, employee]
+
+/*3*/
+/*Show specific type of tea which country of origin is same as suppliers*/
+/*Return name of tea and IC of supplier*/
+(	
+	(
+		Tea[countrOfOrigin = country]Supplier
+		*
+		Product
+	) [name, country, type, IC]
+	÷
+	Tea(type = 'green', country = 'Japan')[type, country]
+) [name, IC]
+
+/*4*/
+/*Show customer and his/her purchased products*/
+/*Return possible name, customer ID, product ID*/
+(
+	(
+		Customer[name, card]
+		*outerJoin
+		LoyaltyCard<ID->card>
+	) [name, card]
+	*outerJoin
+	Order
+) [name, card, product]
+
+/*5*/
+/*Show suppliers that can supply both Gaba and karkade*/
+/*Return IC of targeted suppliers*/
+(
+	(
+		Product(name = 'karkade')<ID->product>
+		*
+		SuppliedBy
+	) [supplier]
+	⋂
+	(
+		Product(name = 'gaba')<ID->product>
+		*
+		SuppliedBy
+	) [supplier]
+)
+

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Codes/PDV/tutorial_02/condition_variable.cpp
+thread
+-
+mutex
+-
+iostream
+-
+condition_variable
+-
+cstdlib
+-
+unistd.h
+-
+

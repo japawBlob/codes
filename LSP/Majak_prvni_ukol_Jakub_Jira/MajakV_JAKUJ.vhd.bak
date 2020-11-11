@@ -1,0 +1,25 @@
+-- Quartus II VHDL Template Basic
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity our_name is
+	port 
+	(
+-- inputs and outputs
+		x0, x1, x2, x3, x4, x5 : in std_logic;
+		STOP, Y : out std_logic
+	);
+
+end entity;
+
+architecture dataflow of our_name is
+
+-- definitions 
+
+begin
+
+	-- implementation
+
+end dataflow;

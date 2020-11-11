@@ -1,0 +1,422 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 264 304 440 320)
+	(text "INPUT" (rect 133 0 169 13)(font "Arial" (font_size 6)))
+	(text "KEY[0]" (rect 9 0 51 15)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 160 20)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 256 136 432 152)
+	(text "INPUT" (rect 133 0 169 13)(font "Arial" (font_size 6)))
+	(text "CLOCK_50" (rect 9 0 83 15)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 160 20)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 832 184 1008 200)
+	(text "OUTPUT" (rect 1 0 51 13)(font "Arial" (font_size 6)))
+	(text "LCD_EN" (rect 90 0 147 15)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 832 200 1008 216)
+	(text "OUTPUT" (rect 1 0 51 13)(font "Arial" (font_size 6)))
+	(text "LCD_RW" (rect 90 0 151 15)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 832 216 1008 232)
+	(text "OUTPUT" (rect 1 0 51 13)(font "Arial" (font_size 6)))
+	(text "LCD_RS" (rect 90 0 147 15)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 832 232 1008 248)
+	(text "OUTPUT" (rect 1 0 51 13)(font "Arial" (font_size 6)))
+	(text "LCD_ON" (rect 90 0 149 15)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(bidir)
+	(rect 832 248 1008 264)
+	(text "BIDIR" (rect 1 0 32 13)(font "Arial" (font_size 6)))
+	(text "LCD_DATA[7..0]" (rect 90 0 193 15)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 56 4)(pt 78 4))
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 56 12)(pt 78 12))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 78 12)(pt 82 8))
+		(line (pt 56 4)(pt 52 8))
+		(line (pt 52 8)(pt 56 12))
+	)
+	(text "VCC" (rect 4 7 28 20)(font "Arial" (font_size 6)))
+)
+(symbol
+	(rect 240 176 464 288)
+	(text "lcd_text" (rect 5 0 53 15)(font "Arial" ))
+	(text "inst" (rect 8 96 31 111)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLOCK_50" (rect 0 0 74 15)(font "Arial" ))
+		(text "CLOCK_50" (rect 21 27 95 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "ACKN" (rect 0 0 38 15)(font "Arial" ))
+		(text "ACKN" (rect 21 43 59 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "ACLRN" (rect 0 0 48 15)(font "Arial" ))
+		(text "ACLRN" (rect 21 59 69 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "ADDRESS[4..0]" (rect 0 0 99 15)(font "Arial" ))
+		(text "ADDRESS[4..0]" (rect 120 27 219 42)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
+	)
+	(port
+		(pt 224 48)
+		(output)
+		(text "DATA[7..0]" (rect 0 0 66 15)(font "Arial" ))
+		(text "DATA[7..0]" (rect 148 43 214 58)(font "Arial" ))
+		(line (pt 224 48)(pt 208 48)(line_width 3))
+	)
+	(port
+		(pt 224 64)
+		(output)
+		(text "CLEARN_CMD" (rect 0 0 97 15)(font "Arial" ))
+		(text "CLEARN_CMD" (rect 121 59 218 74)(font "Arial" ))
+		(line (pt 224 64)(pt 208 64))
+	)
+	(port
+		(pt 224 80)
+		(output)
+		(text "RDYN" (rect 0 0 40 15)(font "Arial" ))
+		(text "RDYN" (rect 170 75 210 90)(font "Arial" ))
+		(line (pt 224 80)(pt 208 80))
+	)
+	(parameter
+		"line1"
+		"*LCD-Controller*"
+		""
+		(type "PARAMETER_STRING")	)
+	(parameter
+		"line2"
+		"can display text"
+		""
+		(type "PARAMETER_STRING")	)
+	(drawing
+		(rectangle (rect 16 16 208 96))
+	)
+	(annotation_block (parameter)(rect 208 72 458 126))
+)
+(symbol
+	(rect 552 160 800 336)
+	(text "lcd_controller" (rect 5 0 92 15)(font "Arial" ))
+	(text "inst2" (rect 8 160 39 175)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLOCK_50" (rect 0 0 74 15)(font "Arial" ))
+		(text "CLOCK_50" (rect 21 27 95 42)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "ADDRESS[4..0]" (rect 0 0 99 15)(font "Arial" ))
+		(text "ADDRESS[4..0]" (rect 21 43 120 58)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "DATA[7..0]" (rect 0 0 66 15)(font "Arial" ))
+		(text "DATA[7..0]" (rect 21 59 87 74)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "CLEARN_CMD" (rect 0 0 97 15)(font "Arial" ))
+		(text "CLEARN_CMD" (rect 21 75 118 90)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "RDYN" (rect 0 0 40 15)(font "Arial" ))
+		(text "RDYN" (rect 21 91 61 106)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "ACLRN" (rect 0 0 48 15)(font "Arial" ))
+		(text "ACLRN" (rect 21 107 69 122)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "LCD_EN" (rect 0 0 57 15)(font "Arial" ))
+		(text "LCD_EN" (rect 179 27 236 42)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32))
+	)
+	(port
+		(pt 248 48)
+		(output)
+		(text "LCD_RW" (rect 0 0 61 15)(font "Arial" ))
+		(text "LCD_RW" (rect 176 43 237 58)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48))
+	)
+	(port
+		(pt 248 64)
+		(output)
+		(text "LCD_RS" (rect 0 0 57 15)(font "Arial" ))
+		(text "LCD_RS" (rect 179 59 236 74)(font "Arial" ))
+		(line (pt 248 64)(pt 232 64))
+	)
+	(port
+		(pt 248 80)
+		(output)
+		(text "LCD_ON" (rect 0 0 59 15)(font "Arial" ))
+		(text "LCD_ON" (rect 178 75 237 90)(font "Arial" ))
+		(line (pt 248 80)(pt 232 80))
+	)
+	(port
+		(pt 248 112)
+		(output)
+		(text "ACKN" (rect 0 0 38 15)(font "Arial" ))
+		(text "ACKN" (rect 195 107 233 122)(font "Arial" ))
+		(line (pt 248 112)(pt 232 112))
+	)
+	(port
+		(pt 248 128)
+		(output)
+		(text "ACLRN_OUT" (rect 0 0 86 15)(font "Arial" ))
+		(text "ACLRN_OUT" (rect 155 123 241 138)(font "Arial" ))
+		(line (pt 248 128)(pt 232 128))
+	)
+	(port
+		(pt 248 96)
+		(bidir)
+		(text "LCD_DATA[7..0]" (rect 0 0 103 15)(font "Arial" ))
+		(text "LCD_DATA[7..0]" (rect 152 91 255 106)(font "Arial" ))
+		(line (pt 248 96)(pt 232 96)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 232 160))
+	)
+)
+(connector
+	(pt 552 272)
+	(pt 544 272)
+)
+(connector
+	(pt 480 192)
+	(pt 552 192)
+)
+(connector
+	(pt 552 240)
+	(pt 464 240)
+)
+(connector
+	(pt 464 256)
+	(pt 552 256)
+)
+(connector
+	(pt 544 272)
+	(pt 544 312)
+)
+(connector
+	(pt 544 312)
+	(pt 440 312)
+)
+(connector
+	(pt 208 208)
+	(pt 240 208)
+)
+(connector
+	(pt 808 344)
+	(pt 216 344)
+)
+(connector
+	(pt 240 240)
+	(pt 216 240)
+)
+(connector
+	(pt 216 240)
+	(pt 216 344)
+)
+(connector
+	(pt 240 224)
+	(pt 200 224)
+)
+(connector
+	(pt 200 224)
+	(pt 200 352)
+)
+(connector
+	(pt 800 288)
+	(pt 808 288)
+)
+(connector
+	(pt 808 344)
+	(pt 808 288)
+)
+(connector
+	(pt 800 192)
+	(pt 832 192)
+)
+(connector
+	(pt 800 208)
+	(pt 832 208)
+)
+(connector
+	(pt 800 224)
+	(pt 832 224)
+)
+(connector
+	(pt 800 240)
+	(pt 832 240)
+)
+(connector
+	(pt 800 256)
+	(pt 832 256)
+	(bus)
+)
+(connector
+	(pt 816 272)
+	(pt 816 352)
+)
+(connector
+	(pt 200 352)
+	(pt 816 352)
+)
+(connector
+	(pt 800 272)
+	(pt 816 272)
+)
+(connector
+	(pt 464 208)
+	(pt 552 208)
+	(bus)
+)
+(connector
+	(pt 464 224)
+	(pt 552 224)
+	(bus)
+)
+(connector
+	(pt 208 168)
+	(pt 208 208)
+)
+(connector
+	(pt 432 144)
+	(pt 480 144)
+)
+(connector
+	(pt 208 168)
+	(pt 480 168)
+)
+(connector
+	(pt 480 144)
+	(pt 480 168)
+)
+(connector
+	(pt 480 168)
+	(pt 480 192)
+)
+(junction (pt 480 168))
+(text "Write static text to LCD display" (rect 272 32 637 58)(font "Arial" (font_size 14)))

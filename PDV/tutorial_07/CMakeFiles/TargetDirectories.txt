@@ -1,0 +1,7 @@
+/mnt/c/codes/tutorial_07/CMakeFiles/prob.dir
+/mnt/c/codes/tutorial_07/CMakeFiles/rebuild_cache.dir
+/mnt/c/codes/tutorial_07/CMakeFiles/autovec.dir
+/mnt/c/codes/tutorial_07/CMakeFiles/cond.dir
+/mnt/c/codes/tutorial_07/CMakeFiles/lzcnt.dir
+/mnt/c/codes/tutorial_07/CMakeFiles/popcnt.dir
+/mnt/c/codes/tutorial_07/CMakeFiles/edit_cache.dir

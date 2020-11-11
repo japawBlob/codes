@@ -1,0 +1,11 @@
+BRUTE:
+   http://cw.felk.cvut.cz/brute
+
+Reference C++:
+   http://en.cppreference.com/w/
+
+Intel Intrinsics Guide:
+   https://software.intel.com/sites/landingpage/IntrinsicsGuide/#
+
+CLion: (muzete spustit evaluacni verzi)
+   /opt/clion-2017.3.4/bin/clion.sh

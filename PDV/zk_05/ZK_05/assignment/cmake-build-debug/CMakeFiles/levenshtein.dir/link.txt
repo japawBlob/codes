@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -fopenmp -march=native -pthread -g   CMakeFiles/levenshtein.dir/main_levenshtein.cpp.o CMakeFiles/levenshtein.dir/levenshtein.cpp.o CMakeFiles/levenshtein.dir/strings.cpp.o  -o levenshtein 

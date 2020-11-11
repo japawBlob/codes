@@ -1,0 +1,1 @@
+--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1" -I "C:\Program Files\Keil\ARM\INC" -I "C:\Program Files\Keil\ARM\INC\ST\STM32F10x" --list "LED_BLIK.lst" --xref -o "LED_BLIK.o" --depend "LED_BLIK.d" "LED_BLIK.asm"

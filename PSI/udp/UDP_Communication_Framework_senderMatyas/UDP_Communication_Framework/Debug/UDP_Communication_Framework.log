@@ -1,0 +1,3 @@
+﻿  UDP_Communication_Framework.cpp
+e:\udp_communication_framework\udp_communication_framework\udp_communication_framework.cpp(185): warning C4302: 'type cast': truncation from 'const char *' to 'char'
+  UDP_Communication_Framework.vcxproj -> E:\UDP_Communication_Framework\Debug\UDP_Communication_Framework.exe

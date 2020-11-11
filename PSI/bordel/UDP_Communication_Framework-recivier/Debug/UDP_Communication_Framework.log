@@ -1,0 +1,3 @@
+﻿  UDP_Communication_Framework.cpp
+\\aspace.msad.fel.cvut.cz\users$\jirajak2\desktop\recivierudp_communication_framework recivier_nejnovejsi verze\udp_communication_framework\udp_communication_framework.cpp(178): warning C4477: printf: Formátovací řetězec %lu vyžaduje argument typu unsigned long, ale variadický argument 1 má typ const char *.
+  UDP_Communication_Framework.vcxproj -> \\aspace.msad.fel.cvut.cz\Users$\jirajak2\Desktop\RECIVIERUDP_Communication_Framework recivier_nejnovejsi verze\Debug\UDP_Communication_Framework.exe

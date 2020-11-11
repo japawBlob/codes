@@ -1,0 +1,121 @@
+#include <stdio.h>
+ 
+#define TIMES 42
+#define PLUS 43
+#define MINUS 45
+ 
+int main(){
+ 
+    int first_r, first_c;
+     
+    if(scanf("%i %i", &first_r, &first_c) != 2){
+        fprintf(stderr,"Error: Chybny vstup!\n");
+        return 100;
+    }
+     
+    int first_array[first_r][first_c];
+    int value;
+     
+    for(int i = 0; i<first_r; i++){
+        for(int j = 0; j<first_c; j++){
+            if(scanf("%i", &value) != 1){
+                fprintf(stderr,"Error: Chybny vstup!\n");
+                return 100;
+            }
+            first_array[i][j] = value;
+        }
+    }
+    /*//VYPIS 2D POLE
+    for(int i = 0; i<first_r; i++){
+        for(int j = 0; j<first_c; j++){
+            printf("%i ", first_array[i][j]);
+        }
+        printf("\n");
+    }
+    */
+    char operator;
+    scanf(" %c", &operator);
+     
+    if(operator == PLUS || operator == MINUS || operator == TIMES){
+    } else {
+        fprintf(stderr,"Error: Chybny vstup!\n");
+        return 100;
+    }
+     
+    int second_r, second_c;
+     
+    if(scanf("%i %i", &second_r, &second_c) != 2){
+        fprintf(stderr,"Error: Chybny vstup!\n");
+        return 100;
+    }
+     
+    int second_array[second_r][second_c];
+     
+    for(int i = 0; i<second_r; i++){
+        for(int j = 0; j<second_c; j++){
+            if(scanf("%i", &value) != 1){
+                fprintf(stderr,"Error: Chybny vstup!\n");
+                return 100;
+            }
+            second_array[i][j] = value;
+        }
+    }
+     
+    if(operator == PLUS){
+        if(first_c != second_c || first_r != second_r){
+            fprintf(stderr,"Error: Chybny vstup!\n");
+            return 100;
+        } else {
+            printf("%i %i\n", first_r, first_c);
+        }
+        for(int i = 0; i<second_r; i++){
+            for(int j = 0; j<second_c; j++){
+                if(j!=0){
+                    printf(" ");
+                }
+                printf("%i", first_array[i][j]+second_array[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    if(operator == MINUS){
+        if(first_c != second_c || first_r != second_r){
+            fprintf(stderr,"Error: Chybny vstup!\n");
+            return 100;
+        } else {
+            printf("%i %i\n", first_r, first_c);
+        }
+        for(int i = 0; i<second_r; i++){
+            for(int j = 0; j<second_c; j++){
+                if(j!=0){
+                    printf(" ");
+                }
+                printf("%i", first_array[i][j]-second_array[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    if(operator == TIMES){
+        if(first_c != second_r){
+            fprintf(stderr,"Error: Chybny vstup!\n");
+            return 100;
+        } else {
+            printf("%i %i\n", first_r, second_c);
+        }
+        int x = 0;
+        for(int i = 0; i<first_r; i++){
+            for(int j = 0; j<second_c; j++){
+                for(int k = 0; k<first_c;k++){
+                    x += first_array[i][k]*second_array[k][j];
+                }
+                if(j!=0){
+                    printf(" ");
+                }
+                printf("%i", x);
+                x=0;
+            }
+            printf("\n");
+        }
+    }
+    return 0;
+}

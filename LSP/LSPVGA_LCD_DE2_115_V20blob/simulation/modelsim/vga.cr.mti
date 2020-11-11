@@ -1,0 +1,218 @@
+C:/SPS/LSPVGA_DE2_115_V20/DisplayLogic0.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_DE2_115_V20/DisplayLogic0.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity DisplayLogic0
+-- Compiling architecture behavioral of DisplayLogic0
+
+} {} {}} C:/SPS/LSPVGA_DE2_115_V20/DisplayLogic.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_DE2_115_V20/DisplayLogic.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity DisplayLogic
+-- Compiling architecture behavioral of DisplayLogic
+
+} {} {}} C:/SPS/LSPVGA_DE2_115_V20/VGARegDE2_115.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_DE2_115_V20/VGARegDE2_115.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity VGARegDE2_115
+-- Compiling architecture rtl of VGARegDE2_115
+
+} {} {}} C:/SPS/LSPVGA_V12/DisplayLogic.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V12/DisplayLogic.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity DisplayLogic
+-- Compiling architecture behavioral of DisplayLogic
+
+} {} {}} C:/SPS/LSPVGA_V10/VGARegDE2.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V10/VGARegDE2.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity VGARegDE2
+-- Compiling architecture rtl of VGARegDE2
+
+} {} {}} C:/SPS/LSPVGA_V12/VGARegDE2.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V12/VGARegDE2.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity VGARegDE2
+-- Compiling architecture rtl of VGARegDE2
+
+} {} {}} C:/SPS/LSPVGA_V10/romPicture.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V10/romPicture.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity romPicture
+-- Compiling architecture SYN of rompicture
+
+} {} {}} C:/SPS/LSPVGA_V10/VGApackage.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V10/VGApackage.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package VGApackage
+-- Compiling package body VGApackage
+-- Loading package VGApackage
+
+} {} {}} C:/SPS/LSPVGA_DE2_115_V20/romPicture.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_DE2_115_V20/romPicture.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity romPicture
+-- Compiling architecture SYN of rompicture
+
+} {} {}} C:/SPS/LSPVGA_DE2_115_V20/VGApackage.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_DE2_115_V20/VGApackage.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package VGApackage
+-- Compiling package body VGApackage
+-- Loading package VGApackage
+
+} {} {}} C:/SPS/LSPVGA_V10/testbench_DisplayLogic.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V10/testbench_DisplayLogic.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package VGApackage
+-- Compiling entity testbench_DisplayLogic
+-- Compiling architecture testbench of testbench_DisplayLogic
+
+} {} {}} C:/SPS/LSPVGA_V10/DisplayLogic0.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V10/DisplayLogic0.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity DisplayLogic0
+-- Compiling architecture behavioral of DisplayLogic0
+
+} {} {}} C:/SPS/LSPVGA_V12/romPicture.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V12/romPicture.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity romPicture
+-- Compiling architecture SYN of rompicture
+
+} {} {}} C:/SPS/LSPVGA_V12/VGApackage.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V12/VGApackage.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package VGApackage
+-- Compiling package body VGApackage
+-- Loading package VGApackage
+
+} {} {}} C:/SPS/LSPVGA_DE2_115_V20/testbench_DisplayLogic.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_DE2_115_V20/testbench_DisplayLogic.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package VGApackage
+-- Compiling entity testbench_DisplayLogic
+-- Compiling architecture testbench of testbench_DisplayLogic
+
+} {} {}} C:/SPS/LSPVGA_V10/VGAgenerator.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V10/VGAgenerator.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity VGAgenerator
+-- Compiling architecture rtl of VGAgenerator
+
+} {} {}} C:/SPS/LSPVGA_V12/testbench_DisplayLogic.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V12/testbench_DisplayLogic.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package VGApackage
+-- Compiling entity testbench_DisplayLogic
+-- Compiling architecture testbench of testbench_DisplayLogic
+
+} {} {}} C:/SPS/LSPVGA_V12/DisplayLogic0.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V12/DisplayLogic0.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity DisplayLogic0
+-- Compiling architecture behavioral of DisplayLogic0
+
+} {} {}} C:/SPS/LSPVGA_DE2_115_V20/VGAgenerator.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_DE2_115_V20/VGAgenerator.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity VGAgenerator
+-- Compiling architecture rtl of VGAgenerator
+
+} {} {}} C:/SPS/LSPVGA_V12/VGAgenerator.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V12/VGAgenerator.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity VGAgenerator
+-- Compiling architecture rtl of VGAgenerator
+
+} {} {}} C:/SPS/LSPVGA_DE2_115_V20/VGARegDE2.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_DE2_115_V20/VGARegDE2.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity VGARegDE2
+-- Compiling architecture rtl of VGARegDE2
+
+} {} {}} C:/SPS/LSPVGA_V10/DisplayLogic.vhd {1 {vcom -work work -2002 -explicit C:/SPS/LSPVGA_V10/DisplayLogic.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VGApackage
+-- Compiling entity DisplayLogic
+-- Compiling architecture behavioral of DisplayLogic
+
+} {} {}}

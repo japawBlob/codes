@@ -1,0 +1,7 @@
+﻿  UDP_Communication_Framework.cpp
+c:\users\jirajak2\psi_temp\udp_communication_framework\senderudp_communication_framework\udp_communication_framework\udp_communication_framework.cpp(112): warning C4018: '<': signed/unsigned mismatch
+c:\users\jirajak2\psi_temp\udp_communication_framework\senderudp_communication_framework\udp_communication_framework\udp_communication_framework.cpp(222): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\jirajak2\psi_temp\udp_communication_framework\senderudp_communication_framework\udp_communication_framework\udp_communication_framework.cpp(245): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\jirajak2\psi_temp\udp_communication_framework\senderudp_communication_framework\udp_communication_framework\udp_communication_framework.cpp(251): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\jirajak2\psi_temp\udp_communication_framework\senderudp_communication_framework\udp_communication_framework\udp_communication_framework.cpp(73): warning C4101: 'ack_buffer': unreferenced local variable
+  UDP_Communication_Framework.vcxproj -> C:\Users\jirajak2\psi_temp\UDP_Communication_Framework\SENDERUDP_Communication_Framework\Debug\UDP_Communication_Framework.exe

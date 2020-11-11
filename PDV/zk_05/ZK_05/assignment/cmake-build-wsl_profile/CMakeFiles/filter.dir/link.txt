@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -fopenmp -march=native -pthread -O3 -DNDEBUG   CMakeFiles/filter.dir/main_filter.cpp.o CMakeFiles/filter.dir/filter.cpp.o CMakeFiles/filter.dir/data_table.cpp.o  -o filter 

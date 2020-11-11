@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -O2 -march=native   CMakeFiles/popcnt.dir/popcnt.cpp.o  -o popcnt 

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Codes/PDV/tutorial_01/PDVCrypt.cpp
+PDVCrypt.h
+/mnt/c/Codes/PDV/tutorial_01/PDVCrypt.h
+
+/mnt/c/Codes/PDV/tutorial_01/PDVCrypt.h
+cstdlib
+-
+fstream
+-
+vector
+-
+
+/mnt/c/Codes/PDV/tutorial_01/decrypt.cpp
+iostream
+-
+fstream
+-
+chrono
+-
+PDVCrypt.h
+/mnt/c/Codes/PDV/tutorial_01/PDVCrypt.h
+

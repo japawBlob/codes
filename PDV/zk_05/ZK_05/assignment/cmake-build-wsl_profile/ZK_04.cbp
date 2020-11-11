@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ZK_04"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="levenshtein">
+				<Option output="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/levenshtein" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 levenshtein"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="levenshtein/fast">
+				<Option output="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/levenshtein" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 levenshtein/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="filter">
+				<Option output="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/filter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 filter"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="filter/fast">
+				<Option output="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/filter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 filter/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/data_table.cpp">
+			<Option target="filter"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/data_table.h">
+			<Option target="filter"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/filter.cpp">
+			<Option target="filter"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/filter.h">
+			<Option target="filter"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/levenshtein.cpp">
+			<Option target="levenshtein"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/levenshtein.h">
+			<Option target="levenshtein"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/main_filter.cpp">
+			<Option target="filter"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/main_levenshtein.cpp">
+			<Option target="levenshtein"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/strings.cpp">
+			<Option target="levenshtein"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/strings.h">
+			<Option target="levenshtein"/>
+		</Unit>
+		<Unit filename="/mnt/c/codes/zk_05/ZK_05/assignment/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

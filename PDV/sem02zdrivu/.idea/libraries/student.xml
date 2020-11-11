@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="student">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/cz/cvut/fel/agents/pdv/student/student.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

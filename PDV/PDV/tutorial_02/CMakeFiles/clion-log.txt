@@ -1,0 +1,4 @@
+/usr/bin/cmake -G "CodeBlocks - Unix Makefiles" /mnt/c/Codes/PDV/tutorial_02
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Codes/PDV/tutorial_02

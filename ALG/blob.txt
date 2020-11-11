@@ -1,0 +1,5 @@
+https://www.geeksforgeeks.org/queuepush-and-queuepop-in-cpp-stl/
+
+https://ksp.mff.cuni.cz/kucharky/dynamicke-programovani/
+
+http://ksp.mff.cuni.cz/kucharky/programatorske-kucharky/09-dynamicke-programovani.pdf

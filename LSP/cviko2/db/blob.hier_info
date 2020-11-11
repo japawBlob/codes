@@ -1,0 +1,879 @@
+|NovaBlob
+AUD_ADCLRCK <= de2beep750Hz:inst8.AUD_ADCLRCK
+AUD_ADCDAT => de2beep750Hz:inst8.AUD_ADCDAT
+CLOCK_50 => de2beep750Hz:inst8.CLOCK_50
+CLOCK_50 => divider10:instdiv.CLK
+KEY[0] => de2beep750Hz:inst8.ACLRN
+KEY[0] => counter4bits:inst4.ENA
+KEY[0] => start_stop:inst5.ACLRN
+KEY[0] => counter4bits:inst4.ACLRN
+KEY[0] => posun18:inst7.ACLRN
+LEDR[0] <= posun18:inst7.LEDR[0]
+LEDR[1] <= posun18:inst7.LEDR[1]
+LEDR[2] <= posun18:inst7.LEDR[2]
+LEDR[3] <= posun18:inst7.LEDR[3]
+LEDR[4] <= posun18:inst7.LEDR[4]
+LEDR[5] <= posun18:inst7.LEDR[5]
+LEDR[6] <= posun18:inst7.LEDR[6]
+LEDR[7] <= posun18:inst7.LEDR[7]
+LEDR[8] <= posun18:inst7.LEDR[8]
+LEDR[9] <= posun18:inst7.LEDR[9]
+LEDR[10] <= posun18:inst7.LEDR[10]
+LEDR[11] <= posun18:inst7.LEDR[11]
+LEDR[12] <= posun18:inst7.LEDR[12]
+LEDR[13] <= posun18:inst7.LEDR[13]
+LEDR[14] <= posun18:inst7.LEDR[14]
+LEDR[15] <= posun18:inst7.LEDR[15]
+LEDR[16] <= posun18:inst7.LEDR[16]
+LEDR[17] <= posun18:inst7.LEDR[17]
+SW[0] => start_stop:inst5.START
+I2C_SDAT <> de2beep750Hz:inst8.I2C_SDAT
+AUD_DACLRCK <= de2beep750Hz:inst8.AUD_DACLRCK
+AUD_DACDAT <= de2beep750Hz:inst8.AUD_DACDAT
+AUD_XCK <= de2beep750Hz:inst8.AUD_XCK
+AUD_BCLK <= de2beep750Hz:inst8.AUD_BCLK
+I2C_SCLK <= de2beep750Hz:inst8.I2C_SCLK
+LEDG[0] <= MajakEA:inst.STOP
+
+
+|NovaBlob|de2beep750Hz:inst8
+AUD_ADCDAT => de2beeper:inst_de2beeper.AUD_ADCDAT
+CLOCK_50 => de2beeper:inst_de2beeper.CLOCK_50
+ACLRN => de2beeper:inst_de2beeper.ACLRN
+SoundON => de2beeper:inst_de2beeper.SoundON
+I2C_SDAT <> de2beeper:inst_de2beeper.I2C_SDAT
+AUD_ADCLRCK <= de2beeper:inst_de2beeper.AUD_ADCLRCK
+AUD_DACLRCK <= de2beeper:inst_de2beeper.AUD_DACLRCK
+AUD_DACDAT <= de2beeper:inst_de2beeper.AUD_DACDAT
+AUD_XCK <= de2beeper:inst_de2beeper.AUD_XCK
+AUD_BCLK <= de2beeper:inst_de2beeper.AUD_BCLK
+I2C_SCLK <= de2beeper:inst_de2beeper.I2C_SCLK
+
+
+|NovaBlob|de2beep750Hz:inst8|de2beeper:inst_de2beeper
+AUD_ADCDAT => adc_dac_controller:b2v_inst_adcDacController.adcData
+CLOCK_50 => clockgenerator:b2v_inst_clockGenrator.Clock_50
+ACLRN => audio_codec_controller:b2v_inst_audioCodecController.AClrn
+ACLRN => clockgenerator:b2v_inst_clockGenrator.ACLRN
+ACLRN => singen:b2v_inst_sinGen.ACLRN
+SoundON => adc_dac_controller:b2v_inst_adcDacController.selectAdcData
+I2C_SDAT <> audio_codec_controller:b2v_inst_audioCodecController.sda
+Divider1500Hz[0] => singen:b2v_inst_sinGen.FREQ[0]
+Divider1500Hz[1] => singen:b2v_inst_sinGen.FREQ[1]
+Divider1500Hz[2] => singen:b2v_inst_sinGen.FREQ[2]
+Divider1500Hz[3] => singen:b2v_inst_sinGen.FREQ[3]
+AUD_ADCLRCK <= adc_dac_controller:b2v_inst_adcDacController.adcLRSelect
+AUD_DACLRCK <= adc_dac_controller:b2v_inst_adcDacController.dacLRSelect
+AUD_DACDAT <= adc_dac_controller:b2v_inst_adcDacController.dacData
+AUD_XCK <= clockgenerator:b2v_inst_clockGenrator.AudioClock
+AUD_BCLK <= adc_dac_controller:b2v_inst_adcDacController.bitClock
+I2C_SCLK <= audio_codec_controller:b2v_inst_audioCodecController.scl
+
+
+|NovaBlob|de2beep750Hz:inst8|de2beeper:inst_de2beeper|adc_dac_controller:b2v_inst_adcDacController
+ACLRN => rightOutCounter[0].PRESET
+ACLRN => rightOutCounter[1].PRESET
+ACLRN => rightOutCounter[2].PRESET
+ACLRN => rightOutCounter[3].PRESET
+ACLRN => leftOutCounter[0].PRESET
+ACLRN => leftOutCounter[1].PRESET
+ACLRN => leftOutCounter[2].PRESET
+ACLRN => leftOutCounter[3].PRESET
+ACLRN => internalLRSelect.ACLR
+ACLRN => LRCounter[0].ACLR
+ACLRN => LRCounter[1].ACLR
+ACLRN => LRCounter[2].ACLR
+ACLRN => LRCounter[3].ACLR
+ACLRN => LRCounter[4].ACLR
+ACLRN => dacDataRightChannelRegister[0].ACLR
+ACLRN => dacDataRightChannelRegister[1].ACLR
+ACLRN => dacDataRightChannelRegister[2].ACLR
+ACLRN => dacDataRightChannelRegister[3].ACLR
+ACLRN => dacDataRightChannelRegister[4].ACLR
+ACLRN => dacDataRightChannelRegister[5].ACLR
+ACLRN => dacDataRightChannelRegister[6].ACLR
+ACLRN => dacDataRightChannelRegister[7].ACLR
+ACLRN => dacDataRightChannelRegister[8].ACLR
+ACLRN => dacDataRightChannelRegister[9].ACLR
+ACLRN => dacDataRightChannelRegister[10].ACLR
+ACLRN => dacDataRightChannelRegister[11].ACLR
+ACLRN => dacDataRightChannelRegister[12].ACLR
+ACLRN => dacDataRightChannelRegister[13].ACLR
+ACLRN => dacDataRightChannelRegister[14].ACLR
+ACLRN => dacDataRightChannelRegister[15].ACLR
+ACLRN => internalBitClock.ACLR
+ACLRN => bitClockCounter[0].ACLR
+ACLRN => bitClockCounter[1].ACLR
+ACLRN => bitClockCounter[2].ACLR
+ACLRN => bitClockCounter[3].ACLR
+ACLRN => bitClockCounter[4].ACLR
+ACLRN => bitClockCounter[5].ACLR
+ACLRN => bitClockCounter[6].ACLR
+ACLRN => bitClockCounter[7].ACLR
+ACLRN => dacData~reg0.ACLR
+ACLRN => adcDataLeftChannelRegister[0].ACLR
+ACLRN => adcDataLeftChannelRegister[1].ACLR
+ACLRN => adcDataLeftChannelRegister[2].ACLR
+ACLRN => adcDataLeftChannelRegister[3].ACLR
+ACLRN => adcDataLeftChannelRegister[4].ACLR
+ACLRN => adcDataLeftChannelRegister[5].ACLR
+ACLRN => adcDataLeftChannelRegister[6].ACLR
+ACLRN => adcDataLeftChannelRegister[7].ACLR
+ACLRN => adcDataLeftChannelRegister[8].ACLR
+ACLRN => adcDataLeftChannelRegister[9].ACLR
+ACLRN => adcDataLeftChannelRegister[10].ACLR
+ACLRN => adcDataLeftChannelRegister[11].ACLR
+ACLRN => adcDataLeftChannelRegister[12].ACLR
+ACLRN => adcDataLeftChannelRegister[13].ACLR
+ACLRN => adcDataLeftChannelRegister[14].ACLR
+ACLRN => adcDataLeftChannelRegister[15].ACLR
+ACLRN => dataInClock~reg0.ENA
+selectAdcData => dacData.OUTPUTSELECT
+selectAdcData => dacData.OUTPUTSELECT
+audioClock => internalBitClock.CLK
+audioClock => bitClockCounter[0].CLK
+audioClock => bitClockCounter[1].CLK
+audioClock => bitClockCounter[2].CLK
+audioClock => bitClockCounter[3].CLK
+audioClock => bitClockCounter[4].CLK
+audioClock => bitClockCounter[5].CLK
+audioClock => bitClockCounter[6].CLK
+audioClock => bitClockCounter[7].CLK
+bitClock <= internalBitClock.DB_MAX_OUTPUT_PORT_TYPE
+adcLRSelect <= internalLRSelect.DB_MAX_OUTPUT_PORT_TYPE
+dacLRSelect <= internalLRSelect.DB_MAX_OUTPUT_PORT_TYPE
+adcData => adcDataLeftChannelRegister[0].DATAIN
+dacData <= dacData~reg0.DB_MAX_OUTPUT_PORT_TYPE
+leftDataIn[0] => ~NO_FANOUT~
+leftDataIn[1] => ~NO_FANOUT~
+leftDataIn[2] => ~NO_FANOUT~
+leftDataIn[3] => ~NO_FANOUT~
+rightDataIn[0] => dacDataRightChannelRegister.DATAB
+rightDataIn[1] => dacDataRightChannelRegister.DATAB
+rightDataIn[2] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+rightDataIn[3] => dacDataRightChannelRegister.DATAB
+dataInClock <= dataInClock~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|de2beep750Hz:inst8|de2beeper:inst_de2beeper|audio_codec_controller:b2v_inst_audioCodecController
+AClrn => Selector0.IN4
+AClrn => I2C_Controller:i2cController.reset
+AClrn => i2cClock20KHz.ACLR
+AClrn => i2cClockCounter[0].ACLR
+AClrn => i2cClockCounter[1].ACLR
+AClrn => i2cClockCounter[2].ACLR
+AClrn => i2cClockCounter[3].ACLR
+AClrn => i2cClockCounter[4].ACLR
+AClrn => i2cClockCounter[5].ACLR
+AClrn => i2cClockCounter[6].ACLR
+AClrn => i2cClockCounter[7].ACLR
+AClrn => i2cClockCounter[8].ACLR
+AClrn => i2cClockCounter[9].ACLR
+AClrn => muxSelect[0].ACLR
+AClrn => muxSelect[1].ACLR
+AClrn => muxSelect[2].ACLR
+AClrn => muxSelect[3].ACLR
+AClrn => nextState.resetState.DATAB
+audioClock => i2cClock20KHz.CLK
+audioClock => i2cClockCounter[0].CLK
+audioClock => i2cClockCounter[1].CLK
+audioClock => i2cClockCounter[2].CLK
+audioClock => i2cClockCounter[3].CLK
+audioClock => i2cClockCounter[4].CLK
+audioClock => i2cClockCounter[5].CLK
+audioClock => i2cClockCounter[6].CLK
+audioClock => i2cClockCounter[7].CLK
+audioClock => i2cClockCounter[8].CLK
+audioClock => i2cClockCounter[9].CLK
+scl <= I2C_Controller:i2cController.I2C_SCLK
+sda <> I2C_Controller:i2cController.I2C_SDAT
+stateOut[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+stateOut[1] <= stateOut.DB_MAX_OUTPUT_PORT_TYPE
+stateOut[2] <= stateOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|de2beep750Hz:inst8|de2beeper:inst_de2beeper|audio_codec_controller:b2v_inst_audioCodecController|I2C_Controller:i2cController
+CLOCK => SD[0].CLK
+CLOCK => SD[1].CLK
+CLOCK => SD[2].CLK
+CLOCK => SD[3].CLK
+CLOCK => SD[4].CLK
+CLOCK => SD[5].CLK
+CLOCK => SD[6].CLK
+CLOCK => SD[7].CLK
+CLOCK => SD[8].CLK
+CLOCK => SD[9].CLK
+CLOCK => SD[10].CLK
+CLOCK => SD[11].CLK
+CLOCK => SD[12].CLK
+CLOCK => SD[13].CLK
+CLOCK => SD[14].CLK
+CLOCK => SD[15].CLK
+CLOCK => SD[16].CLK
+CLOCK => SD[17].CLK
+CLOCK => SD[18].CLK
+CLOCK => SD[19].CLK
+CLOCK => SD[20].CLK
+CLOCK => SD[21].CLK
+CLOCK => SD[22].CLK
+CLOCK => SD[23].CLK
+CLOCK => done~reg0.CLK
+CLOCK => ACK3.CLK
+CLOCK => ACK2.CLK
+CLOCK => ACK1.CLK
+CLOCK => SDO~reg0.CLK
+CLOCK => SCLK.CLK
+CLOCK => SD_COUNTER[0]~reg0.CLK
+CLOCK => SD_COUNTER[1]~reg0.CLK
+CLOCK => SD_COUNTER[2]~reg0.CLK
+CLOCK => SD_COUNTER[3]~reg0.CLK
+CLOCK => SD_COUNTER[4]~reg0.CLK
+CLOCK => SD_COUNTER[5]~reg0.CLK
+CLOCK => comb.DATAB
+I2C_SCLK <= comb.DB_MAX_OUTPUT_PORT_TYPE
+I2C_SDAT <> I2C_SDAT
+I2C_DATA[0] => SD.DATAB
+I2C_DATA[1] => SD.DATAB
+I2C_DATA[2] => SD.DATAB
+I2C_DATA[3] => SD.DATAB
+I2C_DATA[4] => SD.DATAB
+I2C_DATA[5] => SD.DATAB
+I2C_DATA[6] => SD.DATAB
+I2C_DATA[7] => SD.DATAB
+I2C_DATA[8] => SD.DATAB
+I2C_DATA[9] => SD.DATAB
+I2C_DATA[10] => SD.DATAB
+I2C_DATA[11] => SD.DATAB
+I2C_DATA[12] => SD.DATAB
+I2C_DATA[13] => SD.DATAB
+I2C_DATA[14] => SD.DATAB
+I2C_DATA[15] => SD.DATAB
+I2C_DATA[16] => SD.DATAB
+I2C_DATA[17] => SD.DATAB
+I2C_DATA[18] => SD.DATAB
+I2C_DATA[19] => SD.DATAB
+I2C_DATA[20] => SD.DATAB
+I2C_DATA[21] => SD.DATAB
+I2C_DATA[22] => SD.DATAB
+I2C_DATA[23] => SD.DATAB
+RESET => done~reg0.PRESET
+RESET => ACK3.ACLR
+RESET => ACK2.ACLR
+RESET => ACK1.ACLR
+RESET => SDO~reg0.PRESET
+RESET => SCLK.PRESET
+RESET => SD_COUNTER[0]~reg0.PRESET
+RESET => SD_COUNTER[1]~reg0.PRESET
+RESET => SD_COUNTER[2]~reg0.PRESET
+RESET => SD_COUNTER[3]~reg0.PRESET
+RESET => SD_COUNTER[4]~reg0.PRESET
+RESET => SD_COUNTER[5]~reg0.PRESET
+RESET => SD[0].ENA
+RESET => SD[23].ENA
+RESET => SD[22].ENA
+RESET => SD[21].ENA
+RESET => SD[20].ENA
+RESET => SD[19].ENA
+RESET => SD[18].ENA
+RESET => SD[17].ENA
+RESET => SD[16].ENA
+RESET => SD[15].ENA
+RESET => SD[14].ENA
+RESET => SD[13].ENA
+RESET => SD[12].ENA
+RESET => SD[11].ENA
+RESET => SD[10].ENA
+RESET => SD[9].ENA
+RESET => SD[8].ENA
+RESET => SD[7].ENA
+RESET => SD[6].ENA
+RESET => SD[5].ENA
+RESET => SD[4].ENA
+RESET => SD[3].ENA
+RESET => SD[2].ENA
+RESET => SD[1].ENA
+start => SD_COUNTER.OUTPUTSELECT
+start => SD_COUNTER.OUTPUTSELECT
+start => SD_COUNTER.OUTPUTSELECT
+start => SD_COUNTER.OUTPUTSELECT
+start => SD_COUNTER.OUTPUTSELECT
+start => SD_COUNTER.OUTPUTSELECT
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+readWriteEnable => ~NO_FANOUT~
+ACK <= comb.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[0] <= SD_COUNTER[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[1] <= SD_COUNTER[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[2] <= SD_COUNTER[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[3] <= SD_COUNTER[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[4] <= SD_COUNTER[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SD_COUNTER[5] <= SD_COUNTER[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SDO <= SDO~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|de2beep750Hz:inst8|de2beeper:inst_de2beeper|clockgenerator:b2v_inst_clockGenrator
+ACLRN => audiopll18m4:audioPllClockGen.areset
+ACLRN => Delayed_Clrn~reg0.ACLR
+ACLRN => clockGeneratorInternalCount[0].ACLR
+ACLRN => clockGeneratorInternalCount[1].ACLR
+ACLRN => clockGeneratorInternalCount[2].ACLR
+ACLRN => clockGeneratorInternalCount[3].ACLR
+ACLRN => clockGeneratorInternalCount[4].ACLR
+ACLRN => clockGeneratorInternalCount[5].ACLR
+ACLRN => clockGeneratorInternalCount[6].ACLR
+ACLRN => clockGeneratorInternalCount[7].ACLR
+ACLRN => clockGeneratorInternalCount[8].ACLR
+ACLRN => clockGeneratorInternalCount[9].ACLR
+ACLRN => clockGeneratorInternalCount[10].ACLR
+ACLRN => clockGeneratorInternalCount[11].ACLR
+ACLRN => clockGeneratorInternalCount[12].ACLR
+ACLRN => clockGeneratorInternalCount[13].ACLR
+ACLRN => clockGeneratorInternalCount[14].ACLR
+ACLRN => clockGeneratorInternalCount[15].ACLR
+ACLRN => clockGeneratorInternalCount[16].ACLR
+ACLRN => clockGeneratorInternalCount[17].ACLR
+ACLRN => clockGeneratorInternalCount[18].ACLR
+ACLRN => clockGeneratorInternalCount[19].ACLR
+ACLRN => clockGeneratorInternalCount[20].ACLR
+ACLRN => clockGeneratorInternalCount[21].ACLR
+Clock_50 => audiopll18m4:audioPllClockGen.inclk0
+Clock_50 => Delayed_Clrn~reg0.CLK
+Clock_50 => clockGeneratorInternalCount[0].CLK
+Clock_50 => clockGeneratorInternalCount[1].CLK
+Clock_50 => clockGeneratorInternalCount[2].CLK
+Clock_50 => clockGeneratorInternalCount[3].CLK
+Clock_50 => clockGeneratorInternalCount[4].CLK
+Clock_50 => clockGeneratorInternalCount[5].CLK
+Clock_50 => clockGeneratorInternalCount[6].CLK
+Clock_50 => clockGeneratorInternalCount[7].CLK
+Clock_50 => clockGeneratorInternalCount[8].CLK
+Clock_50 => clockGeneratorInternalCount[9].CLK
+Clock_50 => clockGeneratorInternalCount[10].CLK
+Clock_50 => clockGeneratorInternalCount[11].CLK
+Clock_50 => clockGeneratorInternalCount[12].CLK
+Clock_50 => clockGeneratorInternalCount[13].CLK
+Clock_50 => clockGeneratorInternalCount[14].CLK
+Clock_50 => clockGeneratorInternalCount[15].CLK
+Clock_50 => clockGeneratorInternalCount[16].CLK
+Clock_50 => clockGeneratorInternalCount[17].CLK
+Clock_50 => clockGeneratorInternalCount[18].CLK
+Clock_50 => clockGeneratorInternalCount[19].CLK
+Clock_50 => clockGeneratorInternalCount[20].CLK
+Clock_50 => clockGeneratorInternalCount[21].CLK
+AudioClock <= audiopll18m4:audioPllClockGen.c0
+Delayed_Clrn <= Delayed_Clrn~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|de2beep750Hz:inst8|de2beeper:inst_de2beeper|clockgenerator:b2v_inst_clockGenrator|audioPll18M4:audioPllClockGen
+areset => altpll:altpll_component.areset
+inclk0 => altpll:altpll_component.inclk[0]
+c0 <= altpll:altpll_component.clk[0]
+
+
+|NovaBlob|de2beep750Hz:inst8|de2beeper:inst_de2beeper|clockgenerator:b2v_inst_clockGenrator|audioPll18M4:audioPllClockGen|altpll:altpll_component
+inclk[0] => pll.CLK
+inclk[1] => ~NO_FANOUT~
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => pll.ARESET
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= <GND>
+clk[2] <= <GND>
+clk[3] <= <GND>
+clk[4] <= <GND>
+clk[5] <= <GND>
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= <GND>
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= sclkout1.DB_MAX_OUTPUT_PORT_TYPE
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
+
+
+|NovaBlob|de2beep750Hz:inst8|de2beeper:inst_de2beeper|singen:b2v_inst_sinGen
+CLK => clk2.CLK
+CLK => cnt[0].CLK
+CLK => cnt[1].CLK
+CLK => cnt[2].CLK
+CLK => cnt[3].CLK
+CLK => cnt[4].CLK
+ACLRN => cnt[0].ACLR
+ACLRN => cnt[1].ACLR
+ACLRN => cnt[2].ACLR
+ACLRN => cnt[3].ACLR
+ACLRN => cnt[4].ACLR
+ACLRN => waveCounter[0].ACLR
+ACLRN => waveCounter[1].ACLR
+ACLRN => waveCounter[2].ACLR
+ACLRN => waveCounter[3].ACLR
+ACLRN => waveCounter[4].ACLR
+ACLRN => clk2.ENA
+FREQ[0] => Add0.IN8
+FREQ[1] => Add0.IN7
+FREQ[2] => Add0.IN6
+FREQ[3] => Add0.IN5
+Q[0] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|posun18:inst7
+LEDR[0] <= join18wires:inst1.B[0]
+LEDR[1] <= join18wires:inst1.B[1]
+LEDR[2] <= join18wires:inst1.B[2]
+LEDR[3] <= join18wires:inst1.B[3]
+LEDR[4] <= join18wires:inst1.B[4]
+LEDR[5] <= join18wires:inst1.B[5]
+LEDR[6] <= join18wires:inst1.B[6]
+LEDR[7] <= join18wires:inst1.B[7]
+LEDR[8] <= join18wires:inst1.B[8]
+LEDR[9] <= join18wires:inst1.B[9]
+LEDR[10] <= join18wires:inst1.B[10]
+LEDR[11] <= join18wires:inst1.B[11]
+LEDR[12] <= join18wires:inst1.B[12]
+LEDR[13] <= join18wires:inst1.B[13]
+LEDR[14] <= join18wires:inst1.B[14]
+LEDR[15] <= join18wires:inst1.B[15]
+LEDR[16] <= join18wires:inst1.B[16]
+LEDR[17] <= join18wires:inst1.B[17]
+LeftIn => shift18:inst.LeftIn
+CLK => shift18:inst.CLK
+ACLRN => shift18:inst.ACLRN
+
+
+|NovaBlob|posun18:inst7|join18wires:inst1
+B[0] <= W0.DB_MAX_OUTPUT_PORT_TYPE
+B[1] <= W1.DB_MAX_OUTPUT_PORT_TYPE
+B[2] <= W2.DB_MAX_OUTPUT_PORT_TYPE
+B[3] <= W3.DB_MAX_OUTPUT_PORT_TYPE
+B[4] <= W4.DB_MAX_OUTPUT_PORT_TYPE
+B[5] <= W5.DB_MAX_OUTPUT_PORT_TYPE
+B[6] <= W6.DB_MAX_OUTPUT_PORT_TYPE
+B[7] <= W7.DB_MAX_OUTPUT_PORT_TYPE
+B[8] <= W8.DB_MAX_OUTPUT_PORT_TYPE
+B[9] <= W9.DB_MAX_OUTPUT_PORT_TYPE
+B[10] <= W10.DB_MAX_OUTPUT_PORT_TYPE
+B[11] <= W11.DB_MAX_OUTPUT_PORT_TYPE
+B[12] <= W12.DB_MAX_OUTPUT_PORT_TYPE
+B[13] <= W13.DB_MAX_OUTPUT_PORT_TYPE
+B[14] <= W14.DB_MAX_OUTPUT_PORT_TYPE
+B[15] <= W15.DB_MAX_OUTPUT_PORT_TYPE
+B[16] <= W16.DB_MAX_OUTPUT_PORT_TYPE
+B[17] <= W17.DB_MAX_OUTPUT_PORT_TYPE
+W0 => B[0].DATAIN
+W1 => B[1].DATAIN
+W2 => B[2].DATAIN
+W3 => B[3].DATAIN
+W4 => B[4].DATAIN
+W5 => B[5].DATAIN
+W6 => B[6].DATAIN
+W7 => B[7].DATAIN
+W8 => B[8].DATAIN
+W9 => B[9].DATAIN
+W10 => B[10].DATAIN
+W11 => B[11].DATAIN
+W12 => B[12].DATAIN
+W13 => B[13].DATAIN
+W14 => B[14].DATAIN
+W15 => B[15].DATAIN
+W16 => B[16].DATAIN
+W17 => B[17].DATAIN
+
+
+|NovaBlob|posun18:inst7|shift18:inst
+Q0 <= shift16:inst.Q0
+LeftIn => shift16:inst.LeftIn
+CLK => shift16:inst.CLK
+CLK => shift2:inst4.CLK
+ACLRN => shift16:inst.ACLRN
+ACLRN => shift2:inst4.ACLRN
+Q1 <= shift16:inst.Q1
+Q2 <= shift16:inst.Q2
+Q3 <= shift16:inst.Q3
+Q4 <= shift16:inst.Q4
+Q5 <= shift16:inst.Q5
+Q6 <= shift16:inst.Q6
+Q7 <= shift16:inst.Q7
+Q8 <= shift16:inst.Q8
+Q9 <= shift16:inst.Q9
+Q10 <= shift16:inst.Q10
+Q11 <= shift16:inst.Q11
+Q12 <= shift16:inst.Q12
+Q13 <= shift16:inst.Q13
+Q14 <= shift16:inst.Q14
+Q15 <= shift16:inst.Q15
+Q16 <= shift2:inst4.Q0
+Q17 <= shift2:inst4.Q1
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst
+Q0 <= shift8:inst.Q0
+LeftIn => shift8:inst.LeftIn
+CLK => shift8:inst.CLK
+CLK => shift8:inst3.CLK
+ACLRN => shift8:inst.ACLRN
+ACLRN => shift8:inst3.ACLRN
+Q1 <= shift8:inst.Q1
+Q2 <= shift8:inst.Q2
+Q3 <= shift8:inst.Q3
+Q4 <= shift8:inst.Q4
+Q5 <= shift8:inst.Q5
+Q6 <= shift8:inst.Q6
+Q7 <= shift8:inst.Q7
+Q8 <= shift8:inst3.Q0
+Q9 <= shift8:inst3.Q1
+Q10 <= shift8:inst3.Q2
+Q11 <= shift8:inst3.Q3
+Q12 <= shift8:inst3.Q4
+Q13 <= shift8:inst3.Q5
+Q14 <= shift8:inst3.Q6
+Q15 <= shift8:inst3.Q7
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst
+Q0 <= shift4:inst.Q0
+LeftIn => shift4:inst.LeftIn
+CLK => shift4:inst.CLK
+CLK => shift4:inst2.CLK
+ACLRN => shift4:inst.ACLRN
+ACLRN => shift4:inst2.ACLRN
+Q1 <= shift4:inst.Q1
+Q2 <= shift4:inst.Q2
+Q3 <= shift4:inst.Q3
+Q4 <= shift4:inst2.Q0
+Q5 <= shift4:inst2.Q1
+Q6 <= shift4:inst2.Q2
+Q7 <= shift4:inst2.Q3
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst|shift4:inst
+Q0 <= shift2:inst.Q0
+LeftIn => shift2:inst.LeftIn
+CLK => shift2:inst.CLK
+CLK => shift2:inst1.CLK
+ACLRN => shift2:inst.ACLRN
+ACLRN => shift2:inst1.ACLRN
+Q1 <= shift2:inst.Q1
+Q2 <= shift2:inst1.Q0
+Q3 <= shift2:inst1.Q1
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst|shift4:inst|shift2:inst
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst2.ACLR
+CLK => inst.CLK
+CLK => inst2.CLK
+LeftIn => inst.DATAIN
+Q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst|shift4:inst|shift2:inst1
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst2.ACLR
+CLK => inst.CLK
+CLK => inst2.CLK
+LeftIn => inst.DATAIN
+Q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst|shift4:inst2
+Q0 <= shift2:inst.Q0
+LeftIn => shift2:inst.LeftIn
+CLK => shift2:inst.CLK
+CLK => shift2:inst1.CLK
+ACLRN => shift2:inst.ACLRN
+ACLRN => shift2:inst1.ACLRN
+Q1 <= shift2:inst.Q1
+Q2 <= shift2:inst1.Q0
+Q3 <= shift2:inst1.Q1
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst|shift4:inst2|shift2:inst
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst2.ACLR
+CLK => inst.CLK
+CLK => inst2.CLK
+LeftIn => inst.DATAIN
+Q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst|shift4:inst2|shift2:inst1
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst2.ACLR
+CLK => inst.CLK
+CLK => inst2.CLK
+LeftIn => inst.DATAIN
+Q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst3
+Q0 <= shift4:inst.Q0
+LeftIn => shift4:inst.LeftIn
+CLK => shift4:inst.CLK
+CLK => shift4:inst2.CLK
+ACLRN => shift4:inst.ACLRN
+ACLRN => shift4:inst2.ACLRN
+Q1 <= shift4:inst.Q1
+Q2 <= shift4:inst.Q2
+Q3 <= shift4:inst.Q3
+Q4 <= shift4:inst2.Q0
+Q5 <= shift4:inst2.Q1
+Q6 <= shift4:inst2.Q2
+Q7 <= shift4:inst2.Q3
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst3|shift4:inst
+Q0 <= shift2:inst.Q0
+LeftIn => shift2:inst.LeftIn
+CLK => shift2:inst.CLK
+CLK => shift2:inst1.CLK
+ACLRN => shift2:inst.ACLRN
+ACLRN => shift2:inst1.ACLRN
+Q1 <= shift2:inst.Q1
+Q2 <= shift2:inst1.Q0
+Q3 <= shift2:inst1.Q1
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst3|shift4:inst|shift2:inst
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst2.ACLR
+CLK => inst.CLK
+CLK => inst2.CLK
+LeftIn => inst.DATAIN
+Q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst3|shift4:inst|shift2:inst1
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst2.ACLR
+CLK => inst.CLK
+CLK => inst2.CLK
+LeftIn => inst.DATAIN
+Q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst3|shift4:inst2
+Q0 <= shift2:inst.Q0
+LeftIn => shift2:inst.LeftIn
+CLK => shift2:inst.CLK
+CLK => shift2:inst1.CLK
+ACLRN => shift2:inst.ACLRN
+ACLRN => shift2:inst1.ACLRN
+Q1 <= shift2:inst.Q1
+Q2 <= shift2:inst1.Q0
+Q3 <= shift2:inst1.Q1
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst3|shift4:inst2|shift2:inst
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst2.ACLR
+CLK => inst.CLK
+CLK => inst2.CLK
+LeftIn => inst.DATAIN
+Q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift16:inst|shift8:inst3|shift4:inst2|shift2:inst1
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst2.ACLR
+CLK => inst.CLK
+CLK => inst2.CLK
+LeftIn => inst.DATAIN
+Q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|posun18:inst7|shift18:inst|shift2:inst4
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst2.ACLR
+CLK => inst.CLK
+CLK => inst2.CLK
+LeftIn => inst.DATAIN
+Q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|MajakEA:inst
+M <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+C => inst.IN0
+B => inst2.IN0
+B => inst4.IN1
+D => inst5.IN0
+D => inst4.IN2
+A => inst5.IN1
+A => inst4.IN0
+STOP <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|counter4bits:inst4
+Q0 <= register4bits:inst.Q0
+CLK => register4bits:inst.CLK
+ENA => register4bits:inst.ENA
+RESET => register4bits:inst.RESET
+ACLRN => register4bits:inst.ACLRN
+Q1 <= register4bits:inst.Q1
+Q2 <= register4bits:inst.Q2
+Q3 <= register4bits:inst.Q3
+
+
+|NovaBlob|counter4bits:inst4|register4bits:inst
+Q0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst.ACLR
+ACLRN => inst8.ACLR
+ACLRN => inst9.ACLR
+ACLRN => inst10.ACLR
+D0 => inst2.IN0
+RESET => inst13.IN0
+CLK => inst.CLK
+CLK => inst8.CLK
+CLK => inst9.CLK
+CLK => inst10.CLK
+ENA => inst.ENA
+ENA => inst8.ENA
+ENA => inst9.ENA
+ENA => inst10.ENA
+Q1 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+D1 => inst3.IN0
+Q2 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+D2 => inst11.IN0
+Q3 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+D3 => inst12.IN0
+
+
+|NovaBlob|counter4bits:inst4|add1_4bits:inst2
+z0 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+x0 => inst7.IN0
+x0 => inst1.IN0
+x0 => inst.IN0
+x0 => inst9.IN0
+z1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+x1 => inst1.IN1
+x1 => inst.IN1
+x1 => inst9.IN1
+z2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+x2 => inst3.IN1
+x2 => inst9.IN2
+z3 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+x3 => inst5.IN1
+
+
+|NovaBlob|divider1000:inst3
+Y <= divider_generic:inst.q
+CLK => divider_generic:inst.CLK
+
+
+|NovaBlob|divider1000:inst3|divider_generic:inst
+CLK => q2.CLK
+CLK => cnt[0].CLK
+CLK => cnt[1].CLK
+CLK => cnt[2].CLK
+CLK => cnt[3].CLK
+CLK => cnt[4].CLK
+CLK => cnt[5].CLK
+CLK => cnt[6].CLK
+CLK => cnt[7].CLK
+CLK => cnt[8].CLK
+q <= q2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|divider1000:inst2
+Y <= divider_generic:inst.q
+CLK => divider_generic:inst.CLK
+
+
+|NovaBlob|divider1000:inst2|divider_generic:inst
+CLK => q2.CLK
+CLK => cnt[0].CLK
+CLK => cnt[1].CLK
+CLK => cnt[2].CLK
+CLK => cnt[3].CLK
+CLK => cnt[4].CLK
+CLK => cnt[5].CLK
+CLK => cnt[6].CLK
+CLK => cnt[7].CLK
+CLK => cnt[8].CLK
+q <= q2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|divider10:instdiv
+Y <= divider_generic:inst.q
+CLK => divider_generic:inst.CLK
+
+
+|NovaBlob|divider10:instdiv|divider_generic:inst
+CLK => q2.CLK
+CLK => cnt[0].CLK
+CLK => cnt[1].CLK
+CLK => cnt[2].CLK
+q <= q2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|NovaBlob|start_stop:inst5
+RUN <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+ACLRN => inst1.ACLR
+ACLRN => inst5.IN0
+CLK => inst1.CLK
+START => inst6.IN0
+STOP => inst3.IN1
+
+

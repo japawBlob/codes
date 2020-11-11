@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="B4B36PDV_02"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="condition_variable.bin">
+				<Option output="/mnt/c/Codes/PDV/tutorial_02/condition_variable.bin" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 condition_variable.bin"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="condition_variable.bin/fast">
+				<Option output="/mnt/c/Codes/PDV/tutorial_02/condition_variable.bin" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 condition_variable.bin/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="decrypt.bin">
+				<Option output="/mnt/c/Codes/PDV/tutorial_02/decrypt.bin" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 decrypt.bin"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="decrypt.bin/fast">
+				<Option output="/mnt/c/Codes/PDV/tutorial_02/decrypt.bin" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 decrypt.bin/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="benchmark.bin">
+				<Option output="/mnt/c/Codes/PDV/tutorial_02/benchmark.bin" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 benchmark.bin"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="benchmark.bin/fast">
+				<Option output="/mnt/c/Codes/PDV/tutorial_02/benchmark.bin" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 benchmark.bin/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="condition_variable">
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 condition_variable"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="benchmark">
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 benchmark"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="decrypt">
+				<Option working_dir="/mnt/c/Codes/PDV/tutorial_02"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 decrypt"/>
+					<CompileFile command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/mnt/c/Codes/PDV/tutorial_02/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Codes/PDV/tutorial_02/PDVCrypt.cpp">
+			<Option target="decrypt.bin"/>
+			<Option target="benchmark.bin"/>
+		</Unit>
+		<Unit filename="/mnt/c/Codes/PDV/tutorial_02/PDVCrypt.h">
+			<Option target="decrypt.bin"/>
+			<Option target="benchmark.bin"/>
+		</Unit>
+		<Unit filename="/mnt/c/Codes/PDV/tutorial_02/benchmark.cpp">
+			<Option target="benchmark.bin"/>
+		</Unit>
+		<Unit filename="/mnt/c/Codes/PDV/tutorial_02/condition_variable.cpp">
+			<Option target="condition_variable.bin"/>
+		</Unit>
+		<Unit filename="/mnt/c/Codes/PDV/tutorial_02/decrypt.cpp">
+			<Option target="decrypt.bin"/>
+		</Unit>
+		<Unit filename="/mnt/c/Codes/PDV/tutorial_02/decryption.cpp">
+			<Option target="benchmark.bin"/>
+		</Unit>
+		<Unit filename="/mnt/c/Codes/PDV/tutorial_02/decryption.h">
+			<Option target="benchmark.bin"/>
+		</Unit>
+		<Unit filename="/mnt/c/Codes/PDV/tutorial_02/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

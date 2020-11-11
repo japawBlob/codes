@@ -1,0 +1,432 @@
+m255
+K3
+13
+cModel Technology
+dC:\SPS\LSPVGA_V12\simulation\modelsim
+Edisplaylogic2
+Z0 w1572189655
+Z1 DPx4 work 10 vgapackage 0 22 ERJXPnl[<[gWmNVPm`g8J0
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\SPS\LSPVGA_Mux\simulation\modelsim
+Z6 8C:/SPS/LSPVGA_Mux/DisplayLogic2.vhd
+Z7 FC:/SPS/LSPVGA_Mux/DisplayLogic2.vhd
+l0
+L11
+VDGPd8mYO>0o_lD]CDU6Hd0
+Z8 OV;C;10.1d;51
+32
+Z9 !s108 1572879874.002000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/DisplayLogic2.vhd|
+Z11 !s107 C:/SPS/LSPVGA_Mux/DisplayLogic2.vhd|
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+!s100 R[_IfEDRkRlg:WPhMOccD1
+!i10b 1
+Abehavioral
+R1
+R2
+R3
+R4
+DEx4 work 13 displaylogic2 0 22 DGPd8mYO>0o_lD]CDU6Hd0
+l55
+L20
+VaZY0PgR>Y_^QAQEBCAQ4N3
+R8
+32
+R9
+R10
+R11
+R12
+R13
+!s100 @:i9YJhd3Oi@XL=o7[?G42
+!i10b 1
+Edisplaylogic2mux
+Z14 w1572879496
+R2
+R1
+R3
+R4
+R5
+Z15 8C:/SPS/LSPVGA_Mux/DisplayLogic2Mux.vhd
+Z16 FC:/SPS/LSPVGA_Mux/DisplayLogic2Mux.vhd
+l0
+L5
+VaSHGJD9^OJD7Re:aP7o>U0
+R8
+32
+Z17 !s108 1572879874.064000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/DisplayLogic2Mux.vhd|
+Z19 !s107 C:/SPS/LSPVGA_Mux/DisplayLogic2Mux.vhd|
+R12
+R13
+!s100 [=o^`bZFVYea@dg4gAz943
+!i10b 1
+Astructural
+R2
+R1
+R3
+R4
+DEx4 work 16 displaylogic2mux 0 22 aSHGJD9^OJD7Re:aP7o>U0
+l85
+L25
+VE0C_j=ENaWEd0QHVjG_C70
+R8
+32
+R17
+R18
+R19
+R12
+R13
+!s100 6HT_dY0>3^L@Tl?PcBmZO2
+!i10b 1
+Edisplaylogic2mux_debugversion
+Z20 w1572879593
+R2
+R1
+R3
+R4
+R5
+Z21 8C:/SPS/LSPVGA_Mux/DisplayLogic2Mux_debugVersion.vhd
+Z22 FC:/SPS/LSPVGA_Mux/DisplayLogic2Mux_debugVersion.vhd
+l0
+L5
+Veh_0H38b76V_zYW3WSCl`0
+R8
+32
+Z23 !s108 1572879874.485000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/DisplayLogic2Mux_debugVersion.vhd|
+Z25 !s107 C:/SPS/LSPVGA_Mux/DisplayLogic2Mux_debugVersion.vhd|
+R12
+R13
+!s100 iINC^<QJ3QDd8bUXmZbdD2
+!i10b 1
+Astructural
+R2
+R1
+R3
+R4
+DEx4 work 29 displaylogic2mux_debugversion 0 22 eh_0H38b76V_zYW3WSCl`0
+l52
+L26
+VdJDX:T9R7ELIQATBo_J^L2
+R8
+32
+R23
+R24
+R25
+R12
+R13
+!s100 RPU_D<Yl<]I`JIf4;ODSi1
+!i10b 1
+Erompicture2
+Z26 w1572010762
+R3
+R4
+R5
+Z27 8C:/SPS/LSPVGA_Mux/romPicture2.vhd
+Z28 FC:/SPS/LSPVGA_Mux/romPicture2.vhd
+l0
+L42
+V=@EBH5H::KFGimJI7Lgkn2
+R8
+32
+Z29 !s108 1572879874.111000
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/romPicture2.vhd|
+Z31 !s107 C:/SPS/LSPVGA_Mux/romPicture2.vhd|
+R12
+R13
+!s100 K9eVIMQa`b7_MMPSA0DOg3
+!i10b 1
+Asyn
+R3
+R4
+DEx4 work 11 rompicture2 0 22 =@EBH5H::KFGimJI7Lgkn2
+l81
+L52
+VmnVj5RX6R?OnedNc9f6O93
+R8
+32
+R29
+R30
+R31
+R12
+R13
+!s100 7TEQg>4[7C6lDj7D=4YJ80
+!i10b 1
+Etestbench_mux
+Z32 w1572879197
+R1
+Z33 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
+R2
+R3
+R4
+R5
+Z34 8C:/SPS/LSPVGA_Mux/testbench_Mux.vhd
+Z35 FC:/SPS/LSPVGA_Mux/testbench_Mux.vhd
+l0
+L21
+V@;@VS9TcRn:=;3Y>M2__M2
+!s100 9Y87:oPY_`ha>B0fdG3FG0
+R8
+32
+!i10b 1
+Z36 !s108 1572879874.532000
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/testbench_Mux.vhd|
+Z38 !s107 C:/SPS/LSPVGA_Mux/testbench_Mux.vhd|
+R12
+R13
+Atestbench
+R1
+R33
+R2
+R3
+R4
+Z39 DEx4 work 13 testbench_mux 0 22 @;@VS9TcRn:=;3Y>M2__M2
+l122
+L24
+Z40 VSKY8AnXeUzJZ_oOT[A9QF1
+Z41 !s100 MkHoG69JZP16MPg>0>o<D2
+R8
+32
+!i10b 1
+R36
+R37
+R38
+R12
+R13
+Evgagenerator
+Z42 w1571235863
+R1
+R2
+R3
+R4
+R5
+Z43 8C:/SPS/LSPVGA_Mux/VGAgenerator.vhd
+Z44 FC:/SPS/LSPVGA_Mux/VGAgenerator.vhd
+l0
+L12
+VEY05A;SSHUXDTjFYGWNBO1
+R8
+32
+Z45 !s108 1572879874.173000
+Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/VGAgenerator.vhd|
+Z47 !s107 C:/SPS/LSPVGA_Mux/VGAgenerator.vhd|
+R12
+R13
+!s100 e[GAA[c`VZAeE[Ze5Q8V^2
+!i10b 1
+Artl
+R1
+R2
+R3
+R4
+DEx4 work 12 vgagenerator 0 22 EY05A;SSHUXDTjFYGWNBO1
+l28
+L26
+VF2>;8NYE5m_db@K]8zKUd0
+R8
+32
+R45
+R46
+R47
+R12
+R13
+!s100 8@ziRllbT5L1I^RcRMSJi0
+!i10b 1
+Pvgapackage
+R2
+R3
+R4
+Z48 w1567851334
+R5
+Z49 8C:/SPS/LSPVGA_Mux/VGApackage.vhd
+Z50 FC:/SPS/LSPVGA_Mux/VGApackage.vhd
+l0
+L5
+VERJXPnl[<[gWmNVPm`g8J0
+R8
+32
+b1
+Z51 !s108 1572879873.939000
+Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/VGApackage.vhd|
+Z53 !s107 C:/SPS/LSPVGA_Mux/VGApackage.vhd|
+R12
+R13
+!s100 S3:3bFhie5<BlDCVfUFTT1
+!i10b 1
+Bbody
+R1
+R2
+R3
+R4
+l0
+L37
+VCRW0hO=0;DnZ_J8O9]JZM3
+R8
+32
+R51
+R52
+R53
+R12
+R13
+nbody
+!s100 J1DSSVlcd>NTjAKR[R_;c3
+!i10b 1
+Evgaregde2
+Z54 w1572275024
+R1
+R2
+R3
+R4
+R5
+Z55 8C:/SPS/LSPVGA_Mux/VGARegDE2.vhd
+Z56 FC:/SPS/LSPVGA_Mux/VGARegDE2.vhd
+l0
+L12
+VU2PYU?9dm0J?olIiToYf]3
+R8
+32
+Z57 !s108 1572879874.236000
+Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/VGARegDE2.vhd|
+Z59 !s107 C:/SPS/LSPVGA_Mux/VGARegDE2.vhd|
+R12
+R13
+!s100 gJF@f`;XKXLP84g1]K]8]2
+!i10b 1
+Artl
+R1
+R2
+R3
+R4
+DEx4 work 9 vgaregde2 0 22 U2PYU?9dm0J?olIiToYf]3
+l33
+L32
+VAQibegEej5h^:>W21SUTP1
+R8
+32
+R57
+R58
+R59
+R12
+R13
+!s100 I1T=]IamI_[fJMZgnH1713
+!i10b 1
+Evgaregpipeline
+Z60 w1572870190
+R1
+R2
+R3
+R4
+R5
+Z61 8C:/SPS/LSPVGA_Mux/VGARegPipeline.vhd
+Z62 FC:/SPS/LSPVGA_Mux/VGARegPipeline.vhd
+l0
+L12
+VS1C[fQh]ET`ZHfz::bZn21
+R8
+32
+Z63 !s108 1572879874.298000
+Z64 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/VGARegPipeline.vhd|
+Z65 !s107 C:/SPS/LSPVGA_Mux/VGARegPipeline.vhd|
+R12
+R13
+!s100 hh^52:FmI5jimIG`Nz;6m2
+!i10b 1
+Artl
+R1
+R2
+R3
+R4
+DEx4 work 14 vgaregpipeline 0 22 S1C[fQh]ET`ZHfz::bZn21
+l40
+L39
+VjXPMMl_7;Wkj90V8RbW0<0
+R8
+32
+R63
+R64
+R65
+R12
+R13
+!s100 Ld21anIWTL]^@6DI@D?RT1
+!i10b 1
+Evideomuxcalculate
+Z66 w1572879010
+R1
+R2
+R3
+R4
+R5
+Z67 8C:/SPS/LSPVGA_Mux/VideoMuxCalculate.vhd
+Z68 FC:/SPS/LSPVGA_Mux/VideoMuxCalculate.vhd
+l0
+L9
+V:om?Rkbj5TCA2;@SD32I?0
+R8
+32
+Z69 !s108 1572879874.360000
+Z70 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/VideoMuxCalculate.vhd|
+Z71 !s107 C:/SPS/LSPVGA_Mux/VideoMuxCalculate.vhd|
+R12
+R13
+!s100 LJ1ICOR1HSgn9??2@];=?0
+!i10b 1
+Artl
+R1
+R2
+R3
+R4
+DEx4 work 17 videomuxcalculate 0 22 :om?Rkbj5TCA2;@SD32I?0
+l26
+L20
+Ve?hhP9JZSCnd@0A^[c@SA1
+R8
+32
+R69
+R70
+R71
+R12
+R13
+!s100 oQR?gI=D_F4Zoz1O71HER0
+!i10b 1
+Evideomuxswitch
+Z72 w1572876980
+R1
+R2
+R3
+R4
+R5
+Z73 8C:/SPS/LSPVGA_Mux/VideoMuxSwitch.vhd
+Z74 FC:/SPS/LSPVGA_Mux/VideoMuxSwitch.vhd
+l0
+L8
+Vk@UCH20caoO@G;hM<TLOf1
+R8
+32
+Z75 !s108 1572879874.423000
+Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/SPS/LSPVGA_Mux/VideoMuxSwitch.vhd|
+Z77 !s107 C:/SPS/LSPVGA_Mux/VideoMuxSwitch.vhd|
+R12
+R13
+!s100 9J]e5oNVaL<l5W[=E>1?F2
+!i10b 1
+Adataflow
+R1
+R2
+R3
+R4
+DEx4 work 14 videomuxswitch 0 22 k@UCH20caoO@G;hM<TLOf1
+l21
+L19
+VIbLA9_A[6i]@3m1TgA8O63
+R8
+32
+R75
+R76
+R77
+R12
+R13
+!s100 kEH:X`X2_TMJ2UCG6g6@`0
+!i10b 1

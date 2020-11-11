@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, C:/SPS/DCE/Templates/DE115_copy/LSP.bdf
+source_file = 1, C:/SPS/DCE/Templates/DE115_copy/DE115.sdc
+source_file = 1, C:/SPS/DCE/Templates/DE115_copy/output_files/Chain1.cdf
+source_file = 1, C:/SPS/DCE/Templates/DE115_copy/majakEA.bdf
+source_file = 1, C:/SPS/DCE/Templates/DE115_copy/majakEA_Waveform.vwf
+source_file = 1, C:/SPS/DCE/Templates/DE115_copy/db/LSP.cbx.xml
+design_name = majakEA
+instance = comp, \M~output , M~output, majakEA, 1
+instance = comp, \A~input , A~input, majakEA, 1
+instance = comp, \B~input , B~input, majakEA, 1
+instance = comp, \C~input , C~input, majakEA, 1
+instance = comp, \D~input , D~input, majakEA, 1
+instance = comp, \inst4~0 , inst4~0, majakEA, 1

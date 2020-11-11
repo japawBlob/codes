@@ -1,0 +1,1 @@
+/usr/bin/c++   -fopenmp -O3 -Wall   CMakeFiles/main.bin.dir/main.cpp.o CMakeFiles/main.bin.dir/integrate.cpp.o  -o main.bin 

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="ZK_04" targetName="levenshtein" />
+      <config projectName="ZK_04" targetName="filter" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="WSL_profile" CONFIG_NAME="Release" TOOLCHAIN_NAME="WSL" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fd485e68-2566-45fd-b58e-a8aecd04f3d3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:WSL_profile" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/filter.cpp" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1ddEs7pWYRa4p3SfcOgn91ILvCR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
+  </component>
+  <component name="RunManager" selected="CMake Application.filter">
+    <configuration name="filter" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="2347" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ZK_04" TARGET_NAME="filter" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ZK_04" RUN_TARGET_NAME="filter">
+      <envs>
+        <env name="OMP_CANCELLATION " value=" true" />
+      </envs>
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="levenshtein" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ZK_04" TARGET_NAME="levenshtein" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ZK_04" RUN_TARGET_NAME="levenshtein">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.filter" />
+      <item itemvalue="CMake Application.levenshtein" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd485e68-2566-45fd-b58e-a8aecd04f3d3" name="Default Changelist" comment="" />
+      <created>1592746773901</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592746773901</updated>
+      <workItem from="1592746777156" duration="7521000" />
+      <workItem from="1592830131762" duration="8386000" />
+      <workItem from="1592843083655" duration="2912000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="788" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592844359935">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="788" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592844359935" />
+    <state x="723" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592747284699">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="723" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592747284699" />
+    <state x="279" y="278" key="FileChooserDialogImpl" timestamp="1592756461809">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="279" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592756461809" />
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1596023120096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596023120096" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1596023120096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596023120096" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1596023120096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596023120096" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1596023120096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596023120096" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1592846122223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592846122223" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1592846122223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592846122223" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1592846122223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592846122223" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1592846122223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592846122223" />
+    <state x="-69" y="116" key="SettingsEditor" timestamp="1592756462644">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-69" y="116" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592756462644" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1596023051967">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596023051967" />
+  </component>
+</project>

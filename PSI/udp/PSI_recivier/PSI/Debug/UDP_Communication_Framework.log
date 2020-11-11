@@ -1,0 +1,4 @@
+﻿  stdafx.cpp
+  UDP_Communication_Framework.cpp
+\\aspace.msad.fel.cvut.cz\users$\sobotja2\documents\visual studio 2017\projects\udp_communication_framework\udp_communication_framework\udp_communication_framework.cpp(56): warning C4101: buffer_rx: neodkazovaná lokální proměnná
+  UDP_Communication_Framework.vcxproj -> \\aspace.msad.fel.cvut.cz\Users$\sobotja2\Documents\Visual Studio 2017\Projects\UDP_Communication_Framework\Debug\UDP_Communication_Framework.exe

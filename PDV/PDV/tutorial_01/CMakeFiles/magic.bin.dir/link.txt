@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -O3 -fopenmp -pthread   CMakeFiles/magic.bin.dir/magic.cpp.o CMakeFiles/magic.bin.dir/cpu_info.cpp.o  -o magic.bin 

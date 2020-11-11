@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/codes/tutorial_07/avx_mathfun.h
+immintrin.h
+-
+
+/mnt/c/codes/tutorial_07/prob.cpp
+chrono
+-
+vector
+-
+cmath
+-
+cstdlib
+-
+immintrin.h
+-
+iostream
+-
+avx_mathfun.h
+/mnt/c/codes/tutorial_07/avx_mathfun.h
+

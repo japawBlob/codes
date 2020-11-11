@@ -1,0 +1,38 @@
+5
+a 1
+a 2
+a 3
+r		1		1
+a 4
+r		2		2
+a 5
+r		3		3
+a 6
+r		4		4
+a 7
+r		5		5
+a 8
+g 0		6		NULL
+g 1		7		NULL
+g 2		8		NULL
+g 3		NULL	NULL
+g 4		NULL	NULL
+r		6		6
+a 9
+r		7		7
+a 10	
+r		8		8
+a 11
+r		9		9
+a 12
+r		10		10
+a 13
+g 0		11		NULL
+g 1		12		NULL
+g 2		13		NULL
+g 3		NULL	NULL
+g 4		NULL	NULL
+r		11		11
+r		12		12
+r		13		13
+r		NULL	NULL

@@ -1,0 +1,170 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Lite]
+
+==============================================================================
+
+Section Cross References
+
+    stm32f10x.o(RESET) refers to stm32f10x.o(STACK) for __initial_sp
+    stm32f10x.o(RESET) refers to stm32f10x.o(.text) for Reset_Handler
+    stm32f10x.o(.text) refers to blik1.o(STM32F10x_INI) for __main
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing stm32f10x.o(HEAP), (0 bytes).
+    Removing blik1.o(STM32F1xx), (0 bytes).
+
+2 unused section(s) (total 0 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    Blik1.asm                                0x00000000   Number         0  blik1.o ABSOLUTE
+    STM32F10x.s                              0x00000000   Number         0  stm32f10x.o ABSOLUTE
+    RESET                                    0x08000000   Section      236  stm32f10x.o(RESET)
+    .text                                    0x080000ec   Section       28  stm32f10x.o(.text)
+    STM32F10x_INI                            0x08000108   Section      228  blik1.o(STM32F10x_INI)
+    RCC_CNF                                  0x08000131   Thumb Code   120  blik1.o(STM32F10x_INI)
+    GPIO_CNF                                 0x080001a9   Thumb Code    24  blik1.o(STM32F10x_INI)
+    DELAY                                    0x080001c1   Thumb Code    20  blik1.o(STM32F10x_INI)
+    STACK                                    0x20000000   Section      512  stm32f10x.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  stm32f10x.o(RESET)
+    Reset_Handler                            0x080000ed   Thumb Code     4  stm32f10x.o(.text)
+    NMI_Handler                              0x080000f1   Thumb Code     2  stm32f10x.o(.text)
+    HardFault_Handler                        0x080000f3   Thumb Code     2  stm32f10x.o(.text)
+    MemManage_Handler                        0x080000f5   Thumb Code     2  stm32f10x.o(.text)
+    BusFault_Handler                         0x080000f7   Thumb Code     2  stm32f10x.o(.text)
+    UsageFault_Handler                       0x080000f9   Thumb Code     2  stm32f10x.o(.text)
+    SVC_Handler                              0x080000fb   Thumb Code     2  stm32f10x.o(.text)
+    DebugMon_Handler                         0x080000fd   Thumb Code     2  stm32f10x.o(.text)
+    PendSV_Handler                           0x080000ff   Thumb Code     2  stm32f10x.o(.text)
+    SysTick_Handler                          0x08000101   Thumb Code     2  stm32f10x.o(.text)
+    ADC_IRQHandler                           0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    CAN_RX1_IRQHandler                       0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    CAN_SCE_IRQHandler                       0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    DMAChannel1_IRQHandler                   0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    DMAChannel2_IRQHandler                   0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    DMAChannel3_IRQHandler                   0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    DMAChannel4_IRQHandler                   0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    DMAChannel5_IRQHandler                   0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    DMAChannel6_IRQHandler                   0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    DMAChannel7_IRQHandler                   0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    EXTI0_IRQHandler                         0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    EXTI15_10_IRQHandler                     0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    EXTI1_IRQHandler                         0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    EXTI2_IRQHandler                         0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    EXTI3_IRQHandler                         0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    EXTI4_IRQHandler                         0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    EXTI9_5_IRQHandler                       0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    FLASH_IRQHandler                         0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    I2C1_ER_IRQHandler                       0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    I2C1_EV_IRQHandler                       0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    I2C2_ER_IRQHandler                       0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    I2C2_EV_IRQHandler                       0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    PVD_IRQHandler                           0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    RCC_IRQHandler                           0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    RTCAlarm_IRQHandler                      0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    RTC_IRQHandler                           0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    SPI1_IRQHandler                          0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    SPI2_IRQHandler                          0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    TAMPER_IRQHandler                        0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    TIM1_BRK_IRQHandler                      0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    TIM1_CC_IRQHandler                       0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    TIM1_TRG_COM_IRQHandler                  0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    TIM1_UP_IRQHandler                       0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    TIM2_IRQHandler                          0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    TIM3_IRQHandler                          0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    TIM4_IRQHandler                          0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    USART1_IRQHandler                        0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    USART2_IRQHandler                        0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    USART3_IRQHandler                        0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    USBWakeUp_IRQHandler                     0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    USB_HP_CAN_TX_IRQHandler                 0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    USB_LP_CAN_RX0_IRQHandler                0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    WWDG_IRQHandler                          0x08000103   Thumb Code     0  stm32f10x.o(.text)
+    __main                                   0x08000109   Thumb Code     0  blik1.o(STM32F10x_INI)
+    __use_two_region_memory                  0x08000109   Thumb Code     0  blik1.o(STM32F10x_INI)
+    __initial_sp                             0x20000200   Data           0  stm32f10x.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x080000ed
+
+  Load Region LR_1 (Base: 0x08000000, Size: 0x000001ec, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Base: 0x08000000, Size: 0x000001ec, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x000000ec   Data   RO            3    RESET               stm32f10x.o
+    0x080000ec   0x0000001c   Code   RO            4  * .text               stm32f10x.o
+    0x08000108   0x000000e4   Code   RO           11  * STM32F10x_INI       blik1.o
+
+
+    Execution Region ER_RW (Base: 0x20000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region ER_ZI (Base: 0x20000000, Size: 0x00000200, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00000200   Zero   RW            1    STACK               stm32f10x.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       228         24          0          0          0        392   blik1.o
+        28          4        236          0        512        720   stm32f10x.o
+
+    ----------------------------------------------------------------------
+       256         28        236          0        512       1112   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+       256         28        236          0        512       1060   Grand Totals
+       256         28        236          0        512       1060   ELF Image Totals
+       256         28        236          0          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                  492 (   0.48kB)
+    Total RW  Size (RW Data + ZI Data)               512 (   0.50kB)
+    Total ROM Size (Code + RO Data + RW Data)        492 (   0.48kB)
+
+==============================================================================
+

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/codes/zk_05/ZK_05/assignment/data_table.cpp
+cstdlib
+-
+vector
+-
+iostream
+-
+data_table.h
+/mnt/c/codes/zk_05/ZK_05/assignment/data_table.h
+
+/mnt/c/codes/zk_05/ZK_05/assignment/data_table.h
+vector
+-
+iostream
+-
+
+/mnt/c/codes/zk_05/ZK_05/assignment/filter.cpp
+cmath
+-
+data_table.h
+/mnt/c/codes/zk_05/ZK_05/assignment/data_table.h
+
+/mnt/c/codes/zk_05/ZK_05/assignment/filter.h
+data_table.h
+/mnt/c/codes/zk_05/ZK_05/assignment/data_table.h
+
+/mnt/c/codes/zk_05/ZK_05/assignment/main_filter.cpp
+iostream
+-
+chrono
+-
+data_table.h
+/mnt/c/codes/zk_05/ZK_05/assignment/data_table.h
+filter.h
+/mnt/c/codes/zk_05/ZK_05/assignment/filter.h
+

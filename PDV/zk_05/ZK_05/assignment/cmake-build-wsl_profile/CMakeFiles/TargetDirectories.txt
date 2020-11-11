@@ -1,0 +1,4 @@
+/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/CMakeFiles/rebuild_cache.dir
+/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/CMakeFiles/levenshtein.dir
+/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/CMakeFiles/edit_cache.dir
+/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-wsl_profile/CMakeFiles/filter.dir

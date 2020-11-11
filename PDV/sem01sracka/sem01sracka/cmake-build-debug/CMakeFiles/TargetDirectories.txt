@@ -1,0 +1,3 @@
+C:/FCKING_linux/PDV/sem01/cmake-build-debug/CMakeFiles/search.dir
+C:/FCKING_linux/PDV/sem01/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/FCKING_linux/PDV/sem01/cmake-build-debug/CMakeFiles/rebuild_cache.dir

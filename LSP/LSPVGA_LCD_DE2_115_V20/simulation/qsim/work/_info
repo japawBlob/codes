@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\SPS\LSPVGA_V10\simulation\qsim
+vVGAgenerator
+Z1 I2G:CclD>bBcWE5MIocgAL2
+Z2 VQC>PbPjj`nH[aaI@0Mgk60
+Z3 dC:\SPS\LSPVGA_V10\simulation\qsim
+Z4 w1567689781
+Z5 8VGA.vo
+Z6 FVGA.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|VGA.vo|
+Z9 o-work work -O0
+Z10 n@v@g@agenerator
+!i10b 1
+Z11 !s100 VbUUoJfjkF6Q:f5L8hem30
+!s85 0
+Z12 !s108 1567689781.869000
+Z13 !s107 VGA.vo|
+!s101 -O0
+vVGAgenerator_vlg_check_tst
+!i10b 1
+Z14 !s100 DmZbPS1;XD2kSG=O4>6K@0
+Z15 I];U6_9FMjzY28@WQ61_Cz2
+Z16 VG9>0ljJ?e>A<nUY:h2n362
+R3
+Z17 w1567689780
+Z18 8VGA.vt
+Z19 FVGA.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z20 !s108 1567689781.931000
+Z21 !s107 VGA.vt|
+Z22 !s90 -work|work|VGA.vt|
+!s101 -O0
+R9
+Z23 n@v@g@agenerator_vlg_check_tst
+vVGAgenerator_vlg_sample_tst
+!i10b 1
+Z24 !s100 z^;nGUiL[9Rgh5?mKWXIN3
+Z25 IX92mH:`z^7NANecd^4RSQ3
+Z26 V0O3Pe=P3GbRYTERQ9RK^O0
+R3
+R17
+R18
+R19
+L0 29
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z27 n@v@g@agenerator_vlg_sample_tst
+vVGAgenerator_vlg_vec_tst
+!i10b 1
+Z28 !s100 eV_5KK@Z02l5H9DhnWE]M3
+Z29 IL[@5zIm@nLQX^hUlQDDC:0
+Z30 VfC2=@YNO_M;fj6Lg:MB:I3
+R3
+R17
+R18
+R19
+Z31 L0 638
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z32 n@v@g@agenerator_vlg_vec_tst

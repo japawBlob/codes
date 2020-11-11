@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Codes/PDV/hw02_threadpool/ThreadPool.h
+list
+-
+thread
+-
+vector
+-
+iostream
+-
+condition_variable
+-
+
+/mnt/c/Codes/PDV/hw02_threadpool/main.cpp
+iostream
+-
+list
+-
+random
+-
+ThreadPool.h
+/mnt/c/Codes/PDV/hw02_threadpool/ThreadPool.h
+

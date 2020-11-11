@@ -1,0 +1,5 @@
+Dependencies for Project 'LED_BLIK', Target 'STM32F1xx': (DO NOT MODIFY !)
+F (.\STM32F10x.s)(0x5F7B16A4)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F10x--list .\stm32f10x.lst --xref -o .\stm32f10x.o --depend .\stm32f10x.d)
+F (.\Blik1.asm)(0x5F7B16A4)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F10x--list .\blik1.lst --xref -o .\blik1.o --depend .\blik1.d)
+I (INI_1.s)(0x5F7B16A4)
+F (.\ReadMe.txt)(0x5F7B16A5)()

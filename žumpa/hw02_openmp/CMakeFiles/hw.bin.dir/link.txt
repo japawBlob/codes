@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -fopenmp -Wunused-parameter   CMakeFiles/hw.bin.dir/main.cpp.o CMakeFiles/hw.bin.dir/_dataGenerator/DataGenerator.cpp.o CMakeFiles/hw.bin.dir/SumsOfVectors.cpp.o CMakeFiles/hw.bin.dir/_executor/Executor.cpp.o  -o hw.bin 

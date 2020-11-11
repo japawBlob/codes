@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/codes/tutorial_08/main.cpp
+iostream
+-
+random
+-
+algorithm
+-
+chrono
+-
+sparse.h
+/mnt/c/codes/tutorial_08/sparse.h
+multiply.h
+/mnt/c/codes/tutorial_08/multiply.h
+
+/mnt/c/codes/tutorial_08/multiply.cpp
+multiply.h
+/mnt/c/codes/tutorial_08/multiply.h
+string
+-
+vector
+-
+iostream
+-
+sparse.h
+/mnt/c/codes/tutorial_08/sparse.h
+
+/mnt/c/codes/tutorial_08/multiply.h
+sparse.h
+/mnt/c/codes/tutorial_08/sparse.h
+
+/mnt/c/codes/tutorial_08/sparse.h
+vector
+-
+cmath
+-
+iostream
+-
+

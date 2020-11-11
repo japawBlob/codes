@@ -1,0 +1,3 @@
+/mnt/c/codes/hw06_sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/codes/hw06_sort/cmake-build-debug/CMakeFiles/hw.dir
+/mnt/c/codes/hw06_sort/cmake-build-debug/CMakeFiles/edit_cache.dir

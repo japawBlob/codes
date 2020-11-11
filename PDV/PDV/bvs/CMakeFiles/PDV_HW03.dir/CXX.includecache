@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Codes/PDV/bvs/bst_tree.cpp
+functional
+-
+bst_tree.h
+/mnt/c/Codes/PDV/bvs/bst_tree.h
+atomic
+-
+
+/mnt/c/Codes/PDV/bvs/bst_tree.h
+atomic
+-
+
+/mnt/c/Codes/PDV/bvs/main.cpp
+cstdio
+-
+chrono
+-
+tests.h
+/mnt/c/Codes/PDV/bvs/tests.h
+
+/mnt/c/Codes/PDV/bvs/tests.h
+vector
+-
+numeric
+-
+algorithm
+-
+functional
+-
+cstdlib
+-
+bst_tree.h
+/mnt/c/Codes/PDV/bvs/bst_tree.h
+

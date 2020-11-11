@@ -1,0 +1,3 @@
+/mnt/c/codes/hw05_database/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/codes/hw05_database/cmake-build-debug/CMakeFiles/DatabaseQueries.dir
+/mnt/c/codes/hw05_database/cmake-build-debug/CMakeFiles/edit_cache.dir

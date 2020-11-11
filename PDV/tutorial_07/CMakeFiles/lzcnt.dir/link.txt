@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -O2 -march=native   CMakeFiles/lzcnt.dir/lzcnt.cpp.o  -o lzcnt 

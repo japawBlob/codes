@@ -1,0 +1,9 @@
+OBJ=forkpipe.c nd.h nd.c nsd.h nsd.c nsd_main.c
+CC=gcc
+CFLAGS=-g -Wall
+
+bin: $(OBJ)
+	$(CC) -o $@ $(OBJ)
+
+%.o: %.c
+	$(CC) -o $@ -c $(CFLAGS) $<

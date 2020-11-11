@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -O3 -fopenmp -pthread   CMakeFiles/matrix.bin.dir/matrix.cpp.o  -o matrix.bin 

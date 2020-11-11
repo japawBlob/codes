@@ -1,0 +1,4 @@
+﻿  UDP_Communication_Framework.cpp
+c:\users\kolom\onedrive\plocha\matyasovo spi\udp_communication_framework\udp_communication_framework.cpp(256): warning C4553: '==': result of expression not used; did you intend '='?
+c:\users\kolom\onedrive\plocha\matyasovo spi\udp_communication_framework\udp_communication_framework.cpp(97): warning C4101: 'packets': unreferenced local variable
+  UDP_Communication_Framework.vcxproj -> C:\Users\kolom\OneDrive\Plocha\matyasovo spi\Debug\UDP_Communication_Framework.exe

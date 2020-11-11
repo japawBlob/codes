@@ -1,0 +1,24 @@
+Quartus II Archive log --	C:/SPS/DCE/Templates/DE115/LSP_tmp_archive.qarlog
+
+Archive:	C:/SPS/DCE/Templates/DE115/LSP_tmp_archive.qar
+Date:		Thu Feb 20 13:29:17 2020
+Quartus II 64-Bit		13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+
+	=========== Files Selected: ===========
+C:/SPS/DCE/Templates/DE115/DE115.sdc
+C:/SPS/DCE/Templates/DE115/LSP.bdf
+C:/SPS/DCE/Templates/DE115/LSP.qpf
+C:/SPS/DCE/Templates/DE115/LSP.qsf
+C:/SPS/DCE/Templates/DE115/incremental_db/compiled_partitions/LSP.db_info
+C:/SPS/DCE/Templates/DE115/output_files/Chain1.cdf
+c:/altera/13.0sp1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 7 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Thu Feb 20 13:29:18 2020
+Source archive file:	C:/SPS/DCE/Templates/DE115/LSP_tmp_archive.qar
+Archive was extracted into	C:/SPS/DCE/Templates/DE115_copy/
+		 - successfully.

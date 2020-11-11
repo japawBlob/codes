@@ -1,0 +1,4 @@
+/mnt/d/codes/hw02_openmp/CMakeFiles/rebuild_cache.dir
+/mnt/d/codes/hw02_openmp/CMakeFiles/hw.bin.dir
+/mnt/d/codes/hw02_openmp/CMakeFiles/edit_cache.dir
+/mnt/d/codes/hw02_openmp/CMakeFiles/hw.dir

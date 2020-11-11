@@ -1,0 +1,3 @@
+/mnt/c/Codes/PDV/bvs/CMakeFiles/rebuild_cache.dir
+/mnt/c/Codes/PDV/bvs/CMakeFiles/PDV_HW03.dir
+/mnt/c/Codes/PDV/bvs/CMakeFiles/edit_cache.dir

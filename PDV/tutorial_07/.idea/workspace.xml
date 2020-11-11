@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="vectorization" targetName="lzcnt" />
+      <config projectName="vectorization" targetName="prob" />
+      <config projectName="vectorization" targetName="autovec" />
+      <config projectName="vectorization" targetName="cond" />
+      <config projectName="vectorization" targetName="popcnt" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Default" GENERATION_DIR="." />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d781163c-8b89-4e24-b9e5-42a0b456d4ac" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Default" />
+  <component name="ProjectId" id="1ZzBQsvfmZGbRqwWvuYIxMB0QWz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hw05_database" />
+  </component>
+  <component name="RunManager" selected="CMake Application.popcnt">
+    <configuration name="autovec" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vectorization" TARGET_NAME="autovec" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="vectorization" RUN_TARGET_NAME="autovec">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cond" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vectorization" TARGET_NAME="cond" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="vectorization" RUN_TARGET_NAME="cond">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lzcnt" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vectorization" TARGET_NAME="lzcnt" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="vectorization" RUN_TARGET_NAME="lzcnt">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="popcnt" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vectorization" TARGET_NAME="popcnt" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="vectorization" RUN_TARGET_NAME="popcnt">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="prob" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vectorization" TARGET_NAME="prob" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="vectorization" RUN_TARGET_NAME="prob">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.autovec" />
+      <item itemvalue="CMake Application.cond" />
+      <item itemvalue="CMake Application.lzcnt" />
+      <item itemvalue="CMake Application.popcnt" />
+      <item itemvalue="CMake Application.prob" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d781163c-8b89-4e24-b9e5-42a0b456d4ac" name="Default Changelist" comment="" />
+      <created>1585832028768</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585832028768</updated>
+      <workItem from="1585832030210" duration="4052000" />
+      <workItem from="1585842563878" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585832087602">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585832087602" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585842578964">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585842578964" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585836356223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585836356223" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585836356223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585836356223" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585836356223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585836356223" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585836356223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585836356223" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585842565044">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585842565044" />
+  </component>
+</project>

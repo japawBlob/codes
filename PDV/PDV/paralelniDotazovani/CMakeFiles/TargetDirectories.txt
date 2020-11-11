@@ -1,0 +1,3 @@
+/mnt/c/Codes/PDV/paralelniDotazovani/CMakeFiles/rebuild_cache.dir
+/mnt/c/Codes/PDV/paralelniDotazovani/CMakeFiles/DatabaseQueries.dir
+/mnt/c/Codes/PDV/paralelniDotazovani/CMakeFiles/edit_cache.dir

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/codes/tutorial_07/autovec.cpp
+iostream
+-
+chrono
+-
+cstdlib
+-
+cmath
+-
+immintrin.h
+-
+

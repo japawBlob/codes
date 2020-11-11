@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -O2 -march=native   CMakeFiles/prob.dir/prob.cpp.o  -o prob 

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/codes/tutorial_07/cond.cpp
+iostream
+-
+chrono
+-
+vector
+-
+cmath
+-
+cstdlib
+-
+immintrin.h
+-
+

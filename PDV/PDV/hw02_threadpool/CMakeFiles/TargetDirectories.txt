@@ -1,0 +1,4 @@
+/mnt/c/Codes/PDV/hw02_threadpool/CMakeFiles/rebuild_cache.dir
+/mnt/c/Codes/PDV/hw02_threadpool/CMakeFiles/edit_cache.dir
+/mnt/c/Codes/PDV/hw02_threadpool/CMakeFiles/threadpool.bin.dir
+/mnt/c/Codes/PDV/hw02_threadpool/CMakeFiles/threadpool.dir

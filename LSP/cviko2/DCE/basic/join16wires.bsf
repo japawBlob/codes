@@ -1,0 +1,148 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 152 336)
+	(text "join16wires" (rect 5 0 80 16)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 301 31 316)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "W0" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W0" (rect 21 27 44 43)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "W1" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W1" (rect 21 43 44 59)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "W2" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W2" (rect 21 59 44 75)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "W3" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W3" (rect 21 75 44 91)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "W4" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W4" (rect 21 91 44 107)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "W5" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W5" (rect 21 107 44 123)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "W6" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W6" (rect 21 123 44 139)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "W7" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W7" (rect 21 139 44 155)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "W8" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W8" (rect 21 155 44 171)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "W9" (rect 0 0 23 16)(font "Arial" (font_size 8)))
+		(text "W9" (rect 21 171 44 187)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 16 176))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "W10" (rect 0 0 31 16)(font "Arial" (font_size 8)))
+		(text "W10" (rect 21 187 52 203)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 16 192))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "W11" (rect 0 0 31 16)(font "Arial" (font_size 8)))
+		(text "W11" (rect 21 203 52 219)(font "Arial" (font_size 8)))
+		(line (pt 0 208)(pt 16 208))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "W12" (rect 0 0 31 16)(font "Arial" (font_size 8)))
+		(text "W12" (rect 21 219 52 235)(font "Arial" (font_size 8)))
+		(line (pt 0 224)(pt 16 224))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "W13" (rect 0 0 31 16)(font "Arial" (font_size 8)))
+		(text "W13" (rect 21 235 52 251)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 16 240))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "W14" (rect 0 0 31 16)(font "Arial" (font_size 8)))
+		(text "W14" (rect 21 251 52 267)(font "Arial" (font_size 8)))
+		(line (pt 0 256)(pt 16 256))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "W15" (rect 0 0 31 16)(font "Arial" (font_size 8)))
+		(text "W15" (rect 21 267 52 283)(font "Arial" (font_size 8)))
+		(line (pt 0 272)(pt 16 272))
+	)
+	(port
+		(pt 136 32)
+		(output)
+		(text "B[15..0]" (rect 0 0 54 16)(font "Arial" (font_size 8)))
+		(text "B[15..0]" (rect 61 27 115 43)(font "Arial" (font_size 8)))
+		(line (pt 136 32)(pt 120 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 120 304))
+	)
+)

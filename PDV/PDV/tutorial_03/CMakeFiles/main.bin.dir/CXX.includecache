@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Codes/PDV/tutorial_03/integrate.cpp
+integrate.h
+/mnt/c/Codes/PDV/tutorial_03/integrate.h
+omp.h
+-
+cmath
+-
+
+/mnt/c/Codes/PDV/tutorial_03/integrate.h
+functional
+-
+
+/mnt/c/Codes/PDV/tutorial_03/main.cpp
+iostream
+-
+vector
+-
+string
+-
+functional
+-
+chrono
+-
+cmath
+-
+cstdio
+-
+integrate.h
+/mnt/c/Codes/PDV/tutorial_03/integrate.h
+

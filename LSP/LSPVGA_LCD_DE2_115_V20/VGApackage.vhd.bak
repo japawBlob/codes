@@ -1,0 +1,35 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+package vga_package is
+
+	-- Type Declaration (optional)
+
+	-- Subtype Declaration (optional)
+
+	-- Constant Declaration (optional)
+
+	-- Signal Declaration (optional)
+
+	-- Component Declaration (optional)
+
+end vga_package;
+
+package body vga_package is
+
+	-- Type Declaration (optional)
+
+	-- Subtype Declaration (optional)
+
+	-- Constant Declaration (optional)
+
+	-- Function Declaration (optional)
+
+	-- Function Body (optional)
+
+	-- Procedure Declaration (optional)
+
+	-- Procedure Body (optional)
+
+end body vga_package;

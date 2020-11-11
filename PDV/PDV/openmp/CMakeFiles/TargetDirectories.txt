@@ -1,0 +1,4 @@
+/mnt/c/Codes/PDV/openmp/CMakeFiles/rebuild_cache.dir
+/mnt/c/Codes/PDV/openmp/CMakeFiles/hw.bin.dir
+/mnt/c/Codes/PDV/openmp/CMakeFiles/edit_cache.dir
+/mnt/c/Codes/PDV/openmp/CMakeFiles/hw.dir

@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE= -G "CodeBlocks - Unix Makefiles" /mnt/c/codes/tutorial_07
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/codes/tutorial_07

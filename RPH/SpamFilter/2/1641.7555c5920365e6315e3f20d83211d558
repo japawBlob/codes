@@ -1,0 +1,89 @@
+Return-Path: <spamassassin-talk-admin@example.sourceforge.net>
+Delivered-To: yyyy@localhost.example.com
+Received: from localhost (jalapeno [127.0.0.1])
+	by jmason.org (Postfix) with ESMTP id B8FA616F18
+	for <jm@localhost>; Tue,  8 Oct 2002 17:02:19 +0100 (IST)
+Received: from jalapeno [127.0.0.1]
+	by localhost with IMAP (fetchmail-5.9.0)
+	for jm@localhost (single-drop); Tue, 08 Oct 2002 17:02:19 +0100 (IST)
+Received: from usw-sf-list2.sourceforge.net (usw-sf-fw2.sourceforge.net
+    [216.136.171.252]) by dogma.slashnull.org (8.11.6/8.11.6) with ESMTP id
+    g98FWJK22155 for <077-jm-sa-listinfo-9089756@jmason.org>; Tue,
+    8 Oct 2002 16:32:19 +0100
+Received: from usw-sf-list1-b.sourceforge.net ([10.3.1.13]
+    helo=usw-sf-list1.sourceforge.net) by usw-sf-list2.sourceforge.net with
+    esmtp (Exim 3.31-VA-mm2 #1 (Debian)) id 17ywM8-0004Su-00 for
+    <077-jm-sa-listinfo-9089756@jmason.org>; Tue, 08 Oct 2002 08:33:08 -0700
+Received: from buffy.jpci.net ([212.113.192.239]) by
+    usw-sf-list1.sourceforge.net with esmtp (Exim 3.31-VA-mm2 #1 (Debian)) id
+    17ywLg-0005eg-00 for <spamassassin-talk-admin@lists.sourceforge.net>;
+    Tue, 08 Oct 2002 08:32:40 -0700
+From: "postmaster@jpci.net" <postmaster@jpci.net>
+To: "spamassassin-talk-admin@example.sourceforge.net" <spamassassin-talk-admin@example.sourceforge.net>
+Subject: Failed mail: Banned or potentially offensive material
+Date: Tue, 8 Oct 2002 16:30:44 +0100
+Message-Id: <15304473447566@buffy.jpci.net>
+X-Mailer: NTMail v7.02.3037
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+    boundary="==_15304473447567@buffy.jpci.net==_"
+Sender: spamassassin-talk-owner@example.sourceforge.net
+Errors-To: spamassassin-talk-owner@example.sourceforge.net
+X-Beenthere: spamassassin-talk@example.sourceforge.net
+X-Mailman-Version: 2.0.9-sf.net
+Precedence: bulk
+List-Help: <mailto:spamassassin-talk-request@example.sourceforge.net?subject=help>
+List-Post: <mailto:spamassassin-talk@example.sourceforge.net>
+List-Subscribe: <https://example.sourceforge.net/lists/listinfo/spamassassin-talk>,
+    <mailto:spamassassin-talk-request@lists.sourceforge.net?subject=subscribe>
+List-Id: Talk about SpamAssassin <spamassassin-talk.example.sourceforge.net>
+List-Unsubscribe: <https://example.sourceforge.net/lists/listinfo/spamassassin-talk>,
+    <mailto:spamassassin-talk-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchives/forum.php?forum=spamassassin-talk>
+X-Spam-Status: No, hits=-6.2 required=5.0 tests=AWL,KNOWN_MAILING_LIST,TO_ADDRESS_EQ_REAL,
+    T_NONSENSE_FROM_00_10 version=2.50-cvs
+X-Spam-Level: 
+
+This is a MIME-encapsulated message
+
+--==_15304473447567@buffy.jpci.net==_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Your message was not delivered to
+ 
+    daz@jpci.net
+ 
+This mail message contains banned or potentially offensive text.
+
+
+--==_15304473447567@buffy.jpci.net==_
+MIME-Version: 1.0
+Content-Type: text/plain
+
+
+This message contained an attachment that was stripped out. 
+
+The original type was: message/delivery-status
+The filename was: None, 
+(and it had additional parameters of:
+)
+
+
+--==_15304473447567@buffy.jpci.net==_
+MIME-Version: 1.0
+Content-Type: text/plain
+
+
+This message contained an attachment that was stripped out. 
+
+The original type was: message/rfc822
+The filename was: None, 
+(and it had additional parameters of:
+)
+
+
+--==_15304473447567@buffy.jpci.net==_--
+
+

@@ -1,0 +1,14 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: Zprostředkující adresář (Debug\) obsahuje soubory sdílené z jiného projektu (UDP_Communication_Framework.vcxproj). To může způsobit nesprávné chování při čištění a opětovném sestavení.
+  PSI.cpp
+d:\users\martin_sery\desktop\psi\psi\psi.cpp(266): warning C4553: ==: Operátor nemá na zpracování žádný vliv; nechtěli jste použít možnost =?
+d:\users\martin_sery\desktop\psi\psi\psi.cpp(106): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\stdio.h(207): note: viz deklarace: fopen
+d:\users\martin_sery\desktop\psi\psi\psi.cpp(110): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\stdio.h(1269): note: viz deklarace: scanf
+d:\users\martin_sery\desktop\psi\psi\psi.cpp(116): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(335): note: viz deklarace: strncpy
+d:\users\martin_sery\desktop\psi\psi\psi.cpp(133): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\string.h(335): note: viz deklarace: strncpy
+d:\users\martin_sery\desktop\psi\psi\psi.cpp(97): warning C4101: packets: neodkazovaná lokální proměnná
+  PSI.vcxproj -> d:\Users\Martin_Sery\Desktop\PSI\Debug\PSI.exe
+  PSI.vcxproj -> d:\Users\Martin_Sery\Desktop\PSI\Debug\PSI.pdb (Partial PDB)

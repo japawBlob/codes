@@ -1,0 +1,2 @@
+LED_BLIK.o: LED_BLIK.asm
+LED_BLIK.o: INI.s

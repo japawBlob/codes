@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/codes/tutorial_07/lzcnt.cpp
+iostream
+-
+vector
+-
+chrono
+-
+cmath
+-
+cstdlib
+-
+immintrin.h
+-
+

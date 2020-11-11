@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/codes/hw06_sort/_generator/generator.h
+
+/mnt/c/codes/hw06_sort/_tests/test.h
+vector
+-
+
+/mnt/c/codes/hw06_sort/main.cpp
+iostream
+-
+random
+-
+algorithm
+-
+chrono
+-
+_generator/generator.h
+/mnt/c/codes/hw06_sort/_generator/generator.h
+sort.h
+/mnt/c/codes/hw06_sort/sort.h
+_tests/test.h
+/mnt/c/codes/hw06_sort/_tests/test.h
+
+/mnt/c/codes/hw06_sort/sort.cpp
+sort.h
+/mnt/c/codes/hw06_sort/sort.h
+iostream
+-
+
+/mnt/c/codes/hw06_sort/sort.h
+vector
+-
+algorithm
+-
+iostream
+-
+

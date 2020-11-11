@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -pthread -O3   CMakeFiles/threadpool.bin.dir/main.cpp.o  -o threadpool.bin 

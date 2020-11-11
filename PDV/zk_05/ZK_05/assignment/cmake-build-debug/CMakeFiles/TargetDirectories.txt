@@ -1,0 +1,4 @@
+/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-debug/CMakeFiles/levenshtein.dir
+/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/codes/zk_05/ZK_05/assignment/cmake-build-debug/CMakeFiles/filter.dir

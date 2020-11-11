@@ -1,0 +1,71 @@
+-- Example of 
+---------------------------------
+
+library ieee, work;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.VGApackage.all;
+
+entity VideoMuxCalculate is
+	generic(isTestbench : integer := 0);
+	port 
+	(    yrow, xcolumn : in vga_xy; -- row and column indexes of VGA video
+	     VGA_VS : in std_logic; -- vertical synchonization, freq. 59.6 Hz
+	     ACLRN : in std_logic; -- clear after power up
+		  MuxAddress : out std_logic_vector(1 downto 0)
+	    );
+end entity;
+
+
+architecture rtl of VideoMuxCalculate is
+
+	signal sor : boolean;  -- or of colors
+	signal sxor : boolean; -- xor of colors
+	signal s12 : boolean;  -- switch 1 or 2 image
+
+begin
+
+	-- concurrent part with multiplexer - it is always active
+	MuxAddress <=  "00" when sor else  -- highest priority
+	               "01" when sxor	else 
+						"10" when s12 else 
+						"11";
+
+	 
+	process (VGA_VS, ACLRN, xcolumn, yrow)
+		variable counter: integer:=0; -- range 0 to 4095;
+		variable x,y: integer;
+		variable secondImage:boolean:=false;
+	begin
+	   
+		x:=to_integer(xcolumn); y:=to_integer(yrow);
+
+    if y=479 and x=counter then
+      y:=y;
+  end if;
+    
+		sor <= x<=counter and x+4>counter; -- counter incremented by 2
+	   sxor<= x<counter and x+32>counter;
+		if x+32<=counter and x+64>counter then
+		    s12<=(xcolumn(0) xor yrow(0))='1';
+		else s12<=(x+64<=counter) xor secondImage;
+	   end if;	
+		
+		
+		if ACLRN='0' then	counter:=0; secondImage:=false;
+
+		elsif rising_edge(VGA_VS) then 
+		   if counter<XSCREEN+64 then 
+		      if isTestbench=0 then
+            counter:=counter+2;
+        else
+		       counter:=counter+64; -- debug acceleration
+		       end if;
+		   else counter:=0; secondImage:=not secondImage;
+		   end if;
+		end if;
+	end process;
+			
+		
+end architecture;
+

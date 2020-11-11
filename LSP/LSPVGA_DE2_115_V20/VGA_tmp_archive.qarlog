@@ -1,0 +1,40 @@
+Quartus II Archive log --	C:/SPS/LSPVGA_V10/VGA_tmp_archive.qarlog
+
+Archive:	C:/SPS/LSPVGA_V10/VGA_tmp_archive.qar
+Date:		Mon Sep 23 13:51:51 2019
+Quartus II 64-Bit		13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+
+	=========== Files Selected: ===========
+C:/SPS/LSPVGA_V10/Chain1.cdf
+C:/SPS/LSPVGA_V10/Demo.bdf
+C:/SPS/LSPVGA_V10/Demo0.bdf
+C:/SPS/LSPVGA_V10/DemoMux.bdf
+C:/SPS/LSPVGA_V10/DisplayLogic.vhd
+C:/SPS/LSPVGA_V10/DisplayLogic0.vhd
+C:/SPS/LSPVGA_V10/DisplayLogicMux.vhd
+C:/SPS/LSPVGA_V10/VGA.out.sdc
+C:/SPS/LSPVGA_V10/VGA.qpf
+C:/SPS/LSPVGA_V10/VGA.qsf
+C:/SPS/LSPVGA_V10/VGARegDE2.vhd
+C:/SPS/LSPVGA_V10/VGAgenerator.vhd
+C:/SPS/LSPVGA_V10/VGAgenerator_Waveform.vwf
+C:/SPS/LSPVGA_V10/VGApackage.vhd
+C:/SPS/LSPVGA_V10/VGAtiming.sdc
+C:/SPS/LSPVGA_V10/VideoMux.vhd
+C:/SPS/LSPVGA_V10/incremental_db/compiled_partitions/VGA.db_info
+C:/SPS/LSPVGA_V10/romPicture.cmp
+C:/SPS/LSPVGA_V10/romPicture.mif
+C:/SPS/LSPVGA_V10/romPicture.qip
+C:/SPS/LSPVGA_V10/romPicture.vhd
+C:/SPS/LSPVGA_V10/testbench_DisplayLogic.vhd
+c:/altera/13.0sp1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 23 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Mon Sep 23 13:51:52 2019
+Source archive file:	C:/SPS/LSPVGA_V10/VGA_tmp_archive.qar
+Archive was extracted into	C:/SPS/LSPVGA_V10_development/
+		 - successfully.
