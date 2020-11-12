@@ -31,10 +31,10 @@ endif
 all: chw4_tlacitko.elf
 
 # Tool invocations
-chw4_tlacitko.elf: $(OBJS) $(USER_OBJS) C:\Users\kolom\OneDrive\codes\CPL\workspace_CPL\chw4_tlacitko/LinkerScript.ld
+chw4_tlacitko.elf: $(OBJS) $(USER_OBJS) D:\codes\CPL\workspace_CPL\chw4_tlacitko/LinkerScript.ld
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU GCC Linker'
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"C:/Users/kolom/OneDrive/codes/CPL/workspace_CPL/chw4_tlacitko/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw4_tlacitko.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/codes/CPL/workspace_CPL/chw4_tlacitko/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw4_tlacitko.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

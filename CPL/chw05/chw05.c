@@ -8,7 +8,7 @@
 #include <unistd.h>
 
 int main(int argc, char const *argv[]){
-	int hSerial = open( "/dev/ttyS3", O_RDWR| O_NONBLOCK | O_NDELAY );
+	int hSerial = open( "/dev/ttyS5", O_RDWR| O_NONBLOCK | O_NDELAY );
 
     struct termios o_tty;
 	memset (&o_tty, 0, sizeof o_tty);
@@ -40,44 +40,56 @@ int main(int argc, char const *argv[]){
 	scanf("%s", strInput);
 	int n_written;
 	switch(strInput[0]){
+		case 's':
+		{	
+			//unsigned char chArrCmd[] = {'*', 'I', 'D', 'N', '?', '\r', '\n', '\0'};
+			//char chSendChar = 'h';
+			char message[] = "LED ON\r\n";
+			n_written = write( hSerial, message, sizeof(message)-1);
+			break; 
+		}
 		case 'h':
 		{	//unsigned char chArrCmd[] = {'*', 'I', 'D', 'N', '?', '\r', '\n', '\0'};
 			char chSendChar = 'h';
-			n_written = write( hSerial, &chSendChar, 1); 
+			n_written = write( hSerial, &chSendChar, 1);
+			break; 
+
 		}
-		break;
+		
 		case 'o':
 		{
-			char chSendChar = 'o';
-			n_written = write( hSerial, &chSendChar, 1); 
-		}
+			char message[] = "LED ON\r\n";
+			n_written = write( hSerial, message, sizeof(message)-1); 
 			break;
-			case 'c':
+		}
+			
+		case 'f':
 		{
-			char chSendChar = 'c';
-			n_written = write( hSerial, &chSendChar, 1); 
-		}
+			char message[] = "LED OFF\r\n";
+			n_written = write( hSerial, message, sizeof(message)-1); 
 			break;
+		}
+			
 			case 'b':
 		{
 			char chSendChar = 'r';
 			n_written = write( hSerial, &chSendChar, 1); 
-		}
 			break;
+		}
+			
 		case 'r':
 		{
 			char chArrBuf [256];
 			memset (&chArrBuf , '\0', sizeof(chArrBuf) );
 
 			int n = read( hSerial, &chArrBuf , sizeof(chArrBuf) );
-			printf("Recv data %s\n", chArrBuf);
+			printf("Recv data:\n%s", chArrBuf);
 			break;
 		}
 		default:
 			printf("wrong option\n");
 		break;
 	}
-
 	char chArrBuf [256];
 	memset (&chArrBuf , '\0', sizeof(chArrBuf) );
 

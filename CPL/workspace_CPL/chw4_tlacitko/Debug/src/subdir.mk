@@ -24,7 +24,7 @@ src/%.o: ../src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Compiler'
 	@echo $(PWD)
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"C:/Users/kolom/OneDrive/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"C:/Users/kolom/OneDrive/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"C:/Users/kolom/OneDrive/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"C:/Users/kolom/OneDrive/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

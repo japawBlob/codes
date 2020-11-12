@@ -1,0 +1,9 @@
+helo my-computer-at-my-home
+mail from: pc-01@alien.fel.cvut.cz // xx je vaše pořadové číslo ve výpisu vaší paralelky
+rcpt to: pc-01@alien.fel.cvut.cz // yy je pořadové číslo vašeho kolegy
+data
+Subject: pokus
+Testovaci zprava od pc-xx.
+[Enter] 
+. 
+[Enter]

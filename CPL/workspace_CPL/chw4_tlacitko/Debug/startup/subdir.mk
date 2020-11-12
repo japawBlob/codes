@@ -15,7 +15,7 @@ startup/%.o: ../startup/%.s
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Assembler'
 	@echo $(PWD)
-	arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I"C:/Users/kolom/OneDrive/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"C:/Users/kolom/OneDrive/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"C:/Users/kolom/OneDrive/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"C:/Users/kolom/OneDrive/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -g -o "$@" "$<"
+	arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -g -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
