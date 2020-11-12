@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="VGA">
-		<CBX_INST_ENTRY INSTANCE_NAME="|Demo_LCD|DisplayLogic:inst2|lpm_mult:Mult0" CBX_FILE_NAME="mult_oct.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Demo_LCD|DisplayLogic:inst2|lpm_mult:Mult1" CBX_FILE_NAME="mult_p5t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Demo_LCD|DisplayLogic:inst2|romPicture:rom_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_2g81.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Demo_LCD|LCDgenerator:inst|LCD_altpll:ipll|altpll:altpll_component" CBX_FILE_NAME="LCD_altpll_altpll.v"/>
-	</PROJECT>
-</LOG_ROOT>
