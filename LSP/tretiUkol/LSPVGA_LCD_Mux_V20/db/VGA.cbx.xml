@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="VGA">
-		<CBX_INST_ENTRY INSTANCE_NAME="|DemoMux_LCD|DisplayLogic2Mux_LCD:instDL2M|MyDisplayLogic:iDL1|nalepka64:rom_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_osb1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DemoMux_LCD|DisplayLogic2Mux_LCD:instDL2M|MyDisplayLogic:iDL2|nalepka64:rom_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_osb1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DemoMux_LCD|LCDgenerator:inst|LCD_altpll:ipll|altpll:altpll_component" CBX_FILE_NAME="LCD_altpll_altpll.v"/>
-	</PROJECT>
-</LOG_ROOT>
