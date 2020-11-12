@@ -1,3 +1,0 @@
-v1
-PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,DisplayLogic2Mux_LCD:instDL2M|VideoMuxCalculate:iVMCalc|lpm_mult:Mult6|mult_cdt:auto_generated|mac_mult3,
-PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,DisplayLogic2Mux_LCD:instDL2M|VideoMuxCalculate:iVMCalc|lpm_mult:Mult4|mult_96t:auto_generated|mac_mult3,
