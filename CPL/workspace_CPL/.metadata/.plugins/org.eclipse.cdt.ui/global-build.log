@@ -1832,3 +1832,179 @@ make: Nothing to be done for 'all'.
 23:52:47 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
 make -j8 all 
 make: Nothing to be done for 'all'.
+13:28:20 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+D:\codes\CPL\workspace_CPL\chw4_tlacitko\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: chw4_tlacitko.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/codes/CPL/workspace_CPL/chw4_tlacitko/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw4_tlacitko.elf" @"objects.list"   -lm
+Finished building target: chw4_tlacitko.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "chw4_tlacitko.elf" "chw4_tlacitko.bin"
+arm-none-eabi-size "chw4_tlacitko.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4720	   1096	   1092	   6908	   1afc	chw4_tlacitko.elf
+ 
+13:46:18 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+D:\codes\CPL\workspace_CPL\chw4_tlacitko\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: chw4_tlacitko.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/codes/CPL/workspace_CPL/chw4_tlacitko/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw4_tlacitko.elf" @"objects.list"   -lm
+Finished building target: chw4_tlacitko.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "chw4_tlacitko.elf" "chw4_tlacitko.bin"
+arm-none-eabi-size "chw4_tlacitko.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4724	   1096	   1092	   6912	   1b00	chw4_tlacitko.elf
+ 
+15:12:23 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+15:13:36 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+15:15:55 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+15:18:41 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+15:19:32 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+D:\codes\CPL\workspace_CPL\chw4_tlacitko\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: chw4_tlacitko.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/codes/CPL/workspace_CPL/chw4_tlacitko/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw4_tlacitko.elf" @"objects.list"   -lm
+Finished building target: chw4_tlacitko.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "chw4_tlacitko.elf" "chw4_tlacitko.bin"
+arm-none-eabi-size "chw4_tlacitko.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4712	   1096	   1092	   6900	   1af4	chw4_tlacitko.elf
+ 
+15:19:48 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+15:21:19 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+D:\codes\CPL\workspace_CPL\chw4_tlacitko\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: chw4_tlacitko.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/codes/CPL/workspace_CPL/chw4_tlacitko/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw4_tlacitko.elf" @"objects.list"   -lm
+Finished building target: chw4_tlacitko.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "chw4_tlacitko.elf" "chw4_tlacitko.bin"
+arm-none-eabi-size "chw4_tlacitko.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4724	   1096	   1092	   6912	   1b00	chw4_tlacitko.elf
+ 
+15:21:26 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+15:22:19 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+D:\codes\CPL\workspace_CPL\chw4_tlacitko\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: chw4_tlacitko.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/codes/CPL/workspace_CPL/chw4_tlacitko/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw4_tlacitko.elf" @"objects.list"   -lm
+Finished building target: chw4_tlacitko.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "chw4_tlacitko.elf" "chw4_tlacitko.bin"
+arm-none-eabi-size "chw4_tlacitko.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4724	   1096	   1092	   6912	   1b00	chw4_tlacitko.elf
+ 
+15:30:11 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+15:31:08 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+16:17:46 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+D:\codes\CPL\workspace_CPL\chw4_tlacitko\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: chw4_tlacitko.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/codes/CPL/workspace_CPL/chw4_tlacitko/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw4_tlacitko.elf" @"objects.list"   -lm
+Finished building target: chw4_tlacitko.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "chw4_tlacitko.elf" "chw4_tlacitko.bin"
+arm-none-eabi-size "chw4_tlacitko.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4716	   1096	   1092	   6904	   1af8	chw4_tlacitko.elf
+ 
+16:19:17 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+16:21:14 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+D:\codes\CPL\workspace_CPL\chw4_tlacitko\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/StdPeriph_Driver/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/inc" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw4_tlacitko/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: chw4_tlacitko.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/codes/CPL/workspace_CPL/chw4_tlacitko/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw4_tlacitko.elf" @"objects.list"   -lm
+Finished building target: chw4_tlacitko.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "chw4_tlacitko.elf" "chw4_tlacitko.bin"
+arm-none-eabi-size "chw4_tlacitko.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4724	   1096	   1092	   6912	   1b00	chw4_tlacitko.elf
+ 
+16:21:30 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+16:22:01 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+16:22:08 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.

@@ -149,6 +149,7 @@ void Ln(){
 //  @brief  Main loop
 //
 /*void inputHandler(){
+
 }*/
 
 int main(void)
@@ -204,18 +205,9 @@ int main(void)
 		if(messageReady == 1){
 			if(strcmp(btInputBuff, "LED ON") == 0){
 				GPIO_SetBits(GPIOA, GPIO_Pin_5);
-			} else
+			}
 			if(strcmp(btInputBuff, "LED OFF") == 0){
 				GPIO_ResetBits(GPIOA, GPIO_Pin_5);
-			} else
-			if(strcmp(btInputBuff, "BUTT:STATUS?") == 0){
-				if(pressed == 1){
-					OutStringLn("BUTTON:PRESSED");
-				} else {
-					OutStringLn("BUTTON:RELEASED");
-				}
-			} else {
-				OutStringLn("Wrong command");
 			}
 			/*switch (btInputBuff){
 				case 'r':

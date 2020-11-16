@@ -7,8 +7,87 @@
 #include <string.h>
 #include <unistd.h>
 
+enum commandOptions{LED_ON, LED_OFF, BUTTON, HELP};
+
+char *command[] = {
+	"LED ON",
+	"LED OFF",
+	"BUTT:STATUS?",
+	"help",
+};
+/*
+void call_termios(int reset){
+	static struct termios tio, tioOld;
+	tcgetattr(STDIN_FILENO, &tio);
+	if (reset) {
+	tcsetattr(STDIN_FILENO, TCSANOW, &tioOld);
+	} else {
+	tioOld = tio; //backup
+	cfmakeraw(&tio);
+	tio.c_oflag |= OPOST; // enable output postprocessing
+	tcsetattr(STDIN_FILENO, TCSANOW, &tio);
+	}
+}*/
+
+
+void printMenu(){
+	const char* menu[] = {"== program menu ==",
+			"option 'o': Turn LED on",
+			"option 'f': Turn LED off",
+			"option 'b': Get button status",
+			"option 'c': Enter a custom command",
+			"option 'h': Show menu",
+			"option 'e': Exit",
+			"Selection:"};
+
+	int size = (sizeof(menu)/sizeof(char*));
+
+	//printf("%i\n", size);
+	for (int i = 0; i < size; ++i){
+		printf("%s\n", menu[i]);
+	}
+}
+
+
+int sendMessage(int hSerial, char input[]){
+	char message[256];
+	sprintf(message, "%s\r\n", input);
+	int n_written = write( hSerial, message, strlen(message)); 
+	return n_written;
+}
+char * recivieMessage(int hSerial){
+	static char chArrBuf [256];
+	memset (&chArrBuf , '\0', sizeof(chArrBuf) );
+	int n = 0;
+	while(strlen(chArrBuf) == 0){
+	    usleep(1000*100);
+	    n = read( hSerial, &chArrBuf , sizeof(chArrBuf));
+	}
+	chArrBuf[n-2] = '\0';
+	return chArrBuf;
+}
+void handleIncommingMessage(char* message){;
+	if (strcmp(message, "BUTTON:RELEASED") == 0){
+		printf("Nucleo claims the button is up!\n");
+	} else if (strcmp(message, "BUTTON:PRESSED") == 0){
+		printf("Nucleo claims the button is down!\n");
+	} else {
+		printf("Nucleo claims it does not know the command.\n");
+	}
+}
+
+
+
 int main(int argc, char const *argv[]){
-	int hSerial = open( "/dev/ttyS5", O_RDWR| O_NONBLOCK | O_NDELAY );
+	const char* serialPort;
+	printf("%i\n", argc);
+	if(argc < 2){
+		serialPort = "/dev/ttyS5";
+	} else {
+		serialPort = argv[1];
+	}
+
+	int hSerial = open( serialPort, O_RDWR| O_NONBLOCK | O_NDELAY );
 
     struct termios o_tty;
 	memset (&o_tty, 0, sizeof o_tty);
@@ -30,73 +109,71 @@ int main(int argc, char const *argv[]){
     /* set the options */
     tcsetattr(hSerial, TCSANOW, &o_tty);
 
-	//unsigned char chArrCmd[] = {'*', 'I', 'D', 'N', '?', '\r', '\n', '\0'};
-	//int n_written = write( hSerial, chArrCmd, sizeof(chArrCmd)-1 ); // why -1?
     char strInput[255];
+    printMenu();
+
+    printf("on: %lu, off: %lu, butt: %lu\n", sizeof(command[LED_ON]), sizeof(command[LED_OFF]), sizeof(command[BUTTON]));
+	printf("on: %s, off: %s\n", command[LED_ON], command[LED_OFF]);
 
 	while(1){
-
-	printf("Selection\n");
 	scanf("%s", strInput);
 	int n_written;
 	switch(strInput[0]){
-		case 's':
-		{	
-			//unsigned char chArrCmd[] = {'*', 'I', 'D', 'N', '?', '\r', '\n', '\0'};
-			//char chSendChar = 'h';
-			char message[] = "LED ON\r\n";
-			n_written = write( hSerial, message, sizeof(message)-1);
-			break; 
-		}
 		case 'h':
-		{	//unsigned char chArrCmd[] = {'*', 'I', 'D', 'N', '?', '\r', '\n', '\0'};
-			char chSendChar = 'h';
-			n_written = write( hSerial, &chSendChar, 1);
+		{	
+			printMenu();
 			break; 
 
 		}
 		
 		case 'o':
 		{
-			char message[] = "LED ON\r\n";
-			n_written = write( hSerial, message, sizeof(message)-1); 
+			n_written = sendMessage( hSerial, command[LED_ON]); 
 			break;
 		}
 			
 		case 'f':
 		{
-			char message[] = "LED OFF\r\n";
-			n_written = write( hSerial, message, sizeof(message)-1); 
+			n_written = sendMessage( hSerial, command[LED_OFF]); 
 			break;
 		}
 			
 			case 'b':
 		{
-			char chSendChar = 'r';
-			n_written = write( hSerial, &chSendChar, 1); 
+			n_written = sendMessage( hSerial, command[BUTTON]); 
+			char *chArrBuf = "\0";
+			chArrBuf = recivieMessage( hSerial);
+			handleIncommingMessage(chArrBuf);
 			break;
 		}
-			
+			case 'c':
+		{
+			printf("Please input custom command:\n");
+			char message[255]; 
+			scanf("%s", message);
+			n_written = sendMessage( hSerial, message); 
+			char *chArrBuf = "\0";
+			chArrBuf = recivieMessage( hSerial);
+			handleIncommingMessage(chArrBuf);
+			break;
+		}	
 		case 'r':
 		{
-			char chArrBuf [256];
+			static char chArrBuf [256];
 			memset (&chArrBuf , '\0', sizeof(chArrBuf) );
-
-			int n = read( hSerial, &chArrBuf , sizeof(chArrBuf) );
 			printf("Recv data:\n%s", chArrBuf);
 			break;
 		}
+		case 'e':
+		{
+			goto exit;
+		}
 		default:
-			printf("wrong option\n");
+			printf("wrong option\nyou can press 'h' in order to display menu\n");
 		break;
+		}
 	}
-	char chArrBuf [256];
-	memset (&chArrBuf , '\0', sizeof(chArrBuf) );
-
-	int n = read( hSerial, &chArrBuf , sizeof(chArrBuf) );
-
-}
-
+exit:
 	close(hSerial);
 
 	return 0;

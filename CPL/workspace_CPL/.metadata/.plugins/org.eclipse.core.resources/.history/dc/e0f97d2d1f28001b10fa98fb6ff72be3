@@ -125,7 +125,7 @@ void OutStringLn(char *s)
 {
 	OutString(s);
 	//while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET); // Wait for Empty
-	OutString("\r\n");
+	//OutString("\r\n");
 	//while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET); // Wait for Empty
 } // END void OutString(char *s)
 

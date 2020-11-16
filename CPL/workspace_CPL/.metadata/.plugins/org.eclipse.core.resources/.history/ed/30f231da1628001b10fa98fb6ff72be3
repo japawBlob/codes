@@ -186,7 +186,7 @@ int main(void)
 			}
 			if(iItemsInBuffer > 2){
 				if((btInputBuff[iItemsInBuffer-1] == '\n') && (btInputBuff[iItemsInBuffer-2] == '\r')){
-					btInputBuff[iItemsInBuffer-2] = '\0';
+					//btInputBuff[iItemsInBuffer-2] = '\0';
 					messageReady = 1;
 					//iItemsInBuffer = 0;
 				}
