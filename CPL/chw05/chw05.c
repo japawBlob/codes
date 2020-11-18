@@ -148,10 +148,12 @@ int main(int argc, char const *argv[]){
 			printf("Please input custom command:\n");
 			char message[255]; 
 			scanf("%s", message);
+			getchar(); // consume \n character at the end of the line
 			n_written = sendMessage( hSerial, message); 
 			char *chArrBuf = "\0";
 			chArrBuf = recivieMessage( hSerial);
 			handleIncommingMessage(chArrBuf);
+
 			call_termios(0);
 			break;
 		}	
@@ -167,7 +169,7 @@ int main(int argc, char const *argv[]){
 			goto exit;
 		}
 		default:
-			printf("wrong option\nyou can press 'h' in order to display menu\n");
+			printf("%c is wrong option\nyou can press 'h' in order to display menu\n", cInput);
 		break;
 		}
 	}
