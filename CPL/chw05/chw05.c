@@ -15,19 +15,19 @@ char *command[] = {
 	"BUTT:STATUS?",
 	"help",
 };
-/*
+
 void call_termios(int reset){
 	static struct termios tio, tioOld;
 	tcgetattr(STDIN_FILENO, &tio);
 	if (reset) {
-	tcsetattr(STDIN_FILENO, TCSANOW, &tioOld);
+		tcsetattr(STDIN_FILENO, TCSANOW, &tioOld);
 	} else {
-	tioOld = tio; //backup
-	cfmakeraw(&tio);
-	tio.c_oflag |= OPOST; // enable output postprocessing
-	tcsetattr(STDIN_FILENO, TCSANOW, &tio);
+		tioOld = tio; //backup
+		cfmakeraw(&tio);
+		tio.c_oflag |= OPOST; // enable output postprocessing
+		tcsetattr(STDIN_FILENO, TCSANOW, &tio);
 	}
-}*/
+}
 
 
 void printMenu(){
@@ -42,7 +42,6 @@ void printMenu(){
 
 	int size = (sizeof(menu)/sizeof(char*));
 
-	//printf("%i\n", size);
 	for (int i = 0; i < size; ++i){
 		printf("%s\n", menu[i]);
 	}
@@ -80,7 +79,6 @@ void handleIncommingMessage(char* message){;
 
 int main(int argc, char const *argv[]){
 	const char* serialPort;
-	printf("%i\n", argc);
 	if(argc < 2){
 		serialPort = "/dev/ttyS5";
 	} else {
@@ -109,16 +107,14 @@ int main(int argc, char const *argv[]){
     /* set the options */
     tcsetattr(hSerial, TCSANOW, &o_tty);
 
-    char strInput[255];
+    char cInput;
     printMenu();
 
-    printf("on: %lu, off: %lu, butt: %lu\n", sizeof(command[LED_ON]), sizeof(command[LED_OFF]), sizeof(command[BUTTON]));
-	printf("on: %s, off: %s\n", command[LED_ON], command[LED_OFF]);
-
+    call_termios(0);
 	while(1){
-	scanf("%s", strInput);
+	cInput = getchar();
 	int n_written;
-	switch(strInput[0]){
+	switch(cInput){
 		case 'h':
 		{	
 			printMenu();
@@ -148,6 +144,7 @@ int main(int argc, char const *argv[]){
 		}
 			case 'c':
 		{
+			call_termios(1);
 			printf("Please input custom command:\n");
 			char message[255]; 
 			scanf("%s", message);
@@ -155,15 +152,16 @@ int main(int argc, char const *argv[]){
 			char *chArrBuf = "\0";
 			chArrBuf = recivieMessage( hSerial);
 			handleIncommingMessage(chArrBuf);
+			call_termios(0);
 			break;
 		}	
-		case 'r':
+		/*case 'r':
 		{
 			static char chArrBuf [256];
 			memset (&chArrBuf , '\0', sizeof(chArrBuf) );
 			printf("Recv data:\n%s", chArrBuf);
 			break;
-		}
+		}*/
 		case 'e':
 		{
 			goto exit;
@@ -174,6 +172,7 @@ int main(int argc, char const *argv[]){
 		}
 	}
 exit:
+	call_termios(1);
 	close(hSerial);
 
 	return 0;
