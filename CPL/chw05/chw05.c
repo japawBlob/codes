@@ -91,6 +91,9 @@ int main(int argc, char const *argv[]){
 	memset (&o_tty, 0, sizeof o_tty);
 	int iRetVal = tcgetattr (hSerial , &o_tty);
 
+	cfsetispeed(&o_tty, B9600);
+    cfsetospeed(&o_tty, B9600);
+
 
     /* set raw input, 1 second timeout */
     o_tty.c_cflag     |= (CLOCAL | CREAD);

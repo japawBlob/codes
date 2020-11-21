@@ -159,10 +159,10 @@ int findPath (node*** map, int startX, int startY){
 			} 
 
 //+++++++++++++++++++++++
-/*			if(neededNumber==map[tempX][tempY]->visited && map[tempX][tempY]->length > map[current->x][current->y]->length+1){
+			if(neededNumber==map[tempX][tempY]->visited && map[tempX][tempY]->length > map[current->x][current->y]->length+1){
 				map[tempX][tempY]->length=map[current->x][current->y]->length+1;
-				printf("jsem tu\n");
-			}*/
+				//printf("jsem tu\n");
+			}
 //+++++++++++++++++++++++
 
 			map[tempX][tempY]->visited++;
@@ -176,16 +176,16 @@ int findPath (node*** map, int startX, int startY){
 				goals.pop();
 			}
 		 	//printf("tu 6\n");
-			//printMap(map);
-			//printf("\n");
-/*			for (int i = 0; i < R; ++i){
+			printMap(map);
+			printf("\n");
+			/*for (int i = 0; i < R; ++i){
 				for (int j = 0; j < S; ++j){
-					//printf("%i %i   ", map[i][j]->x, map[i][j]->y);
-					//printf("%i   ", map[i][j]->val);
+					printf("%i %i\t", map[i][j]->x, map[i][j]->y);
+					printf("%i\t", map[i][j]->val);
 					map[i][j]->length=99999;
 				}
-			}*/
-			//printMap(map);
+			}
+			printMap(map);*/
 			neededNumber++;
 		} 
 		if(tempFronta.empty() && fronticka.empty() && neededNumber == T){
@@ -246,7 +246,7 @@ void printMap(node*** map){
 		for (int j = 0; j < S; ++j){
 			//printf("%i %i   ", map[i][j]->x, map[i][j]->y);
 			//printf("%i   ", map[i][j]->val);
-			printf("%i   ", map[i][j]->length);
+			printf("%i\t", map[i][j]->length);
 		}
 		printf("\n");
 	}

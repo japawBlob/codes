@@ -317,3 +317,6 @@ Finished building: ../HAL_Driver/Src/stm32f4xx_hal_cortex.c
 00:50:40 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
 make -j8 all 
 make: Nothing to be done for 'all'.
+23:58:49 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
+make -j8 all 
+make: Nothing to be done for 'all'.
