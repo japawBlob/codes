@@ -46,6 +46,7 @@ int main(int argc, char const *argv[]){
     sem_init(&ledOFF, 0, 0);
     sem_init(&morseEnded, 0, 0);
     sem_init(&inputFlag, 0, 0);
+    //sem_init(&terminateThreads, 0, 0);
     //sem_post(&morseEnded);
     printMenu();
     //char fileName[255];
@@ -55,9 +56,10 @@ int main(int argc, char const *argv[]){
     pthread_t inputThread;
     pthread_create(&inputThread, NULL, inputHandle, (void*)m_input);
 
-    call_termios(0);
+    
 	while(1){
-
+		//usleep(10*100);
+		//printf("mainloop\n");
 		if(sem_trywait(&inputFlag) != -1){
 			printf("inputDetected\n");
 			//pthread_join(morse, NULL);
@@ -74,30 +76,29 @@ int main(int argc, char const *argv[]){
 				}
 				case 'm':
 				{	
-					call_termios(1);
+					//call_termios(1);
 					printf("Please enter the name of the source file for morse:\n");
 					//fileName = (char*)malloc(sizeof(char)*255); 
 					
 					 // consume \n character at the end of the line
 					
 
-					char* fileName = (char*)malloc(sizeof(char)*255);
+					//char* fileName = (char*)malloc(sizeof(char)*255);
 					/*scanf("%s", fileName);*/
-					int size = 0;
+					/*int size = 0;
 					while(g_input != '\n'){
 						sem_wait(&inputFlag);
 						printf("%c ", g_input);
 						fileName[size++] = g_input;
-					}
+					}*/
 					//printf("%s\n", fileName);
 					//getchar();
-					pthread_create(&morse, NULL, loadMorse, (void*)fileName);
+					sem_wait(&inputFlag);
+					pthread_create(&morse, NULL, loadMorse, (void*)message);
 
 					//loadMorse(fileName);
 
-					
-
-					call_termios(0);
+					//call_termios(0);
 					break; 
 
 				}
@@ -129,22 +130,23 @@ int main(int argc, char const *argv[]){
 				}
 					case 'c':
 				{
-					//call_termios(1);
+					
 					printf("Please input custom command:\n");
-					char message[255];
-					int i = 0; 
-					while(g_input != '\n'){
+					//char message[255];
+					//int i = 0; 
+					/*while(g_input != '\n'){
 						if(sem_trywait(&inputFlag) != -1){
 							message[i++] = g_input;
 						}
-					}
+					}*/
 					//getchar(); // consume \n character at the end of the line
+					sem_wait(&inputFlag);
 					n_written = sendMessage( hSerial, message); 
 					char *chArrBuf = "\0";
 					chArrBuf = recivieMessage( hSerial);
 					handleIncommingMessage(chArrBuf);
-
-					//call_termios(0);
+					//sem_post(&inputFlag);
+					
 					break;
 				}	
 				/*case 'r':
@@ -170,12 +172,16 @@ int main(int argc, char const *argv[]){
 			pthread_join(morse, NULL);
 			//free(fileName);
 		}
+
 	}
 exit:
+	free(m_input);
+	pthread_join(inputThread, NULL);
 	sem_destroy(&ledOFF);
 	sem_destroy(&ledON);
 	sem_destroy(&morseEnded);
-	call_termios(1);
+	sem_destroy(&inputFlag);
+	
 	close(hSerial);
 
 	return 0;

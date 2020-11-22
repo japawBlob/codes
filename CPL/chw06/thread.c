@@ -27,19 +27,52 @@ void* loadMorse(void* path){
 	fclose(morseSource);
 	free(morseString);
 exit:
-	sleep(10);
-	free(path);
+	//free(path);
 	sem_post(&morseEnded);
 	
 	return NULL;
 }
 void* inputHandle(void* m_input){
+	call_termios(0);
 	m_input = (char*)m_input;
 	while(1){
+		printf("inputHandle1\n");
 	    g_input = getchar();
+	    printf("inputHandle2\n");
 	    sem_post(&inputFlag);
+	    switch (g_input) {
+	        case 'm':
+	        {
+	        	call_termios(1);
+	        	scanf("%s", message);
+	        	getchar();
+	        	sem_post(&inputFlag);
+	        	call_termios(0);
+	        	break;
+	        }
+	        case 'c':
+	        {
+	        	call_termios(1);
+	        	scanf("%s", message);
+	        	getchar();
+	        	sem_post(&inputFlag);
+	        	call_termios(0);
+	          	break;
+	        }
+	        case 'e':
+	        {
+	        	//sem_post(&terminateThreads);
+	        	goto exit;
+	          	break;
+	        }
+	        default:
+	        {
+	          	break;
+	        }
+	    }
 	}
 	
-
+exit:
+	call_termios(1);
 	return NULL;
 }

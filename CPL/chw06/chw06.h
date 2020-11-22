@@ -18,8 +18,15 @@ sem_t ledON;
 sem_t ledOFF;
 sem_t morseEnded;
 sem_t inputFlag;
+sem_t terminateThreads;
 
+char message[255];
 char g_input;
+
+typedef struct{
+	char c_input;
+	char message[255];
+} t_input;
 
 int morseActive;
 
