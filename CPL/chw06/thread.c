@@ -14,13 +14,17 @@ void* loadMorse(void* path){
 	int size = 0;
 	char c;
 	while((c = fgetc(morseSource)) != '\n'){
-		if(c == '#'){
-
+		if(c == '1'){
+			sem_post(&ledON);
+		}
+		if(c == '0'){
+			sem_post(&ledOFF);
 		}
 	    morseString[size++] = c;
+	    usleep(500*1000);
 	}
 	for(int i=0; i<size; i++){
-	    printf("%c ", morseString[i]);
+	    printf("%c", morseString[i]);
 	} printf("\n");
 
 

@@ -172,6 +172,12 @@ int main(int argc, char const *argv[]){
 			pthread_join(morse, NULL);
 			//free(fileName);
 		}
+		if(sem_trywait(&ledON) != -1){
+			sendMessage( hSerial, command[LED_ON]);
+		}
+		if(sem_trywait(&ledOFF) != -1){
+			sendMessage( hSerial, command[LED_OFF]);
+		}
 
 	}
 exit:
