@@ -24,6 +24,7 @@ void printMenu(){
 			"option 'c': Enter a custom command",
 			"option 'h': Show menu",
 			"option 'm': Load and execute morse code from file",
+			"option 'x': Terminate execution of the morse code",
 			"option 'e': Exit",
 			"Selection:"};
 
