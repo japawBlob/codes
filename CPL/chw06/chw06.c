@@ -174,9 +174,11 @@ int main(int argc, char const *argv[]){
 		}
 		if(sem_trywait(&ledON) != -1){
 			sendMessage( hSerial, command[LED_ON]);
+			printf("1\n");
 		}
 		if(sem_trywait(&ledOFF) != -1){
 			sendMessage( hSerial, command[LED_OFF]);
+			printf("0\n");
 		}
 
 	}

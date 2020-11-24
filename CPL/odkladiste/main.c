@@ -1,16 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main(void)
+#include <string.h>
+
+int main(int argc, char* argv[])
 {
-  double d = 12.3;
+	char* s1 = "blob";
+	char* s2 = "blob123";
 
-  double* blob = &d;
+	printf("ret of strcmp: %i\n", strcmp(s1,s2));
+	printf("ret of strncmp: %i\n", strncmp(s1,s2,strlen(s1)));
 
-  printf("%f\n", *blob);
+	FILE *morseSource = fopen("blob.txt", "r");
 
-  d++;
+	for (int i = 0; i < 7; ++i)
+	{
+		fgetc(morseSource);
+	}
+	float f;
+	fscanf(morseSource,"%f", &f);
 
-  printf("%f\n", *blob);
+	printf("%f\n", f);
 
-  return 0;
+
+  	return 0;
 }

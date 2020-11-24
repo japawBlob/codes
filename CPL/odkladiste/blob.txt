@@ -6,7 +6,6 @@ sigoff=2.1
 # Morse code definition
 # space between signals is sigoff, space between letters (one leter is 000) is 3*sigoff
 # on state length is sig_on for dot and 3*sig_on for dash
-
 000 111 000
 
 # 0 means dot '.'
