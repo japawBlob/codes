@@ -1,8 +1,6 @@
 #include "chw06.h"
 
 void* loadMorse(void* path){
-	printf("%s\n", (char*)path);
-	printf("strlen: %lu\n", strlen(path));
 
 	FILE *morseSource = fopen(path, "r");
 	if(morseSource == NULL){
@@ -51,7 +49,7 @@ void* loadMorse(void* path){
 		}
 		
 	}
-	printf("sig_on=%f, sig_off=%f\n", sig_on, sig_off);
+	//("sig_on=%f, sig_off=%f\n", sig_on, sig_off);
 	executeMorse(morseString, sig_on, sig_off);
 
 	fclose(morseSource);
@@ -66,7 +64,7 @@ void executeMorse(char* morseString, float sig_on, float sig_off){
 	int i = 0;
 	int onTime = 2*(100000*sig_on);
 	int offTime = 2*(100000*sig_off);
-	printf("sig_on=%i, sig_off=%i\n", onTime, offTime);
+	//printf("sig_on=%i, sig_off=%i\n", onTime, offTime);
 	while(morseString[i]!='\0'){
 
 		switch (morseString[i]) {
@@ -121,11 +119,13 @@ void* inputHandle(void* m_input){
 	    switch (g_input) {
 	        case 'm':
 	        {
-	        	call_termios(1);
-	        	scanf("%s", message);
-	        	getchar();
-	        	sem_post(&inputFlag);
-	        	call_termios(0);
+	        	if(morseActive == 0){
+		        	call_termios(1);
+		        	scanf("%s", message);
+		        	getchar();
+		        	sem_post(&inputFlag);
+		        	call_termios(0);
+	        	}
 	        	break;
 	        }
 	        case 'c':

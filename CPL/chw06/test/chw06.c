@@ -48,6 +48,7 @@ int main(int argc, char const *argv[]){
     sem_init(&terminateMorse, 0, 0);
 
     printMenu();
+    morseActive = 0;
     pthread_t morse;
 	pthread_t inputThread;
     
@@ -58,8 +59,6 @@ int main(int argc, char const *argv[]){
     
 	while(1){
 		if(sem_trywait(&inputFlag) != -1){
-			printf("inputDetected\n");
-		
 			int n_written;
 			switch(g_input){
 				case 'h':
@@ -70,11 +69,15 @@ int main(int argc, char const *argv[]){
 				}
 				case 'm':
 				{	
-					printf("Please enter the name of the source file for morse:\n");
-
-					sem_wait(&inputFlag);
-					pthread_create(&morse, NULL, loadMorse, (void*)message);
-					morseActive = 1;
+					if(morseActive == 0){
+						printf("Please enter the name of the source file for morse:\n");
+						sem_wait(&inputFlag);
+						pthread_create(&morse, NULL, loadMorse, (void*)message);
+						morseActive = 1;
+					} else {
+						printf("I am sorry the execution of morse is now in progress.\nIf you\'d like to terminate it, please press \'x\'\n");
+					}
+					
 					break; 
 
 				}

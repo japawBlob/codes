@@ -21,6 +21,8 @@ sem_t terminateMorse;
 char message[255];
 char g_input;
 
+int morseActive;
+
 typedef struct{
 	char c_input;
 	char message[255];
