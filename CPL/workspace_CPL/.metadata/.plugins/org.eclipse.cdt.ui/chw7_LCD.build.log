@@ -1,0 +1,44 @@
+21:33:27 **** Incremental Build of configuration Debug for project chw7_LCD ****
+make -j8 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+D:\codes\CPL\workspace_CPL\chw7_LCD\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -DSTM32F446xx -DUSE_HAL_DRIVER -I"D:/codes/CPL/workspace_CPL/chw7_LCD/HAL_Driver/Inc/Legacy" -I"D:/codes/CPL/workspace_CPL/chw7_LCD/Utilities/STM32F4xx-Nucleo" -I"D:/codes/CPL/workspace_CPL/chw7_LCD/inc" -I"D:/codes/CPL/workspace_CPL/chw7_LCD/CMSIS/device" -I"D:/codes/CPL/workspace_CPL/chw7_LCD/CMSIS/core" -I"D:/codes/CPL/workspace_CPL/chw7_LCD/HAL_Driver/Inc" -I"D:/codes/CPL/workspace_CPL/chw7_LCD/Drivers/BSP/Adafruit_Shield" -I"D:/codes/CPL/workspace_CPL/chw7_LCD/Utilities/Fonts" -I"D:/codes/CPL/workspace_CPL/chw7_LCD/Drivers/BSP/Components" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:518:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(void)
+      ^~~~
+../src/main.c: In function 'main':
+../src/main.c:676:13: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+             sprintf( (char *)chArr, (char *)"  %d   ", (int)uiSec );
+             ^~~~~~~
+../src/main.c:676:13: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:676:13: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/main.c:690:21: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+             iResult = strstr(chArrTmpData, "DRAW");
+                     ^
+../src/main.c:696:27: warning: implicit declaration of function 'sscanf' [-Wimplicit-function-declaration]
+                 iResult = sscanf( chArrTmpData, "DRAW:CIRCLE %d,%d,%d", &iXs, &iYs, &iRad );
+                           ^~~~~~
+../src/main.c:696:27: warning: incompatible implicit declaration of built-in function 'sscanf'
+../src/main.c:696:27: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+At top level:
+../src/main.c:287:21: warning: 'TFT_ShieldDetect' defined but not used [-Wunused-function]
+ static ShieldStatus TFT_ShieldDetect(void)
+                     ^~~~~~~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: chw7_LCD.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/codes/CPL/workspace_CPL/chw7_LCD/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "chw7_LCD.elf" @"objects.list"   -lm
+Finished building target: chw7_LCD.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "chw7_LCD.elf" "chw7_LCD.bin"
+arm-none-eabi-size "chw7_LCD.elf"
+   text	   data	    bss	    dec	    hex	filename
+  73084	   2612	   3552	  79248	  13590	chw7_LCD.elf
+ 
+
+21:33:30 Build Finished (took 2s.313ms)
+
