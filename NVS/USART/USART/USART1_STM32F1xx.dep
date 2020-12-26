@@ -1,0 +1,4 @@
+Dependencies for Project 'USART1', Target 'STM32F1xx': (DO NOT MODIFY !)
+F (.\STM32F10x.s)(0x5FE1046F)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F10x--list .\stm32f10x.lst --xref -o .\stm32f10x.o --depend .\stm32f10x.d)
+F (.\UART1.asm)(0x5FE1046F)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F10x--list .\uart1.lst --xref -o .\uart1.o --depend .\uart1.d)
+I (INI.s)(0x5FE1046F)

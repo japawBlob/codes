@@ -1,6 +1,0 @@
-08:27:57 **** Incremental Build of configuration Debug for project chw4_tlacitko ****
-make -j8 all 
-make: Nothing to be done for 'all'.
-
-08:27:58 Build Finished (took 560ms)
-
