@@ -14,7 +14,6 @@
 ;*
 ;***************************************************************************************************
 		AREA MOJEDATA, DATA, NOINIT, READWRITE
-INIT_VALUE		SPACE 4
 INIT_VALUE_L 	SPACE 4
 INIT_VALUE_H 	SPACE 4
 CURR_VALUE_L 	SPACE 4
@@ -68,22 +67,21 @@ MAIN									; MAIN navesti hlavni smycky programu
 										; ODR - Output Data Register
 				LDR		R5, =GPIOA_IDR 	; Kopie adresy brany A IDR do R5, GPIOA_IDR je v souboru INI.S			
 										; IDR - Input Data Register
-				
-				LDR.W 	R0, =INIT_VALUE_L
 				MOV 	R1, #5
-				STRB	R1, [R0]
-				
-				LDR.W 	R0, =CURR_VALUE_L
-				STRB	R1, [R0]
-			
+				LDR.W 	R0, =INIT_VALUE_L
+				STRB	R1, [R0]				
 START			
-				LDRB	R3, [R0]
+				LDR.W 	R0, =INIT_VALUE_L
+				LDRB	R3, [R0]	
+				LDR.W 	R0, =CURR_VALUE_L
+				STRB	R3, [R0]
+				
 				MOV		R4,#0			; Vlozeni 0 do R4, nulovani citace (softwarový citac registr R4)
 				
 				MOV		R1, #0x0000	
 				STR		R1, [R2]		; Zhasnuti obou diod
 
-				LDR 	R0, numbers
+				;LDR 	R0, numbers
 				
 				;MOV 	R0, R3
 				BL 		UPDATE_DISPLAY
@@ -94,18 +92,6 @@ INIT_LOOP
 				BL HANDLE_SUB_BUTTON			
 				
 				BL HANDLE_ENTER_BUTTON
-				
-				LDR		R5, =GPIOB_ODR
-				
-				
-				;ORR		R1, R1, #0x300
-				;MOV 	R0, #0x300
-				;BIC		R1, R1, R0;
-				;MOV		R0, #0x300
-				;ORR		R1, R1, R0
-				;STR		R1, [R5]
-
-				;BL 		UPDATE_DISPLAY
 
 				; Testovani stisku tlacitka
 				LDR		R5, =GPIOA_IDR
@@ -141,10 +127,11 @@ TEST_REALEASE_OF_BUTTON
 				STR		R1, [R2]
 				MOV		R6, #0x1
 				
-				LDR.W 	R0, =INIT_VALUE
+				LDR.W 	R0, =INIT_VALUE_L
 				LDRB	R3, [R0] 
-				BL UPDATE_DISPLAY
-				
+				LDR.W	R0, =CURR_VALUE_L
+				STRB	R3, [R0]
+				BL UPDATE_DISPLAY			
 				
 COUNTDOWN
 	
@@ -162,13 +149,7 @@ COUNTDOWN
 				BLT		NOT_YET_SECOND
 				
 				;Odecteni citace
-					SUBS	R3, R3, #0x1
-					BNE		CONTINUE_COUNTING
-				
-					B START
-				
-CONTINUE_COUNTING
-					BL 		UPDATE_DISPLAY
+					BL 		HANDLE_COUNTDOWN
 					MOV		R4, #0
 NOT_YET_SECOND		
 				B		COUNTDOWN
@@ -180,8 +161,10 @@ BUTTON_PRESSED
 				
 				BNE 	INIT_SKIP
 				
-				LDR.W 	R0, =INIT_VALUE
+				LDR.W 	R0, =INIT_VALUE_L
 				LDRB	R3, [R0]
+				LDR.W	R0, =CURR_VALUE_L
+				STRB	R3, [R0]
 				
 				BL 		UPDATE_DISPLAY
 				MOV		R4, #0x0
@@ -198,16 +181,33 @@ INIT_SKIP
 				
 				BLT		NOT_YET_SECOND_1
 				
-				SUBS	R3, R3, #0x1
-				BNE		CONTINUE_COUNTING_1
-				
-				B START
-CONTINUE_COUNTING_1
-
-				BL 		UPDATE_DISPLAY
+				BL		HANDLE_COUNTDOWN
 				MOV		R4, #0
 NOT_YET_SECOND_1		
 				B		BUTTON_PRESSED
+				
+;***************************************************************************************************
+;* Jmeno funkce		: HANDLE_COUNTDOWN
+;* Popis			: Resi odpocet, odecte jednu sekundu
+;* Vstup			: Zadny
+;* Vystup			: Zadny	
+;**************************************************************************************************	
+HANDLE_COUNTDOWN
+				PUSH	{R0,R3,R6,LR}
+
+				LDR.W 	R6, =CURR_VALUE_L
+				LDRB	R3, [R6]
+				SUB		R3, R3, #1	
+				
+				CMP		R3, #0
+				BEQ		START
+
+				STRB	R3, [R6]			
+				BL UPDATE_DISPLAY
+				
+				POP		{R0,R3,R6,PC}				
+				
+
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_ENTER_BUTTON
 ;* Popis			: Potvrzuje vybranou hodnotu
@@ -230,7 +230,9 @@ HANDLE_ENTER_BUTTON
 				
 				BEQ		SKIP_ENTER
 				
-				LDR.W 	R6, =INIT_VALUE
+				LDR.W 	R6, =CURR_VALUE_L
+				LDRB	R3, [R6]
+				LDR.W 	R6, =INIT_VALUE_L
 				STRB	R3, [R6]
 				
 WAIT_FOR_RELEASE_ENTER
@@ -240,6 +242,7 @@ WAIT_FOR_RELEASE_ENTER
 SKIP_ENTER
 				
 				POP		{R0,R6,PC}	
+				
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_SUB_BUTTON
 ;* Popis			: Odecte 1 od display, osetruje preteceni
@@ -248,28 +251,32 @@ SKIP_ENTER
 ;**************************************************************************************************	
 HANDLE_SUB_BUTTON
 				PUSH	{R0,R6,LR}
-				LDR		R0, =GPIOC_IDR
+				LDR		R0, =GPIOB_IDR
 				LDR		R6, [R0]		 
-				TST		R6, #0x80
+				TST		R6, #0x200
 				
 			    BEQ		SKIP_SUB
 				
 				BL DELAY
 				
 				LDR		R6, [R0]		 
-				TST		R6, #0x80
+				TST		R6, #0x200
 				
 				BEQ		SKIP_SUB
+				
+				LDR.W	R6, =CURR_VALUE_L
+				LDRB	R3, [R6]
 				
 				CMP 	R3, #1
 				BEQ		SKIP_SUB_OVERFLOW
 				SUB		R3, R3, #1
+				STRB	R3, [R6]
 SKIP_SUB_OVERFLOW
 				BL UPDATE_DISPLAY
 				
 WAIT_FOR_RELEASE_SUB
 				LDR		R6, [R0]		 
-				TST		R6, #0x80
+				TST		R6, #0x200
 				BNE		WAIT_FOR_RELEASE_SUB
 SKIP_SUB
 				
@@ -282,26 +289,30 @@ SKIP_SUB
 ;**************************************************************************************************	
 HANDLE_ADD_BUTTON
 				PUSH	{R0,R6,LR}
-				LDR		R0, =GPIOC_IDR
+				LDR		R0, =GPIOB_IDR
 				LDR		R6, [R0]		 
-				TST		R6, #0x40
+				TST		R6, #0x100
 				
 				BEQ		SKIP_ADD
 				
 				BL DELAY
 				
 				LDR		R6, [R0]		 
-				TST		R6, #0x40
+				TST		R6, #0x100
 				BEQ		SKIP_ADD
+				
+				LDR.W	R6, =CURR_VALUE_L
+				LDRB	R3, [R6]
 				
 				CMP 	R3, #DISPLAYABLE_MAX
 				BEQ		SKIP_ADD_OVERFLOW
 				ADD		R3, R3, #1
+				STRB	R3, [R6]
 SKIP_ADD_OVERFLOW
 				BL UPDATE_DISPLAY
 WAIT_FOR_RELEASE_ADD
 				LDR		R6, [R0]		 
-				TST		R6, #0x40
+				TST		R6, #0x100
 				BNE		WAIT_FOR_RELEASE_ADD
 SKIP_ADD
 				
@@ -318,7 +329,7 @@ UPDATE_DISPLAY
 				LDRB	R0, [R1] 
 				SUB		R0, R0, #1
 				LSL		R0, R0, #2
-				LDR 	R1,numbers
+				adr 	R1,numbers
 				ADD		R0, R0, R1
 				LDR		R1, [R0]
 				MOV 	R0, #8
@@ -465,14 +476,14 @@ GPIO_CNF								; Navesti zacatku podprogramu
 				BIC		R1, R1, R2 		; Nulovani bitu v R2 
 				MOV		R2, #0x100000	; Vlozeni 11100000 do R2
 				ORR		R1, R1, R2		; maskovani, bit 0 nastven jako push-pull výstup
-				STR		R1, [R0]		; Ulozeni konfigurace PB05, PB06, PB07 
+				STR		R1, [R0]		; Ulozeni konfigurace PB05
 				
 				LDR		R2, =0xFF		; Konstanta pro nulovani nastaveni bitu 0	
 				LDR		R0, =GPIOB_CRH	; Kopie adresy GPIOB_CRH (Port Configuration Register High)
 										; do R0, GPIOB_CRH je v souboru INI.S	
 				LDR		R1, [R0]		; Nacteni hodnoty z adresy v R0 do R1 
 				BIC		R1, R1, R2 		; Nulovani bitu v R2 
-				MOV		R2, #0x11		; Vlozeni 0x88 do R2
+				MOV		R2, #0x88		; Vlozeni 0x88 do R2
 				ORR		R1, R1, R2		; maskovani, bit 8, 9 nastven jako push-pull vstup
 				STR		R1, [R0]		; Ulozeni konfigurace PB08, PB09
 				
@@ -483,7 +494,7 @@ GPIO_CNF								; Navesti zacatku podprogramu
 				BIC		R1, R1, R2 		; Nulovani bitu v R2 
 				MOV		R2, #0x8000		; Vlozeni 0x800 do R2
 				ORR		R1, R1, R2		; maskovani, bit 11 nastven jako push-pull vstup
-				STR		R1, [R0]		; Ulozeni konfigurace PB11
+				STR		R1, [R0]		; Ulozeni konfigurace PA11
 				
 				LDR		R2, =0xFF000000	; Konstanta pro nulovani nastaveni bitu 0	
 				LDR		R0, =GPIOC_CRL	; Kopie adresy GPIOC_CRL (Port Configuration Register Low)
