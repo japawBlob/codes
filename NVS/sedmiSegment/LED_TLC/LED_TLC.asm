@@ -9,15 +9,14 @@
 ;*
 ;* JMÉNO SOUBORU	: LED_TLC.ASM
 ;* AUTOR			: JAKUB JIRA
-;* DATUM			: 10/2020
-;* POPIS			: Schodistovy automat
+;* DATUM			: 12/2020
+;* POPIS			: 7-segmentovy display
 ;*
 ;***************************************************************************************************
+;Data pro ulozeni momentnalni a pocatecny hodnoty pocitadla
 		AREA MOJEDATA, DATA, NOINIT, READWRITE
 INIT_VALUE_L 	SPACE 4
-INIT_VALUE_H 	SPACE 4
 CURR_VALUE_L 	SPACE 4
-CURR_VALUE_H	SPACE 4
 
 			
 		AREA    STM32F1xx, CODE, READONLY  	; hlavicka souboru
@@ -27,12 +26,9 @@ CURR_VALUE_H	SPACE 4
 
 ;++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++										
 ONE_SECOND_CONST EQU  0x3E0			; neni to v zadnem pripade presna hodnota jedne sekundy, udelano zhruba
-;HALF_SECOND_CONST EQU 0x100000		
-;STEADY_LIGHT_CONST EQU	0x5
-;MAX_LIGHT_CONST EQU 	0xF	
 DISPLAYABLE_MAX EQU 0xA
 numbers DCD 2_01100000, 2_11011010, 2_11110010, 2_01100110, 2_10110110, 2_10111111, 2_11100000, 2_11111110, 2_11110111, 2_11111100
-initial_counter_value DCD 6
+initial_counter_value EQU 5
 ;++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++										
 
 											
@@ -67,7 +63,7 @@ MAIN									; MAIN navesti hlavni smycky programu
 										; ODR - Output Data Register
 				LDR		R5, =GPIOA_IDR 	; Kopie adresy brany A IDR do R5, GPIOA_IDR je v souboru INI.S			
 										; IDR - Input Data Register
-				MOV 	R1, #5
+				MOV 	R1, #initial_counter_value
 				LDR.W 	R0, =INIT_VALUE_L
 				STRB	R1, [R0]				
 START			
@@ -76,14 +72,11 @@ START
 				LDR.W 	R0, =CURR_VALUE_L
 				STRB	R3, [R0]
 				
-				MOV		R4,#0			; Vlozeni 0 do R4, nulovani citace (softwarový citac registr R4)
+				MOV		R4,#0			; Vlozeni 0 do R4, vyuziva se jako softwarove pocitadlo milisekund
 				
 				MOV		R1, #0x0000	
 				STR		R1, [R2]		; Zhasnuti obou diod
-
-				;LDR 	R0, numbers
 				
-				;MOV 	R0, R3
 				BL 		UPDATE_DISPLAY
 
 INIT_LOOP			
@@ -104,7 +97,6 @@ INIT_LOOP
 				STR		R1, [R2]
 				
 				; Delay nastaveny na 1ms pro vyreseni odskoku tlacitka
-				MOV		R0, #1
 				BL		DELAY			
 				
 				; Po uplynuti delay opetovne testovani stisku tlacitka
@@ -127,6 +119,7 @@ TEST_REALEASE_OF_BUTTON
 				STR		R1, [R2]
 				MOV		R6, #0x1
 				
+				;Presunuti konstanty z Vychozi hodnoty do Momentalni hodnoty
 				LDR.W 	R0, =INIT_VALUE_L
 				LDRB	R3, [R0] 
 				LDR.W	R0, =CURR_VALUE_L
@@ -148,12 +141,12 @@ COUNTDOWN
 				CMP 	R4, #ONE_SECOND_CONST
 				BLT		NOT_YET_SECOND
 				
-				;Odecteni citace
+				;Upraveni citace
 					BL 		HANDLE_COUNTDOWN
 					MOV		R4, #0
 NOT_YET_SECOND		
 				B		COUNTDOWN
-
+				;Ve chvili, kdy bylo tlacitko stisknuto pokracuje odpocet, dokud neni uvolneno
 BUTTON_PRESSED
 				; Test tlacitka
 				LDR		R1, [R5]
@@ -161,6 +154,7 @@ BUTTON_PRESSED
 				
 				BNE 	INIT_SKIP
 				
+				;Nacteni Vychozich hodnot, pokud bylo tlacitko uvolneno
 				LDR.W 	R0, =INIT_VALUE_L
 				LDRB	R3, [R0]
 				LDR.W	R0, =CURR_VALUE_L
@@ -188,7 +182,8 @@ NOT_YET_SECOND_1
 				
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_COUNTDOWN
-;* Popis			: Resi odpocet, odecte jednu sekundu
+;* Popis			: Resi odpocet, odecte jednu sekundu od CURR_VALUE, 
+;*					  pripadne skoci na start v pripade konce odpoctu
 ;* Vstup			: Zadny
 ;* Vystup			: Zadny	
 ;**************************************************************************************************	
@@ -210,8 +205,8 @@ HANDLE_COUNTDOWN
 
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_ENTER_BUTTON
-;* Popis			: Potvrzuje vybranou hodnotu
-;* Vstup			: R3 - inkrementace pocitadla
+;* Popis			: Potvrzuje vybranou hodnotu, prekopiruje CURR_VALUE do INIT_VALUE
+;* Vstup			: Zadny
 ;* Vystup			: Zadny	
 ;**************************************************************************************************	
 HANDLE_ENTER_BUTTON
@@ -245,8 +240,8 @@ SKIP_ENTER
 				
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_SUB_BUTTON
-;* Popis			: Odecte 1 od display, osetruje preteceni
-;* Vstup			: R3 - inkrementace pocitadla
+;* Popis			: Odecte 1 od CURR_VALUE, osetruje preteceni
+;* Vstup			: Zadny
 ;* Vystup			: Zadny	
 ;**************************************************************************************************	
 HANDLE_SUB_BUTTON
@@ -283,8 +278,8 @@ SKIP_SUB
 				POP		{R0,R6,PC}	
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_ADD_BUTTON
-;* Popis			: Pricte 1 k display, osetruje preteceni
-;* Vstup			: R3 - inkrementace pocitadla
+;* Popis			: Pricte 1 k CURR_VALUE, osetruje preteceni
+;* Vstup			: Zadny
 ;* Vystup			: Zadny	
 ;**************************************************************************************************	
 HANDLE_ADD_BUTTON
@@ -319,8 +314,8 @@ SKIP_ADD
 				POP		{R0,R6,PC}
 ;***************************************************************************************************
 ;* Jmeno funkce		: UPDATE_DISPLAY
-;* Popis			: Upraví 7-mi segmentovy display
-;* Vstup			: R3 - jake cislo se ma zobrazit
+;* Popis			: Upraví 7-mi segmentovy display na prislusnou hodnotu ulozenou v CURR_VALUE
+;* Vstup			: Zadny
 ;* Vystup			: Zadny
 ;**************************************************************************************************	
 UPDATE_DISPLAY
@@ -353,18 +348,6 @@ DOWHILE
 				
 				SUBS	R0, R0, #1
 				BNE		DOWHILE
-				
-				;ORR 	R2, R2, #0x300
-				;STR		R2, [R6]
-				;LDR		R5, =GPIOB_ODR
-				
-				
-				;ORR		R1, R1, #0x300
-				;MOV 	R0, #0x300
-				;BIC		R1, R1, R0;
-				;MOV		R0, #0x300
-				;ORR		R1, R1, R0
-				;STR		R1, [R5]
 				
 				POP		{R0,R1,R2,R3,R6,PC}
 ;***************************************************************************************************
@@ -511,7 +494,7 @@ GPIO_CNF								; Navesti zacatku podprogramu
 ;**************************************************************************************************
 ;* Jmeno funkce		: DELAY
 ;* Popis			: Softwarove zpozdeni procesoru
-;* Vstup			: R0 = pocet opakovani cyklu spozdeni
+;* Vstup			: Zadny
 ;* Vystup			: Zadny
 ;* Komentar			: Podprodram zpozdi prubech vykonavani programu	
 ;**************************************************************************************************

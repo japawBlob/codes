@@ -17,29 +17,27 @@ ARM Macro Assembler    Page 1
     9 00000000         ;*
    10 00000000         ;* JMÉNO SOUBORU : LED_TLC.ASM
    11 00000000         ;* AUTOR   : JAKUB JIRA
-   12 00000000         ;* DATUM   : 10/2020
+   12 00000000         ;* DATUM   : 12/2020
    13 00000000         ;* POPIS   : Schodistovy automat
    14 00000000         ;*
    15 00000000         ;*******************************************************
                        ********************************************
    16 00000000                 AREA             MOJEDATA, DATA, NOINIT, READWRI
 TE
-   17 00000000         INIT_VALUE
+   17 00000000         INIT_VALUE_L
                                SPACE            4
-   18 00000004         INIT_VALUE_L
+   18 00000004         INIT_VALUE_H
                                SPACE            4
-   19 00000008         INIT_VALUE_H
+   19 00000008         CURR_VALUE_L
                                SPACE            4
-   20 0000000C         CURR_VALUE_L
+   20 0000000C         CURR_VALUE_H
                                SPACE            4
-   21 00000010         CURR_VALUE_H
-                               SPACE            4
-   22 00000014         
-   23 00000014         
-   24 00000014                 AREA             STM32F1xx, CODE, READONLY 
+   21 00000010         
+   22 00000010         
+   23 00000010                 AREA             STM32F1xx, CODE, READONLY 
                                                             ; hlavicka souboru
-   25 00000000         
-   26 00000000                 GET              INI.s       ; vlozeni souboru s
+   24 00000000         
+   25 00000000                 GET              INI.s       ; vlozeni souboru s
                                                              pojmenovanymi adre
                                                             sami
     1 00000000         
@@ -63,14 +61,14 @@ TE
    16 00000000         ;*       GPIOA         *
    17 00000000         ;*******************************************************
                        *************************
+   18 00000000         ;GPIOA Registers 
+   19 00000000         ;-------------------------------------------------------
 
 
 
 ARM Macro Assembler    Page 2 
 
 
-   18 00000000         ;GPIOA Registers 
-   19 00000000         ;-------------------------------------------------------
                        ------------------------- 
    20 00000000 40010800 
                        GPIOA_CRL
@@ -128,14 +126,14 @@ ARM Macro Assembler    Page 2
                                                             tr
    45 00000000         ;GPIOA_ODR bits
    46 00000000 422101BC 
+                       AODR15  EQU              0x422101BC  ; 15
+   47 00000000 422101B8 
 
 
 
 ARM Macro Assembler    Page 3 
 
 
-                       AODR15  EQU              0x422101BC  ; 15
-   47 00000000 422101B8 
                        AODR14  EQU              0x422101B8  ; 14
    48 00000000 422101B4 
                        AODR13  EQU              0x422101B4  ; 13
@@ -193,14 +191,14 @@ ARM Macro Assembler    Page 3
    75 00000000         ;-------------------------------------------------------
                        -------------------------
    76 00000000 40011000 
+                       GPIOC_CRL
+                               EQU              0x40011000
 
 
 
 ARM Macro Assembler    Page 4 
 
 
-                       GPIOC_CRL
-                               EQU              0x40011000
    77 00000000         ;-------------------------------------------------------
                        -------------------------
    78 00000000 40011004 
@@ -258,14 +256,14 @@ ARM Macro Assembler    Page 4
   103 00000000 422201B8 
                        CODR14  EQU              0x422201B8  ; 14
   104 00000000 422201B4 
+                       CODR13  EQU              0x422201B4  ; 13
+  105 00000000 422201B0 
 
 
 
 ARM Macro Assembler    Page 5 
 
 
-                       CODR13  EQU              0x422201B4  ; 13
-  105 00000000 422201B0 
                        CODR12  EQU              0x422201B0  ; 12
   106 00000000 422201AC 
                        CODR11  EQU              0x422201AC  ; 11
@@ -323,14 +321,14 @@ ARM Macro Assembler    Page 5
                                EQU              0x40010C00
   133 00000000         ;-------------------------------------------------------
                        -------------------------
+  134 00000000 40010C04 
+                       GPIOB_CRH
 
 
 
 ARM Macro Assembler    Page 6 
 
 
-  134 00000000 40010C04 
-                       GPIOB_CRH
                                EQU              0x40010C04
   135 00000000         ;-------------------------------------------------------
                        -------------------------
@@ -388,14 +386,14 @@ ARM Macro Assembler    Page 6
   161 00000000 422181B0 
                        BODR12  EQU              0x422181B0  ; 12
   162 00000000 422181AC 
+                       BODR11  EQU              0x422181AC  ; 11
+  163 00000000 422181A8 
 
 
 
 ARM Macro Assembler    Page 7 
 
 
-                       BODR11  EQU              0x422181AC  ; 11
-  163 00000000 422181A8 
                        BODR10  EQU              0x422181A8  ; 10
   164 00000000 422181A4 
                        BODR9   EQU              0x422181A4  ; 9
@@ -453,14 +451,14 @@ ARM Macro Assembler    Page 7
   191 00000000 42420060 
                        PLLON   EQU              0x42420060  ; 24
   192 00000000 4242004C 
+                       CSSON   EQU              0x4242004C  ; 19
+  193 00000000 42420048 
 
 
 
 ARM Macro Assembler    Page 8 
 
 
-                       CSSON   EQU              0x4242004C  ; 19
-  193 00000000 42420048 
                        HSEBYP  EQU              0x42420048  ; 18
   194 00000000 42420044 
                        HSERDY  EQU              0x42420044  ; 17
@@ -518,14 +516,14 @@ ARM Macro Assembler    Page 8
   220 00000000 42420110 
                        PLLRDYF EQU              0x42420110  ; 4
   221 00000000 4242010C 
+                       HSERDYF EQU              0x4242010C  ; 3
+  222 00000000 42420108 
 
 
 
 ARM Macro Assembler    Page 9 
 
 
-                       HSERDYF EQU              0x4242010C  ; 3
-  222 00000000 42420108 
                        HSIRDYF EQU              0x42420108  ; 2
   223 00000000 42420104 
                        LSERDYF EQU              0x42420104  ; 1
@@ -583,14 +581,14 @@ ARM Macro Assembler    Page 9
   248 00000000 42420300 
                        AFIOEN  EQU              0x42420300  ; 0
   249 00000000         ;-------------------------------------------------------
+                       -------------------------
+  250 00000000 4002101C 
 
 
 
 ARM Macro Assembler    Page 10 
 
 
-                       -------------------------
-  250 00000000 4002101C 
                        RCC_APB1ENR
                                EQU              0x4002101C
   251 00000000         ;RCC_APB1ENR bits
@@ -648,14 +646,14 @@ ARM Macro Assembler    Page 10
   275 00000000 40021024 
                        RCC_CSR EQU              0x40021024
   276 00000000         ;-------------------------------------------------------
+                       -------------------------
+  277 00000000         
 
 
 
 ARM Macro Assembler    Page 11 
 
 
-                       -------------------------
-  277 00000000         
   278 00000000         
   279 00000000         
   280 00000000         ;*******************************************************
@@ -713,14 +711,14 @@ ARM Macro Assembler    Page 11
                                EQU              0x4220008C  ; 3
   301 00000000 42200088 
                        USART1_REMAP
+                               EQU              0x42200088  ; 2
+  302 00000000 42200084 
 
 
 
 ARM Macro Assembler    Page 12 
 
 
-                               EQU              0x42200088  ; 2
-  302 00000000 42200084 
                        I2C1_REMAP
                                EQU              0x42200084  ; 1
   303 00000000 42200080 
@@ -778,14 +776,14 @@ ARM Macro Assembler    Page 12
   324 00000000 4001380C 
                        USART_CR1
                                EQU              0x4001380C  ;control registr 1
+  325 00000000         ;-------------------------------------------------------
+                       -------------------------
 
 
 
 ARM Macro Assembler    Page 13 
 
 
-  325 00000000         ;-------------------------------------------------------
-                       -------------------------
   326 00000000 40013810 
                        USART_CR2
                                EQU              0x40013810  ;control registr 2
@@ -843,14 +841,14 @@ ARM Macro Assembler    Page 13
                                                             ODE
   354 00000000 42258008 
                        URS_T1  EQU              0x42258008  ; 2 bit Update Requ
+                                                            est Source
+  355 00000000 42258004 
 
 
 
 ARM Macro Assembler    Page 14 
 
 
-                                                            est Source
-  355 00000000 42258004 
                        UDIS_T1 EQU              0x42258004  ; 1 bit Update Disa
                                                             ble
   356 00000000 42258000 
@@ -908,14 +906,14 @@ ARM Macro Assembler    Page 14
                        -------------------------
   376 00000000 40012C20 
                        TIM1_CCR
+                               EQU              0x40012C20  ; CAPTURE/COMPARE E
+                                                            NABLE
 
 
 
 ARM Macro Assembler    Page 15 
 
 
-                               EQU              0x40012C20  ; CAPTURE/COMPARE E
-                                                            NABLE
   377 00000000         ;-------------------------------------------------------
                        -------------------------
   378 00000000 40012C24 
@@ -973,14 +971,14 @@ ARM Macro Assembler    Page 15
   398 00000000 40012C4C 
                        TIM1_DMAR
                                EQU              0x40012C4C  ; DMA ADDRESS FOR F
+                                                            ULL TRANSFER
+  399 00000000         
 
 
 
 ARM Macro Assembler    Page 16 
 
 
-                                                            ULL TRANSFER
-  399 00000000         
   400 00000000         
   401 00000000         
   402 00000000         ;*******************************************************
@@ -1038,14 +1036,14 @@ ARM Macro Assembler    Page 16
                        CC3IE_T2
                                EQU              0x4200018C  ; 3 bit Capture/Com
                                                             pare Interrupt Enab
+                                                            le
+  424 00000000 42000188 
 
 
 
 ARM Macro Assembler    Page 17 
 
 
-                                                            le
-  424 00000000 42000188 
                        CC2IE_T2
                                EQU              0x42000188  ; 2 bit Capture/Com
                                                             pare Interrupt Enab
@@ -1103,14 +1101,14 @@ ARM Macro Assembler    Page 17
   444 00000000 40000030 
                        TIM2_RCR
                                EQU              0x40000030  ; REPETITION
+  445 00000000         ;-------------------------------------------------------
+                       -------------------------
 
 
 
 ARM Macro Assembler    Page 18 
 
 
-  445 00000000         ;-------------------------------------------------------
-                       -------------------------
   446 00000000 40000034 
                        TIM2_CCR1
                                EQU              0x40000034  ; COMPARE/CAPTURE
@@ -1168,14 +1166,14 @@ ARM Macro Assembler    Page 18
   471 00000000 4200800C 
                        OPM_T3  EQU              0x4200800C  ; 3 bit ONE PULSE M
                                                             ODE
+  472 00000000 42008008 
+                       URS_T3  EQU              0x42008008  ; 2 bit Update Requ
 
 
 
 ARM Macro Assembler    Page 19 
 
 
-  472 00000000 42008008 
-                       URS_T3  EQU              0x42008008  ; 2 bit Update Requ
                                                             est Source
   473 00000000 42008004 
                        UDIS_T3 EQU              0x42008004  ; 1 bit Update Disa
@@ -1233,14 +1231,14 @@ ARM Macro Assembler    Page 19
   490 00000000         ;-------------------------------------------------------
                        -------------------------
   491 00000000 40000414 
+                       TIM3_EGR
+                               EQU              0x40000414  ; EVENT GENERATION
 
 
 
 ARM Macro Assembler    Page 20 
 
 
-                       TIM3_EGR
-                               EQU              0x40000414  ; EVENT GENERATION
   492 00000000         ;-------------------------------------------------------
                        -------------------------
   493 00000000 40000418 
@@ -1298,14 +1296,14 @@ ARM Macro Assembler    Page 20
                        TIM3_CCR4
                                EQU              0x40000440  ; COMPARE/CAPTURE
   514 00000000         ;-------------------------------------------------------
+                       -------------------------
+  515 00000000 40000444 
 
 
 
 ARM Macro Assembler    Page 21 
 
 
-                       -------------------------
-  515 00000000 40000444 
                        TIM3_BDTR
                                EQU              0x40000444  ; BREAK AND DEAD-TI
                                                             ME
@@ -1363,14 +1361,14 @@ ARM Macro Assembler    Page 21
   538 00000000         ;-------------------------------------------------------
                        -------------------------
   539 00000000 4000080C 
+                       TIM4_DIER
+                               EQU              0x4000080C  ; 
 
 
 
 ARM Macro Assembler    Page 22 
 
 
-                       TIM4_DIER
-                               EQU              0x4000080C  ; 
   540 00000000         ;TIM4_DIER bits
   541 00000000 42010198 
                        TIE_T4  EQU              0x42010198  ; 6 bit Trigger Int
@@ -1428,14 +1426,14 @@ ARM Macro Assembler    Page 22
   558 00000000 40000824 
                        TIM4_CNT
                                EQU              0x40000824  ; COUNTER
+  559 00000000         ;-------------------------------------------------------
+                       -------------------------
 
 
 
 ARM Macro Assembler    Page 23 
 
 
-  559 00000000         ;-------------------------------------------------------
-                       -------------------------
   560 00000000 40000828 
                        TIM4_PSC
                                EQU              0x40000828  ; PRESCALER
@@ -1493,14 +1491,14 @@ ARM Macro Assembler    Page 23
   582 00000000         ;*******************************************************
                        *************************
   583 00000000         ;*       EXTI         *
+  584 00000000         ;*******************************************************
+                       *************************
 
 
 
 ARM Macro Assembler    Page 24 
 
 
-  584 00000000         ;*******************************************************
-                       *************************
   585 00000000         ;EXTI Registers   
   586 00000000         ;-------------------------------------------------------
                        -------------------------
@@ -1558,14 +1556,14 @@ ARM Macro Assembler    Page 24
                        -------------------------
   611 00000000 E000ED0C 
                        NVIC_AIRCR
+                               EQU              0xE000ED0C  ; Application Inter
+                                                            rupt and Reset Cont
 
 
 
 ARM Macro Assembler    Page 25 
 
 
-                               EQU              0xE000ED0C  ; Application Inter
-                                                            rupt and Reset Cont
                                                             rol Register
   612 00000000         ;-------------------------------------------------------
                        -------------------------
@@ -1623,14 +1621,14 @@ ARM Macro Assembler    Page 25
                        -------------------------
   636 00000000 4001240C 
                        ADC_SMPR1
+                               EQU              0x4001240C  ;
+  637 00000000         ;-------------------------------------------------------
 
 
 
 ARM Macro Assembler    Page 26 
 
 
-                               EQU              0x4001240C  ;
-  637 00000000         ;-------------------------------------------------------
                        -------------------------
   638 00000000 40012410 
                        ADC_SMPR2
@@ -1688,14 +1686,14 @@ ARM Macro Assembler    Page 26
   660 00000000 4001243C 
                        ADC_JDR1
                                EQU              0x4001243C  ;
+  661 00000000         ;-------------------------------------------------------
+                       -------------------------
 
 
 
 ARM Macro Assembler    Page 27 
 
 
-  661 00000000         ;-------------------------------------------------------
-                       -------------------------
   662 00000000 40012440 
                        ADC_JDR2
                                EQU              0x40012440  ;
@@ -1717,24 +1715,21 @@ ARM Macro Assembler    Page 27
                        -------------------------
   670 00000000         
   671 00000000                 END
-   27 00000000         ; jsou zde definovany adresy pristupu do pameti (k regis
+   26 00000000         ; jsou zde definovany adresy pristupu do pameti (k regis
                        trum)
-   28 00000000         
-   29 00000000         ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   27 00000000         
+   28 00000000         ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
                        +++++++++++++++++++++++++++++++++++++++++++++          
-   30 00000000 000003E0 
+   29 00000000 000003E0 
                        ONE_SECOND_CONST
                                EQU              0x3E0       ; neni to v zadnem 
                                                             pripade presna hodn
                                                             ota jedne sekundy, 
                                                             udelano zhruba
-   31 00000000         ;HALF_SECOND_CONST EQU 0x100000  
-   32 00000000         ;STEADY_LIGHT_CONST EQU 0x5
-   33 00000000         ;MAX_LIGHT_CONST EQU  0xF 
-   34 00000000 0000000A 
+   30 00000000 0000000A 
                        DISPLAYABLE_MAX
                                EQU              0xA
-   35 00000000 000000FC 
+   31 00000000 000000FC 
               00000060 
               000000DA 
               000000F2 
@@ -1747,18 +1742,8 @@ ARM Macro Assembler    Page 27
                                DCD              2_11111100, 2_01100000, 2_11011
 010, 2_11110010, 2_01100110, 2_10110110, 2_10111111, 2_11100000, 2_11111110, 2_
 11110111
-   36 00000028         ;numbers_H DCD 2_11111100, 2_01100000, 2_11011010, 2_111
-                       10010, 2_01100110, 2_10110110, 2_10111111, 2_11100000, 2
-                       _11111110, 2_11110111
-   37 00000028         
-   38 00000028         
-   39 00000028 0D 0A 54 
-
-
-
-ARM Macro Assembler    Page 28 
-
-
+   32 00000028         
+   33 00000028 0D 0A 54 
               68 69 73 
               20 69 73 
               20 73 69 
@@ -1768,6 +1753,12 @@ ARM Macro Assembler    Page 28
               74 64 6F 
               77 6E 20 
               70 72 6F 
+
+
+
+ARM Macro Assembler    Page 28 
+
+
               67 72 61 
               6D 2E 0D 
               0A 43 6F 
@@ -1818,12 +1809,6 @@ ARM Macro Assembler    Page 28
               20 2D 20 
               44 69 73 
               70 6C 61 
-
-
-
-ARM Macro Assembler    Page 29 
-
-
               79 20 68 
               65 6C 70 
               0A 0D 00 WELCOME_MESSAGE
@@ -1833,7 +1818,13 @@ one second\r\n\t\t\' \' - Confirming selection\r\n\t\t\'s\' - Starting countdow
 n\r\n\t\t\'h\' - Display help",0xA, 0xD, 0 
                                                             ; definovani konsta
                                                             nty retezce
-   40 000000E5 20 3A 73 
+
+
+
+ARM Macro Assembler    Page 29 
+
+
+   34 000000E5 20 3A 73 
               79 6D 62 
               6F 6C 20 
               28 52 45 
@@ -1844,7 +1835,7 @@ n\r\n\t\t\'h\' - Display help",0xA, 0xD, 0
                                DCB              " :symbol (RECEIVED) ",0xA, 0xD
 , 0 
                                                             ;
-   41 000000FC 43 6F 75 
+   35 000000FC 43 6F 75 
               6E 74 64 
               6F 77 6E 
               20 53 54 
@@ -1854,7 +1845,7 @@ n\r\n\t\t\'h\' - Display help",0xA, 0xD, 0
                                DCB              "Countdown STARTED",0xA, 0xD, 0
  
                                                             ;
-   42 00000110 43 6F 75 
+   36 00000110 43 6F 75 
               6E 74 64 
               6F 77 6E 
               20 45 4E 
@@ -1862,466 +1853,466 @@ n\r\n\t\t\'h\' - Display help",0xA, 0xD, 0
               0A 0D 00 END_MESSAGE
                                DCB              "Countdown ENDED",0xA, 0xD, 0 ;
                                                             
-   43 00000122         
-   44 00000122         
-   45 00000122         
-   46 00000122 00 00 00000006 
+   37 00000122         
+   38 00000122         
+   39 00000122         
+   40 00000122 00 00 00000006 
                        initial_counter_value
                                DCD              6
-   47 00000128         ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   41 00000128         ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++
                        +++++++++++++++++++++++++++++++++++++++++++++          
-   48 00000128         
-   49 00000128         
-   50 00000128                 EXPORT           __main      ; export navesti po
+   42 00000128         
+   43 00000128         
+   44 00000128                 EXPORT           __main      ; export navesti po
                                                             uzivaneho v jinem s
                                                             ouboru, zde konkret
                                                             ne
-   51 00000128                 EXPORT           __use_two_region_memory ; jde o
+   45 00000128                 EXPORT           __use_two_region_memory ; jde o
                                                              navesti, ktere pou
                                                             ziva startup code S
                                                             TM32F10x.s
-   52 00000128         
-   53 00000128         __use_two_region_memory
-   54 00000128         __main
+   46 00000128         
+   47 00000128         __use_two_region_memory
+   48 00000128         __main
+   49 00000128         
+   50 00000128                 ENTRY                        ; vstupni bod do ko
+                                                            du, odtud se zacina
+                                                             vykonavat program
+   51 00000128         
+   52 00000128         ;*******************************************************
+                       ********************************************
+   53 00000128         ;* Jmeno funkce  : MAIN
+   54 00000128         ;* Popis   : Hlavni program + volani podprogramu nastave
 
 
 
 ARM Macro Assembler    Page 30 
 
 
-   55 00000128         
-   56 00000128                 ENTRY                        ; vstupni bod do ko
-                                                            du, odtud se zacina
-                                                             vykonavat program
-   57 00000128         
+                       ni hodinoveho systemu a konfigurace
+   55 00000128         ;*       pouzitych vyvodu procesoru 
+   56 00000128         ;* Vstup   : Zadny
+   57 00000128         ;* Vystup   : Zadny
    58 00000128         ;*******************************************************
                        ********************************************
-   59 00000128         ;* Jmeno funkce  : MAIN
-   60 00000128         ;* Popis   : Hlavni program + volani podprogramu nastave
-                       ni hodinoveho systemu a konfigurace
-   61 00000128         ;*       pouzitych vyvodu procesoru 
-   62 00000128         ;* Vstup   : Zadny
-   63 00000128         ;* Vystup   : Zadny
-   64 00000128         ;*******************************************************
-                       ********************************************
-   65 00000128         
-   66 00000128         MAIN                                 ; MAIN navesti hlav
+   59 00000128         
+   60 00000128         MAIN                                 ; MAIN navesti hlav
                                                             ni smycky programu 
                                                             
-   67 00000128 F000 FA50       BL               RCC_CNF     ; Volani podprogram
+   61 00000128 F000 FA50       BL               RCC_CNF     ; Volani podprogram
                                                             u nastaveni hodinov
                                                             eho systemu proceso
                                                             ru
-   68 0000012C         ; tj. skok na adresu s navestim RCC_CNF a ulozeni navrat
+   62 0000012C         ; tj. skok na adresu s navestim RCC_CNF a ulozeni navrat
                        ove 
-   69 0000012C         ; adresy do LR (Link Register)
-   70 0000012C F000 FA89       BL               GPIO_CNF    ; Volani podprogram
+   63 0000012C         ; adresy do LR (Link Register)
+   64 0000012C F000 FA89       BL               GPIO_CNF    ; Volani podprogram
                                                             u konfigurace vyvod
                                                             u procesoru
-   71 00000130         ; tj. skok na adresu s navestim GPIO_CNF 
-   72 00000130         ;*!* Poznamka pri pouziti volani podprogramu instrukci B
+   65 00000130         ; tj. skok na adresu s navestim GPIO_CNF 
+   66 00000130         ;*!* Poznamka pri pouziti volani podprogramu instrukci B
                        L nesmi
-   73 00000130         ; byt v obsluze podprogramu tato instrukce jiz pouzita, 
+   67 00000130         ; byt v obsluze podprogramu tato instrukce jiz pouzita, 
                        nebot
-   74 00000130         ; by doslo k prepsani LR a ztrate navratove adresy ->
-   75 00000130         ; lze ale pouzit i jine instrukce (PUSH, POP) *!*
-   76 00000130 F000 F93B       BL               USART_CNF   ; skok na podprogra
+   68 00000130         ; by doslo k prepsani LR a ztrate navratove adresy ->
+   69 00000130         ; lze ale pouzit i jine instrukce (PUSH, POP) *!*
+   70 00000130 F000 F93B       BL               USART_CNF   ; skok na podprogra
                                                             m nastaveni USART 
-   77 00000134         
-   78 00000134         
-   79 00000134 4A87            LDR              R2, =GPIOC_ODR ; Kopie adresy b
+   71 00000134         
+   72 00000134         
+   73 00000134 4A87            LDR              R2, =GPIOC_ODR ; Kopie adresy b
                                                             rany C ODR do R2, G
                                                             PIOC_ODR je v soubo
                                                             ru INI.S   
-   80 00000136         ; ODR - Output Data Register
-   81 00000136 4D88            LDR              R5, =GPIOA_IDR ; Kopie adresy b
+   74 00000136         ; ODR - Output Data Register
+   75 00000136 4D88            LDR              R5, =GPIOA_IDR ; Kopie adresy b
                                                             rany A IDR do R5, G
                                                             PIOA_IDR je v soubo
                                                             ru INI.S   
-   82 00000138         ; IDR - Input Data Register
-   83 00000138         
-   84 00000138         
-   85 00000138         
-   86 00000138 4888            LDR              R0, =WELCOME_MESSAGE ; nacteni 
+   76 00000138         ; IDR - Input Data Register
+   77 00000138         
+   78 00000138         
+   79 00000138         
+   80 00000138 4888            LDR              R0, =WELCOME_MESSAGE ; nacteni 
                                                             adresy retezce
-   87 0000013A F000 F923       BL               TRAN_USART_TEXT ; vyslani texto
+   81 0000013A F000 F923       BL               TRAN_USART_TEXT ; vyslani texto
                                                             veho retezce
-   88 0000013E         ;LOOP   
-   89 0000013E         ;BL  REC_USART   ; prijem bajtu pres USART
+   82 0000013E         ;LOOP   
+   83 0000013E         ;BL  REC_USART   ; prijem bajtu pres USART
+   84 0000013E         
+   85 0000013E         ;BL  TRAN_USART   ; vyslani bajtu pres USART
+   86 0000013E         
+   87 0000013E         ;LDR  R0, =DATA_TEXT  ; nacteni adresy retezce
+   88 0000013E         ;BL  TRAN_USART_TEXT  ; vyslani textoveho retezce (potvr
+                       zovaci hlaska)
+   89 0000013E         
+   90 0000013E         ;B  LOOP      
+   91 0000013E         
 
 
 
 ARM Macro Assembler    Page 31 
 
 
-   90 0000013E         
-   91 0000013E         ;BL  TRAN_USART   ; vyslani bajtu pres USART
    92 0000013E         
-   93 0000013E         ;LDR  R0, =DATA_TEXT  ; nacteni adresy retezce
-   94 0000013E         ;BL  TRAN_USART_TEXT  ; vyslani textoveho retezce (potvr
-                       zovaci hlaska)
-   95 0000013E         
-   96 0000013E         ;B  LOOP      
-   97 0000013E         
-   98 0000013E         
-   99 0000013E F8DF 0220       LDR.W            R0, =INIT_VALUE_L
-  100 00000142 F04F 0105       MOV              R1, #5
-  101 00000146 7001            STRB             R1, [R0]
-  102 00000148         
-  103 00000148 F8DF 0218       LDR.W            R0, =INIT_VALUE_H
-  104 0000014C F04F 0101       MOV              R1, #1
-  105 00000150 7001            STRB             R1, [R0]
-  106 00000152         
-  107 00000152         START
-  108 00000152 7803            LDRB             R3, [R0]
-  109 00000154 F04F 0400       MOV              R4,#0       ; Vlozeni 0 do R4, 
+   93 0000013E F8DF 0220       LDR.W            R0, =INIT_VALUE_L
+   94 00000142 F04F 0105       MOV              R1, #5
+   95 00000146 7001            STRB             R1, [R0]
+   96 00000148         
+   97 00000148 F8DF 0218       LDR.W            R0, =INIT_VALUE_H
+   98 0000014C F04F 0101       MOV              R1, #1
+   99 00000150 7001            STRB             R1, [R0]
+  100 00000152         
+  101 00000152         START
+  102 00000152 7803            LDRB             R3, [R0]
+  103 00000154 F04F 0400       MOV              R4,#0       ; Vlozeni 0 do R4, 
                                                             nulovani citace (so
                                                             ftwarový citac regi
                                                             str R4)
-  110 00000158         
-  111 00000158 F04F 0100       MOV              R1, #0x0000
-  112 0000015C 6011            STR              R1, [R2]    ; Zhasnuti obou dio
+  104 00000158         
+  105 00000158 F04F 0100       MOV              R1, #0x0000
+  106 0000015C 6011            STR              R1, [R2]    ; Zhasnuti obou dio
                                                             d
-  113 0000015E         
-  114 0000015E F8DF 0204       LDR.W            R0, =INIT_VALUE_H
-  115 00000162 7801            LDRB             R1, [R0]
-  116 00000164 F8DF 0200       LDR.W            R0, =CURR_VALUE_H
-  117 00000168 7001            STRB             R1, [R0]
-  118 0000016A         
-  119 0000016A F8DF 01F4       LDR.W            R0, =INIT_VALUE_L
-  120 0000016E 7801            LDRB             R1, [R0]
-  121 00000170 F8DF 01F8       LDR.W            R0, =CURR_VALUE_L
-  122 00000174 7001            STRB             R1, [R0]
-  123 00000176 F000 F9C8       BL               UPDATE_DISPLAY
-  124 0000017A         
-  125 0000017A         INIT_LOOP
-  126 0000017A F000 F872       BL               REC_USART   ; prijem bajtu pres
+  107 0000015E         
+  108 0000015E F8DF 0204       LDR.W            R0, =INIT_VALUE_H
+  109 00000162 7801            LDRB             R1, [R0]
+  110 00000164 F8DF 0200       LDR.W            R0, =CURR_VALUE_H
+  111 00000168 7001            STRB             R1, [R0]
+  112 0000016A         
+  113 0000016A F8DF 01F4       LDR.W            R0, =INIT_VALUE_L
+  114 0000016E 7801            LDRB             R1, [R0]
+  115 00000170 F8DF 01F8       LDR.W            R0, =CURR_VALUE_L
+  116 00000174 7001            STRB             R1, [R0]
+  117 00000176 F000 F9C8       BL               UPDATE_DISPLAY
+  118 0000017A         
+  119 0000017A         INIT_LOOP
+  120 0000017A F000 F872       BL               REC_USART   ; prijem bajtu pres
                                                              USART
-  127 0000017E         
-  128 0000017E F000 F99B       BL               HANDLE_ADD_BUTTON
-  129 00000182         
-  130 00000182 F000 F970       BL               HANDLE_SUB_BUTTON
-  131 00000186         
-  132 00000186 F000 F94F       BL               HANDLE_ENTER_BUTTON
-  133 0000018A         
-  134 0000018A 4D79            LDR              R5, =GPIOB_ODR
-  135 0000018C         
-  136 0000018C F000 F9BD       BL               UPDATE_DISPLAY
-  137 00000190         ;ORR  R1, R1, #0x300
-  138 00000190         ;MOV  R0, #0x300
-  139 00000190         ;BIC  R1, R1, R0;
-  140 00000190         ;MOV  R0, #0x300
-  141 00000190         ;ORR  R1, R1, R0
-  142 00000190         ;STR  R1, [R5]
+  121 0000017E         
+  122 0000017E F000 F99B       BL               HANDLE_ADD_BUTTON
+  123 00000182         
+  124 00000182 F000 F970       BL               HANDLE_SUB_BUTTON
+  125 00000186         
+  126 00000186 F000 F94F       BL               HANDLE_ENTER_BUTTON
+  127 0000018A         
+  128 0000018A 4D79            LDR              R5, =GPIOB_ODR
+  129 0000018C         
+  130 0000018C F000 F9BD       BL               UPDATE_DISPLAY
+  131 00000190         ;ORR  R1, R1, #0x300
+  132 00000190         ;MOV  R0, #0x300
+  133 00000190         ;BIC  R1, R1, R0;
+  134 00000190         ;MOV  R0, #0x300
+  135 00000190         ;ORR  R1, R1, R0
+  136 00000190         ;STR  R1, [R5]
+  137 00000190         
+  138 00000190         ;BL   UPDATE_DISPLAY
+  139 00000190         
+  140 00000190         ; Testovani stisku tlacitka
+  141 00000190 4D71            LDR              R5, =GPIOA_IDR
+  142 00000192 6829            LDR              R1, [R5]
+  143 00000194 F011 0F01       TST              R1, #0x1
+  144 00000198         
+  145 00000198 D0EF            BEQ              INIT_LOOP
 
 
 
 ARM Macro Assembler    Page 32 
 
 
-  143 00000190         
-  144 00000190         ;BL   UPDATE_DISPLAY
-  145 00000190         
-  146 00000190         ; Testovani stisku tlacitka
-  147 00000190 4D71            LDR              R5, =GPIOA_IDR
-  148 00000192 6829            LDR              R1, [R5]
-  149 00000194 F011 0F01       TST              R1, #0x1
-  150 00000198         
-  151 00000198 D0EF            BEQ              INIT_LOOP
-  152 0000019A         
-  153 0000019A F44F 7180       MOV              R1, #0x0100
-  154 0000019E 6011            STR              R1, [R2]
-  155 000001A0         
-  156 000001A0         ; Delay nastaveny na 1ms pro vyreseni odskoku tlacitka
-  157 000001A0 F04F 0001       MOV              R0, #1
-  158 000001A4 F000 F9B1       BL               UPDATE_DISPLAY
-  159 000001A8         
-  160 000001A8         ; Po uplynuti delay opetovne testovani stisku tlacitka
-  161 000001A8 6829            LDR              R1, [R5]
-  162 000001AA F011 0F01       TST              R1, #0x1
-  163 000001AE         
-  164 000001AE D0D0            BEQ              START
-  165 000001B0         
-  166 000001B0         TEST_REALEASE_OF_BUTTON
-  167 000001B0         
-  168 000001B0 F000 F9AB       BL               UPDATE_DISPLAY
-  169 000001B4         
-  170 000001B4         ; Test uvolneni tlacitka
-  171 000001B4 6829            LDR              R1, [R5]
-  172 000001B6 F011 0F01       TST              R1, #0x1
-  173 000001BA         
-  174 000001BA         
-  175 000001BA         
-  176 000001BA D1F9            BNE              TEST_REALEASE_OF_BUTTON
-  177 000001BC         
-  178 000001BC         COUNTDOWN_INIT
-  179 000001BC 486D            LDR              R0, =START_MESSAGE ; nacteni ad
+  146 0000019A         
+  147 0000019A F44F 7180       MOV              R1, #0x0100
+  148 0000019E 6011            STR              R1, [R2]
+  149 000001A0         
+  150 000001A0         ; Delay nastaveny na 1ms pro vyreseni odskoku tlacitka
+  151 000001A0 F04F 0001       MOV              R0, #1
+  152 000001A4 F000 F9B1       BL               UPDATE_DISPLAY
+  153 000001A8         
+  154 000001A8         ; Po uplynuti delay opetovne testovani stisku tlacitka
+  155 000001A8 6829            LDR              R1, [R5]
+  156 000001AA F011 0F01       TST              R1, #0x1
+  157 000001AE         
+  158 000001AE D0D0            BEQ              START
+  159 000001B0         
+  160 000001B0         TEST_REALEASE_OF_BUTTON
+  161 000001B0         
+  162 000001B0 F000 F9AB       BL               UPDATE_DISPLAY
+  163 000001B4         
+  164 000001B4         ; Test uvolneni tlacitka
+  165 000001B4 6829            LDR              R1, [R5]
+  166 000001B6 F011 0F01       TST              R1, #0x1
+  167 000001BA         
+  168 000001BA         
+  169 000001BA         
+  170 000001BA D1F9            BNE              TEST_REALEASE_OF_BUTTON
+  171 000001BC         
+  172 000001BC         COUNTDOWN_INIT
+  173 000001BC 486D            LDR              R0, =START_MESSAGE ; nacteni ad
                                                             resy retezce
-  180 000001BE F000 F8E1       BL               TRAN_USART_TEXT
-  181 000001C2         
-  182 000001C2 4A64            LDR              R2, =GPIOC_ODR
-  183 000001C4         ; Rozsviceni svetla
-  184 000001C4 F44F 7140       MOV              R1, #0x0300
-  185 000001C8 6011            STR              R1, [R2]
-  186 000001CA F04F 0601       MOV              R6, #0x1
-  187 000001CE         
-  188 000001CE F8DF 0190       LDR.W            R0, =INIT_VALUE_L
-  189 000001D2 7803            LDRB             R3, [R0]
-  190 000001D4 F8DF 0194       LDR.W            R0, =CURR_VALUE_L
-  191 000001D8 7003            STRB             R3, [R0]
-  192 000001DA         
-  193 000001DA F8DF 0188       LDR.W            R0, =INIT_VALUE_H
-  194 000001DE 7801            LDRB             R1, [R0]
-  195 000001E0 F8DF 0184       LDR.W            R0, =CURR_VALUE_H
-  196 000001E4 7001            STRB             R1, [R0]
-  197 000001E6         
-  198 000001E6 2900            CMP              R1, #0
-  199 000001E8 D105            BNE              NOT_ZERO
-  200 000001EA 2B00            CMP              R3, #0
+  174 000001BE F000 F8E1       BL               TRAN_USART_TEXT
+  175 000001C2         
+  176 000001C2 4A64            LDR              R2, =GPIOC_ODR
+  177 000001C4         ; Rozsviceni svetla
+  178 000001C4 F44F 7140       MOV              R1, #0x0300
+  179 000001C8 6011            STR              R1, [R2]
+  180 000001CA F04F 0601       MOV              R6, #0x1
+  181 000001CE         
+  182 000001CE F8DF 0190       LDR.W            R0, =INIT_VALUE_L
+  183 000001D2 7803            LDRB             R3, [R0]
+  184 000001D4 F8DF 0194       LDR.W            R0, =CURR_VALUE_L
+  185 000001D8 7003            STRB             R3, [R0]
+  186 000001DA         
+  187 000001DA F8DF 0188       LDR.W            R0, =INIT_VALUE_H
+  188 000001DE 7801            LDRB             R1, [R0]
+  189 000001E0 F8DF 0184       LDR.W            R0, =CURR_VALUE_H
+  190 000001E4 7001            STRB             R1, [R0]
+  191 000001E6         
+  192 000001E6 2900            CMP              R1, #0
+  193 000001E8 D105            BNE              NOT_ZERO
+  194 000001EA 2B00            CMP              R3, #0
+  195 000001EC D103            BNE              NOT_ZERO
+  196 000001EE 4862            LDR              R0, =END_MESSAGE
+  197 000001F0 F000 F8C8       BL               TRAN_USART_TEXT
+  198 000001F4 E7AD            B                START
+  199 000001F6         NOT_ZERO
+  200 000001F6         
+  201 000001F6 F000 F988       BL               UPDATE_DISPLAY
+  202 000001FA         
+  203 000001FA         
 
 
 
 ARM Macro Assembler    Page 33 
 
 
-  201 000001EC D103            BNE              NOT_ZERO
-  202 000001EE 4862            LDR              R0, =END_MESSAGE
-  203 000001F0 F000 F8C8       BL               TRAN_USART_TEXT
-  204 000001F4 E7AD            B                START
-  205 000001F6         NOT_ZERO
-  206 000001F6         
-  207 000001F6 F000 F988       BL               UPDATE_DISPLAY
-  208 000001FA         
-  209 000001FA         
-  210 000001FA         COUNTDOWN
-  211 000001FA         ; Test tlacitka
-  212 000001FA 6829            LDR              R1, [R5]
-  213 000001FC F011 0F01       TST              R1, #0x1
-  214 00000200         
-  215 00000200 D10B            BNE              BUTTON_PRESSED
-  216 00000202         
-  217 00000202 F000 F982       BL               UPDATE_DISPLAY
-  218 00000206         
-  219 00000206         ; Inkrementace pocitadla a pripadny skok, pokud jeste ne
+  204 000001FA         COUNTDOWN
+  205 000001FA         ; Test tlacitka
+  206 000001FA 6829            LDR              R1, [R5]
+  207 000001FC F011 0F01       TST              R1, #0x1
+  208 00000200         
+  209 00000200 D10B            BNE              BUTTON_PRESSED
+  210 00000202         
+  211 00000202 F000 F982       BL               UPDATE_DISPLAY
+  212 00000206         
+  213 00000206         ; Inkrementace pocitadla a pripadny skok, pokud jeste ne
                        byla napocitana sekunda
-  220 00000206 F104 0401       ADD              R4,R4,#0x1
-  221 0000020A F5B4 7F78       CMP              R4, #ONE_SECOND_CONST
-  222 0000020E DB03            BLT              NOT_YET_SECOND
-  223 00000210         
-  224 00000210         ;Odecteni citace
-  225 00000210 F000 F8D8       BL               HANDLE_COUNTDOWN
-  226 00000214         
-  227 00000214         CONTINUE_COUNTING
-  228 00000214         ;LDR.W R1, =CURR_VALUE_L
-  229 00000214         ;STRB R3, [R1]
-  230 00000214         ;BL   UPDATE_DISPLAY
-  231 00000214 F04F 0400       MOV              R4, #0
-  232 00000218         NOT_YET_SECOND
-  233 00000218 E7EF            B                COUNTDOWN
-  234 0000021A         
-  235 0000021A         BUTTON_PRESSED
-  236 0000021A         ; Test tlacitka
-  237 0000021A 6829            LDR              R1, [R5]
-  238 0000021C F011 0F01       TST              R1, #0x1
-  239 00000220         
-  240 00000220 D10D            BNE              INIT_SKIP
-  241 00000222         
-  242 00000222 F8DF 013C       LDR.W            R0, =INIT_VALUE_L
-  243 00000226 7803            LDRB             R3, [R0]
-  244 00000228 F8DF 0140       LDR.W            R0, =CURR_VALUE_L
-  245 0000022C 7003            STRB             R3, [R0]
-  246 0000022E F000 F96C       BL               UPDATE_DISPLAY
-  247 00000232 F04F 0400       MOV              R4, #0x0
-  248 00000236 F44F 7140       MOV              R1, #0x0300
-  249 0000023A         
-  250 0000023A 6011            STR              R1, [R2]
-  251 0000023C E7DD            B                COUNTDOWN
-  252 0000023E         INIT_SKIP
-  253 0000023E         ; Dekrementace pocitadla a pripadny skok, pokud jeste ne
+  214 00000206 F104 0401       ADD              R4,R4,#0x1
+  215 0000020A F5B4 7F78       CMP              R4, #ONE_SECOND_CONST
+  216 0000020E DB03            BLT              NOT_YET_SECOND
+  217 00000210         
+  218 00000210         ;Odecteni citace
+  219 00000210 F000 F8D8       BL               HANDLE_COUNTDOWN
+  220 00000214         
+  221 00000214         CONTINUE_COUNTING
+  222 00000214         ;LDR.W R1, =CURR_VALUE_L
+  223 00000214         ;STRB R3, [R1]
+  224 00000214         ;BL   UPDATE_DISPLAY
+  225 00000214 F04F 0400       MOV              R4, #0
+  226 00000218         NOT_YET_SECOND
+  227 00000218 E7EF            B                COUNTDOWN
+  228 0000021A         
+  229 0000021A         BUTTON_PRESSED
+  230 0000021A         ; Test tlacitka
+  231 0000021A 6829            LDR              R1, [R5]
+  232 0000021C F011 0F01       TST              R1, #0x1
+  233 00000220         
+  234 00000220 D10D            BNE              INIT_SKIP
+  235 00000222         
+  236 00000222 F8DF 013C       LDR.W            R0, =INIT_VALUE_L
+  237 00000226 7803            LDRB             R3, [R0]
+  238 00000228 F8DF 0140       LDR.W            R0, =CURR_VALUE_L
+  239 0000022C 7003            STRB             R3, [R0]
+  240 0000022E F000 F96C       BL               UPDATE_DISPLAY
+  241 00000232 F04F 0400       MOV              R4, #0x0
+  242 00000236 F44F 7140       MOV              R1, #0x0300
+  243 0000023A         
+  244 0000023A 6011            STR              R1, [R2]
+  245 0000023C E7DD            B                COUNTDOWN
+  246 0000023E         INIT_SKIP
+  247 0000023E         ; Dekrementace pocitadla a pripadny skok, pokud jeste ne
                        byla napocitana sekunda
-  254 0000023E F000 F964       BL               UPDATE_DISPLAY
-  255 00000242         
-  256 00000242 F104 0401       ADD              R4,R4,#0x1
-  257 00000246 F5B4 7F78       CMP              R4, #ONE_SECOND_CONST
+  248 0000023E F000 F964       BL               UPDATE_DISPLAY
+  249 00000242         
+  250 00000242 F104 0401       ADD              R4,R4,#0x1
+  251 00000246 F5B4 7F78       CMP              R4, #ONE_SECOND_CONST
+  252 0000024A         
+  253 0000024A DB09            BLT              NOT_YET_SECOND_1
+  254 0000024C         
+  255 0000024C 1E5B            SUBS             R3, R3, #0x1
+  256 0000024E D100            BNE              CONTINUE_COUNTING_1
+  257 00000250         
+  258 00000250 E77F            B                START
+  259 00000252         CONTINUE_COUNTING_1
+  260 00000252         
 
 
 
 ARM Macro Assembler    Page 34 
 
 
-  258 0000024A         
-  259 0000024A DB09            BLT              NOT_YET_SECOND_1
-  260 0000024C         
-  261 0000024C 1E5B            SUBS             R3, R3, #0x1
-  262 0000024E D100            BNE              CONTINUE_COUNTING_1
-  263 00000250         
-  264 00000250 E77F            B                START
-  265 00000252         CONTINUE_COUNTING_1
-  266 00000252         
-  267 00000252 F8DF 1118       LDR.W            R1, =CURR_VALUE_L
-  268 00000256 700B            STRB             R3, [R1]
-  269 00000258 F000 F957       BL               UPDATE_DISPLAY
-  270 0000025C F04F 0400       MOV              R4, #0
-  271 00000260         NOT_YET_SECOND_1
-  272 00000260 E7DB            B                BUTTON_PRESSED
-  273 00000262         
+  261 00000252 F8DF 1118       LDR.W            R1, =CURR_VALUE_L
+  262 00000256 700B            STRB             R3, [R1]
+  263 00000258 F000 F957       BL               UPDATE_DISPLAY
+  264 0000025C F04F 0400       MOV              R4, #0
+  265 00000260         NOT_YET_SECOND_1
+  266 00000260 E7DB            B                BUTTON_PRESSED
+  267 00000262         
+  268 00000262         ;*******************************************************
+                       **************************************
+  269 00000262         ;* Jmeno funkce  : REC_USATR
+  270 00000262         ;* Popis   : Podprogram pro prijem dat z USART
+  271 00000262         ;* Vstup   : Zadny
+  272 00000262         ;* Vystup   : R0 = prijaty bajt
+  273 00000262         ;* Komentar   : Je prijat jeden bajt pomoci USART1  
   274 00000262         ;*******************************************************
                        **************************************
-  275 00000262         ;* Jmeno funkce  : REC_USATR
-  276 00000262         ;* Popis   : Podprogram pro prijem dat z USART
-  277 00000262         ;* Vstup   : Zadny
-  278 00000262         ;* Vystup   : R0 = prijaty bajt
-  279 00000262         ;* Komentar   : Je prijat jeden bajt pomoci USART1  
-  280 00000262         ;*******************************************************
-                       **************************************
-  281 00000262 B506    REC_USART
+  275 00000262 B506    REC_USART
                                PUSH             {R1, R2, LR}
-  282 00000264         ;cekani na prijem bajtu
-  283 00000264 4945            LDR              R1, =USART_SR
-  284 00000266 680A            LDR              R2,[R1]
-  285 00000268 F012 0F20       TST              R2, #0x20   ; test naplneni cte
+  276 00000264         ;cekani na prijem bajtu
+  277 00000264 4945            LDR              R1, =USART_SR
+  278 00000266 680A            LDR              R2,[R1]
+  279 00000268 F012 0F20       TST              R2, #0x20   ; test naplneni cte
                                                             ciho bufferu
-  286 0000026C D071            BEQ              NO_RDY_REC  ; skok pri nenaplne
+  280 0000026C D071            BEQ              NO_RDY_REC  ; skok pri nenaplne
                                                             nem bufferu
-  287 0000026E 4944            LDR              R1, =USART_DR
-  288 00000270 6808            LDR              R0, [R1]    ; precteny bajt v R
+  281 0000026E 4944            LDR              R1, =USART_DR
+  282 00000270 6808            LDR              R0, [R1]    ; precteny bajt v R
                                                             O
-  289 00000272         
-  290 00000272         
-  291 00000272         
-  292 00000272 F8DF 60F8       LDR.W            R6, =CURR_VALUE_L
-  293 00000276 7833            LDRB             R3, [R6]
-  294 00000278 F8DF 60EC       LDR.W            R6, =CURR_VALUE_H
-  295 0000027C 7834            LDRB             R4, [R6]
-  296 0000027E         
-  297 0000027E 282B            CMP              R0, #0x2B
-  298 00000280 D11A            BNE              NOT_PLUS
-  299 00000282         
-  300 00000282 2B09            CMP              R3, #9
-  301 00000284 D105            BNE              NO_ADD_LOGIC_U
-  302 00000286 2C09            CMP              R4, #9
-  303 00000288 D005            BEQ              ADD_OVERFLOW_U
-  304 0000028A F104 0401       ADD              R4, #1
-  305 0000028E F04F 33FF       MOV              R3, #-1
-  306 00000292         
-  307 00000292         NO_ADD_LOGIC_U
-  308 00000292 F103 0301       ADD              R3, #1
-  309 00000296         ADD_OVERFLOW_U
-  310 00000296 F000 F87E       BL               TRAN_USART
+  283 00000272         
+  284 00000272         
+  285 00000272         
+  286 00000272 F8DF 60F8       LDR.W            R6, =CURR_VALUE_L
+  287 00000276 7833            LDRB             R3, [R6]
+  288 00000278 F8DF 60EC       LDR.W            R6, =CURR_VALUE_H
+  289 0000027C 7834            LDRB             R4, [R6]
+  290 0000027E         
+  291 0000027E 282B            CMP              R0, #0x2B
+  292 00000280 D11A            BNE              NOT_PLUS
+  293 00000282         
+  294 00000282 2B09            CMP              R3, #9
+  295 00000284 D105            BNE              NO_ADD_LOGIC_U
+  296 00000286 2C09            CMP              R4, #9
+  297 00000288 D005            BEQ              ADD_OVERFLOW_U
+  298 0000028A F104 0401       ADD              R4, #1
+  299 0000028E F04F 33FF       MOV              R3, #-1
+  300 00000292         
+  301 00000292         NO_ADD_LOGIC_U
+  302 00000292 F103 0301       ADD              R3, #1
+  303 00000296         ADD_OVERFLOW_U
+  304 00000296 F000 F87E       BL               TRAN_USART
+  305 0000029A 4620            MOV              R0, R4
+  306 0000029C F100 0030       ADD              R0, #0x30
+  307 000002A0 F000 F879       BL               TRAN_USART
+  308 000002A4 4618            MOV              R0, R3
+  309 000002A6 F100 0030       ADD              R0, #0x30
+  310 000002AA F000 F874       BL               TRAN_USART
+  311 000002AE F04F 000D       MOV              R0, #0xD
+  312 000002B2 F000 F870       BL               TRAN_USART
+  313 000002B6         
 
 
 
 ARM Macro Assembler    Page 35 
 
 
-  311 0000029A 4620            MOV              R0, R4
-  312 0000029C F100 0030       ADD              R0, #0x30
-  313 000002A0 F000 F879       BL               TRAN_USART
-  314 000002A4 4618            MOV              R0, R3
-  315 000002A6 F100 0030       ADD              R0, #0x30
-  316 000002AA F000 F874       BL               TRAN_USART
-  317 000002AE F04F 000D       MOV              R0, #0xD
-  318 000002B2 F000 F870       BL               TRAN_USART
-  319 000002B6         
-  320 000002B6 E044            B                BREAK
-  321 000002B8         NOT_PLUS
-  322 000002B8 282D            CMP              R0, #0x2D
-  323 000002BA D11A            BNE              NOT_MINUS
-  324 000002BC         
-  325 000002BC 2B00            CMP              R3, #0
-  326 000002BE D105            BNE              NO_SUB_LOGIC_U
-  327 000002C0 2C00            CMP              R4, #0
-  328 000002C2 D005            BEQ              SUB_OVERFLOW_U
-  329 000002C4 F1A4 0401       SUB              R4, #1
-  330 000002C8 F04F 030A       MOV              R3, #10
-  331 000002CC         
-  332 000002CC         NO_SUB_LOGIC_U
-  333 000002CC F1A3 0301       SUB              R3, R3, #1
-  334 000002D0         SUB_OVERFLOW_U
-  335 000002D0 F000 F861       BL               TRAN_USART
-  336 000002D4 4620            MOV              R0, R4
-  337 000002D6 F100 0030       ADD              R0, #0x30
-  338 000002DA F000 F85C       BL               TRAN_USART
-  339 000002DE 4618            MOV              R0, R3
-  340 000002E0 F100 0030       ADD              R0, #0x30
-  341 000002E4 F000 F857       BL               TRAN_USART
-  342 000002E8 F04F 000D       MOV              R0, #0xD
-  343 000002EC F000 F853       BL               TRAN_USART
-  344 000002F0         
-  345 000002F0 E027            B                BREAK
-  346 000002F2         NOT_MINUS
-  347 000002F2         
-  348 000002F2 2820            CMP              R0, #0x20
-  349 000002F4 D11C            BNE              NOT_SPACE
-  350 000002F6         
-  351 000002F6 F000 F84E       BL               TRAN_USART
-  352 000002FA 4620            MOV              R0, R4
-  353 000002FC F100 0030       ADD              R0, #0x30
-  354 00000300 F000 F849       BL               TRAN_USART
-  355 00000304 4618            MOV              R0, R3
-  356 00000306 F100 0030       ADD              R0, #0x30
-  357 0000030A F000 F844       BL               TRAN_USART
-  358 0000030E F04F 000D       MOV              R0, #0xD
-  359 00000312 F000 F840       BL               TRAN_USART
-  360 00000316         
-  361 00000316 F8DF 6054       LDR.W            R6, =CURR_VALUE_L
-  362 0000031A 7833            LDRB             R3, [R6]
-  363 0000031C F8DF 6040       LDR.W            R6, =INIT_VALUE_L
-  364 00000320 7033            STRB             R3, [R6]
-  365 00000322         
-  366 00000322 F8DF 6044       LDR.W            R6, =CURR_VALUE_H
-  367 00000326 7834            LDRB             R4, [R6]
-  368 00000328 F8DF 6038       LDR.W            R6, =INIT_VALUE_H
-  369 0000032C 7034            STRB             R4, [R6]
+  314 000002B6 E044            B                BREAK
+  315 000002B8         NOT_PLUS
+  316 000002B8 282D            CMP              R0, #0x2D
+  317 000002BA D11A            BNE              NOT_MINUS
+  318 000002BC         
+  319 000002BC 2B00            CMP              R3, #0
+  320 000002BE D105            BNE              NO_SUB_LOGIC_U
+  321 000002C0 2C00            CMP              R4, #0
+  322 000002C2 D005            BEQ              SUB_OVERFLOW_U
+  323 000002C4 F1A4 0401       SUB              R4, #1
+  324 000002C8 F04F 030A       MOV              R3, #10
+  325 000002CC         
+  326 000002CC         NO_SUB_LOGIC_U
+  327 000002CC F1A3 0301       SUB              R3, R3, #1
+  328 000002D0         SUB_OVERFLOW_U
+  329 000002D0 F000 F861       BL               TRAN_USART
+  330 000002D4 4620            MOV              R0, R4
+  331 000002D6 F100 0030       ADD              R0, #0x30
+  332 000002DA F000 F85C       BL               TRAN_USART
+  333 000002DE 4618            MOV              R0, R3
+  334 000002E0 F100 0030       ADD              R0, #0x30
+  335 000002E4 F000 F857       BL               TRAN_USART
+  336 000002E8 F04F 000D       MOV              R0, #0xD
+  337 000002EC F000 F853       BL               TRAN_USART
+  338 000002F0         
+  339 000002F0 E027            B                BREAK
+  340 000002F2         NOT_MINUS
+  341 000002F2         
+  342 000002F2 2820            CMP              R0, #0x20
+  343 000002F4 D11C            BNE              NOT_SPACE
+  344 000002F6         
+  345 000002F6 F000 F84E       BL               TRAN_USART
+  346 000002FA 4620            MOV              R0, R4
+  347 000002FC F100 0030       ADD              R0, #0x30
+  348 00000300 F000 F849       BL               TRAN_USART
+  349 00000304 4618            MOV              R0, R3
+  350 00000306 F100 0030       ADD              R0, #0x30
+  351 0000030A F000 F844       BL               TRAN_USART
+  352 0000030E F04F 000D       MOV              R0, #0xD
+  353 00000312 F000 F840       BL               TRAN_USART
+  354 00000316         
+  355 00000316 F8DF 6054       LDR.W            R6, =CURR_VALUE_L
+  356 0000031A 7833            LDRB             R3, [R6]
+  357 0000031C F8DF 6040       LDR.W            R6, =INIT_VALUE_L
+  358 00000320 7033            STRB             R3, [R6]
+  359 00000322         
+  360 00000322 F8DF 6044       LDR.W            R6, =CURR_VALUE_H
+  361 00000326 7834            LDRB             R4, [R6]
+  362 00000328 F8DF 6038       LDR.W            R6, =INIT_VALUE_H
+  363 0000032C 7034            STRB             R4, [R6]
+  364 0000032E         
+  365 0000032E E00E            B                BREAK_AFTER_SAVE
+  366 00000330         NOT_SPACE
+  367 00000330         
+  368 00000330 2873            CMP              R0, #0x73
+  369 00000332 D101            BNE              NOT_s
+  370 00000334         
+  371 00000334 BC06            POP              {R1, R2}
+  372 00000336         
 
 
 
 ARM Macro Assembler    Page 36 
 
 
-  370 0000032E         
-  371 0000032E E00E            B                BREAK_AFTER_SAVE
-  372 00000330         NOT_SPACE
-  373 00000330         
-  374 00000330 2873            CMP              R0, #0x73
-  375 00000332 D101            BNE              NOT_s
-  376 00000334         
-  377 00000334 BC06            POP              {R1, R2}
-  378 00000336         
-  379 00000336 E741            B                COUNTDOWN_INIT
-  380 00000338         NOT_s
-  381 00000338 2868            CMP              R0, #0x68
-  382 0000033A D102            BNE              NOT_h
-  383 0000033C 4807            LDR              R0, =WELCOME_MESSAGE
-  384 0000033E F000 F821       BL               TRAN_USART_TEXT
-  385 00000342         
-  386 00000342         NOT_h
-  387 00000342         
-  388 00000342         
-  389 00000342         
-  390 00000342         
-  391 00000342         BREAK
-  392 00000342 F8DF 6028       LDR.W            R6, =CURR_VALUE_L
-  393 00000346 7033            STRB             R3, [R6]
-  394 00000348 F8DF 601C       LDR.W            R6, =CURR_VALUE_H
-  395 0000034C 7034            STRB             R4, [R6]
-  396 0000034E         BREAK_AFTER_SAVE
-  397 0000034E F000 F8DC       BL               UPDATE_DISPLAY
-  398 00000352         NO_RDY_REC
-  399 00000352 BD06            POP              {R1, R2, PC}
-  400 00000354         
+  373 00000336 E741            B                COUNTDOWN_INIT
+  374 00000338         NOT_s
+  375 00000338 2868            CMP              R0, #0x68
+  376 0000033A D102            BNE              NOT_h
+  377 0000033C 4807            LDR              R0, =WELCOME_MESSAGE
+  378 0000033E F000 F821       BL               TRAN_USART_TEXT
+  379 00000342         
+  380 00000342         NOT_h
+  381 00000342         
+  382 00000342         
+  383 00000342         
+  384 00000342         
+  385 00000342         BREAK
+  386 00000342 F8DF 6028       LDR.W            R6, =CURR_VALUE_L
+  387 00000346 7033            STRB             R3, [R6]
+  388 00000348 F8DF 601C       LDR.W            R6, =CURR_VALUE_H
+  389 0000034C 7034            STRB             R4, [R6]
+  390 0000034E         BREAK_AFTER_SAVE
+  391 0000034E F000 F8DC       BL               UPDATE_DISPLAY
+  392 00000352         NO_RDY_REC
+  393 00000352 BD06            POP              {R1, R2, PC}
+  394 00000354         
+  395 00000354         ;*******************************************************
+                       **************************************
+  396 00000354         ;* Jmeno funkce  : TRAN_USART_TEXT
+  397 00000354         ;* Popis   : Podprogram pro vyslani retezce dat pres USA
+                       RT1
+  398 00000354         ;* Vstup   : R0 = adresa retezce
+  399 00000354         ;* Vystup   : Zadny
+  400 00000354         ;* Komentar   : Je vyslana skupina bajtu az po zarazku (
+                        0 )  
   401 00000354         ;*******************************************************
                        **************************************
-  402 00000354         ;* Jmeno funkce  : TRAN_USART_TEXT
-  403 00000354         ;* Popis   : Podprogram pro vyslani retezce dat pres USA
-                       RT1
-  404 00000354         ;* Vstup   : R0 = adresa retezce
-  405 00000354         ;* Vystup   : Zadny
-  406 00000354         ;* Komentar   : Je vyslana skupina bajtu az po zarazku (
-                        0 )  
-  407 00000354         ;*******************************************************
-                       **************************************
-  408 00000354 4001100C 
+  402 00000354 4001100C 
               40010808 
               00000000 
               00000000 
@@ -2333,421 +2324,421 @@ ARM Macro Assembler    Page 36
               00000000 
               40013800 
               40013804         LTORG
-  409 00000384 B506    TRAN_USART_TEXT
+  403 00000384 B506    TRAN_USART_TEXT
                                PUSH             {R1, R2, LR}
-  410 00000386 4601            MOV              R1, R0
-  411 00000388         NEXT_B
-  412 00000388 F811 0B01       LDRB             R0,[R1],#1  ; nacteni znaku, a 
+  404 00000386 4601            MOV              R1, R0
+  405 00000388         NEXT_B
+  406 00000388 F811 0B01       LDRB             R0,[R1],#1  ; nacteni znaku, a 
+                                                            inkrementace ukazat
+                                                            ele
+  407 0000038C B110            CBZ              R0, END_SEND ; je-li znak null,
+                                                             konec
+  408 0000038E F000 F802       BL               TRAN_USART  ; vyslani znaku pre
+                                                            s USART
+  409 00000392 E7F9            B                NEXT_B      ; dalsi znak (bajt)
+                                                            
+  410 00000394         END_SEND
 
 
 
 ARM Macro Assembler    Page 37 
 
 
-                                                            inkrementace ukazat
-                                                            ele
-  413 0000038C B110            CBZ              R0, END_SEND ; je-li znak null,
-                                                             konec
-  414 0000038E F000 F802       BL               TRAN_USART  ; vyslani znaku pre
-                                                            s USART
-  415 00000392 E7F9            B                NEXT_B      ; dalsi znak (bajt)
-                                                            
-  416 00000394         END_SEND
-  417 00000394 BD06            POP              {R1, R2, PC}
-  418 00000396         
+  411 00000394 BD06            POP              {R1, R2, PC}
+  412 00000396         
+  413 00000396         ;*******************************************************
+                       **************************************
+  414 00000396         ;* Jmeno funkce  : TRAN_USART
+  415 00000396         ;* Popis   : Podprogram pro vyslani bajtu pres USART1
+  416 00000396         ;* Vstup   : R0 = bajt k vyslani
+  417 00000396         ;* Vystup   : Zadny
+  418 00000396         ;* Komentar   : Je vyslana skupina bajtu az po zarazku (
+                        0 )  
   419 00000396         ;*******************************************************
                        **************************************
-  420 00000396         ;* Jmeno funkce  : TRAN_USART
-  421 00000396         ;* Popis   : Podprogram pro vyslani bajtu pres USART1
-  422 00000396         ;* Vstup   : R0 = bajt k vyslani
-  423 00000396         ;* Vystup   : Zadny
-  424 00000396         ;* Komentar   : Je vyslana skupina bajtu az po zarazku (
-                        0 )  
-  425 00000396         ;*******************************************************
-                       **************************************
-  426 00000396 B506    TRAN_USART
+  420 00000396 B506    TRAN_USART
                                PUSH             {R1, R2, LR}
-  427 00000398         NO_RDY_TRAN
-  428 00000398 4984            LDR              R1, =USART_SR
-  429 0000039A 680A            LDR              R2, [R1]
-  430 0000039C F012 0F40       TST              R2, #0x40   ; test vyprazdeni v
+  421 00000398         NO_RDY_TRAN
+  422 00000398 4984            LDR              R1, =USART_SR
+  423 0000039A 680A            LDR              R2, [R1]
+  424 0000039C F012 0F40       TST              R2, #0x40   ; test vyprazdeni v
                                                             ysilaciho bufferu 
-  431 000003A0 D0FA            BEQ              NO_RDY_TRAN ; skok pri nevypraz
+  425 000003A0 D0FA            BEQ              NO_RDY_TRAN ; skok pri nevypraz
                                                             dnenem bufferu
-  432 000003A2 4983            LDR              R1, =USART_DR
-  433 000003A4 7008            STRB             R0, [R1]    ; ulozeni bajtu do 
+  426 000003A2 4983            LDR              R1, =USART_DR
+  427 000003A4 7008            STRB             R0, [R1]    ; ulozeni bajtu do 
                                                             vysilaciho registru
                                                             
-  434 000003A6 780A            LDRB             R2, [R1]    ; prazdne vycteni D
+  428 000003A6 780A            LDRB             R2, [R1]    ; prazdne vycteni D
                                                             R a nulovani prizna
                                                             ku
-  435 000003A8         
-  436 000003A8 BD06            POP              {R1, R2, PC}
-  437 000003AA         
-  438 000003AA         ;*******************************************************
+  429 000003A8         
+  430 000003A8 BD06            POP              {R1, R2, PC}
+  431 000003AA         
+  432 000003AA         ;*******************************************************
                        **************************************
-  439 000003AA         ;* Jmeno funkce  : UART_CNF
-  440 000003AA         ;* Popis   : Konfigurace USART1 pro prijem i vysilani
-  441 000003AA         ;* Vstup   : Zadny
-  442 000003AA         ;* Vystup   : Zadny
-  443 000003AA         ;* Komentar   : Nastaveni USART1 s prenosovou rychlosti 
+  433 000003AA         ;* Jmeno funkce  : UART_CNF
+  434 000003AA         ;* Popis   : Konfigurace USART1 pro prijem i vysilani
+  435 000003AA         ;* Vstup   : Zadny
+  436 000003AA         ;* Vystup   : Zadny
+  437 000003AA         ;* Komentar   : Nastaveni USART1 s prenosovou rychlosti 
                        9600Bd
-  444 000003AA         ;*      (1 start bit, 8 data bit , 1 stop bit)  
-  445 000003AA         ;*******************************************************
+  438 000003AA         ;*      (1 start bit, 8 data bit , 1 stop bit)  
+  439 000003AA         ;*******************************************************
                        **************************************     
-  446 000003AA B500    USART_CNF
+  440 000003AA B500    USART_CNF
                                PUSH             {LR}
-  447 000003AC         
-  448 000003AC 4881            LDR              R0, =USART_BRR 
+  441 000003AC         
+  442 000003AC 4881            LDR              R0, =USART_BRR 
                                                             ; BAUD RATE registr
                                                             
-  449 000003AE F640 11C4       LDR              R1, =0x009C4 ; RATE 9600Bd (156
+  443 000003AE F640 11C4       LDR              R1, =0x009C4 ; RATE 9600Bd (156
                                                             .25 PRO 24MHz), 156
+                                                             = 0x9C0, 0,25 = 0x
+                                                            4 
+  444 000003B2 6001            STR              R1, [R0]
+  445 000003B4         
+  446 000003B4 4880            LDR              R0, =USART_CR1 
+                                                            ; control registr
+  447 000003B6 6801            LDR              R1, [R0]
+  448 000003B8 F242 020C       LDR              R2, =0x200C ; USART povolen (UE
+                                                             = 1), vysilani i p
 
 
 
 ARM Macro Assembler    Page 38 
 
 
-                                                             = 0x9C0, 0,25 = 0x
-                                                            4 
-  450 000003B2 6001            STR              R1, [R0]
-  451 000003B4         
-  452 000003B4 4880            LDR              R0, =USART_CR1 
-                                                            ; control registr
-  453 000003B6 6801            LDR              R1, [R0]
-  454 000003B8 F242 020C       LDR              R2, =0x200C ; USART povolen (UE
-                                                             = 1), vysilani i p
                                                             rijem povoleno (TE 
                                                             = 1),RE = 1
-  455 000003BC EA41 0102       ORR              R1, R1, R2
-  456 000003C0 6001            STR              R1, [R0]
-  457 000003C2         
-  458 000003C2 BD00            POP              {PC}
-  459 000003C4         
-  460 000003C4         ;*******************************************************
+  449 000003BC EA41 0102       ORR              R1, R1, R2
+  450 000003C0 6001            STR              R1, [R0]
+  451 000003C2         
+  452 000003C2 BD00            POP              {PC}
+  453 000003C4         
+  454 000003C4         ;*******************************************************
                        ********************************************
-  461 000003C4         ;* Jmeno funkce  : HANDLE_COUNTDOWN
-  462 000003C4         ;* Popis   : Resi odpocet, odecte jednu sekundu
-  463 000003C4         ;* Vstup   : Zadny
-  464 000003C4         ;* Vystup   : Zadny 
-  465 000003C4         ;*******************************************************
+  455 000003C4         ;* Jmeno funkce  : HANDLE_COUNTDOWN
+  456 000003C4         ;* Popis   : Resi odpocet, odecte jednu sekundu
+  457 000003C4         ;* Vstup   : Zadny
+  458 000003C4         ;* Vystup   : Zadny 
+  459 000003C4         ;*******************************************************
                        ******************************************* 
-  466 000003C4         HANDLE_COUNTDOWN
-  467 000003C4 B549            PUSH             {R0,R3,R6,LR}
-  468 000003C6         
-  469 000003C6 F85F 605C       LDR.W            R6, =CURR_VALUE_L
-  470 000003CA 7833            LDRB             R3, [R6]
-  471 000003CC F85F 6068       LDR.W            R6, =CURR_VALUE_H
-  472 000003D0 7834            LDRB             R4, [R6]
-  473 000003D2         
-  474 000003D2 2C00            CMP              R4, #0
-  475 000003D4 D105            BNE              NOT_END
-  476 000003D6 2B01            CMP              R3, #1
-  477 000003D8 D103            BNE              NOT_END
-  478 000003DA 4878            LDR              R0, =END_MESSAGE
-  479 000003DC F7FF FFD2       BL               TRAN_USART_TEXT
-  480 000003E0 E6B7            B                START
-  481 000003E2         NOT_END
-  482 000003E2 2B00            CMP              R3, #0
-  483 000003E4 D103            BNE              NO_HANDLE_LOGIC
-  484 000003E6 F1A4 0401       SUB              R4, #1
-  485 000003EA F04F 030A       MOV              R3, #10
-  486 000003EE         
-  487 000003EE         NO_HANDLE_LOGIC
-  488 000003EE F1A3 0301       SUB              R3, R3, #1
-  489 000003F2 F85F 6088       LDR.W            R6, =CURR_VALUE_L
-  490 000003F6 7033            STRB             R3, [R6]
-  491 000003F8 F85F 6094       LDR.W            R6, =CURR_VALUE_H
-  492 000003FC 7034            STRB             R4, [R6]
-  493 000003FE         
-  494 000003FE F04F 0020       MOV              R0, #0x20
-  495 00000402 F7FF FFC8       BL               TRAN_USART
-  496 00000406 4620            MOV              R0, R4
-  497 00000408 F100 0030       ADD              R0, #0x30
-  498 0000040C F7FF FFC3       BL               TRAN_USART
-  499 00000410 4618            MOV              R0, R3
-  500 00000412 F100 0030       ADD              R0, #0x30
+  460 000003C4         HANDLE_COUNTDOWN
+  461 000003C4 B549            PUSH             {R0,R3,R6,LR}
+  462 000003C6         
+  463 000003C6 F85F 605C       LDR.W            R6, =CURR_VALUE_L
+  464 000003CA 7833            LDRB             R3, [R6]
+  465 000003CC F85F 6068       LDR.W            R6, =CURR_VALUE_H
+  466 000003D0 7834            LDRB             R4, [R6]
+  467 000003D2         
+  468 000003D2 2C00            CMP              R4, #0
+  469 000003D4 D105            BNE              NOT_END
+  470 000003D6 2B01            CMP              R3, #1
+  471 000003D8 D103            BNE              NOT_END
+  472 000003DA 4878            LDR              R0, =END_MESSAGE
+  473 000003DC F7FF FFD2       BL               TRAN_USART_TEXT
+  474 000003E0 E6B7            B                START
+  475 000003E2         NOT_END
+  476 000003E2 2B00            CMP              R3, #0
+  477 000003E4 D103            BNE              NO_HANDLE_LOGIC
+  478 000003E6 F1A4 0401       SUB              R4, #1
+  479 000003EA F04F 030A       MOV              R3, #10
+  480 000003EE         
+  481 000003EE         NO_HANDLE_LOGIC
+  482 000003EE F1A3 0301       SUB              R3, R3, #1
+  483 000003F2 F85F 6088       LDR.W            R6, =CURR_VALUE_L
+  484 000003F6 7033            STRB             R3, [R6]
+  485 000003F8 F85F 6094       LDR.W            R6, =CURR_VALUE_H
+  486 000003FC 7034            STRB             R4, [R6]
+  487 000003FE         
+  488 000003FE F04F 0020       MOV              R0, #0x20
+  489 00000402 F7FF FFC8       BL               TRAN_USART
+  490 00000406 4620            MOV              R0, R4
+  491 00000408 F100 0030       ADD              R0, #0x30
+  492 0000040C F7FF FFC3       BL               TRAN_USART
+  493 00000410 4618            MOV              R0, R3
+  494 00000412 F100 0030       ADD              R0, #0x30
+  495 00000416 F7FF FFBE       BL               TRAN_USART
+  496 0000041A F04F 000D       MOV              R0, #0xD
+  497 0000041E F7FF FFBA       BL               TRAN_USART
+  498 00000422         
+  499 00000422 F000 F872       BL               UPDATE_DISPLAY
+  500 00000426         
+  501 00000426 BD49            POP              {R0,R3,R6,PC}
+  502 00000428         ;*******************************************************
+                       ********************************************
 
 
 
 ARM Macro Assembler    Page 39 
 
 
-  501 00000416 F7FF FFBE       BL               TRAN_USART
-  502 0000041A F04F 000D       MOV              R0, #0xD
-  503 0000041E F7FF FFBA       BL               TRAN_USART
-  504 00000422         
-  505 00000422 F000 F872       BL               UPDATE_DISPLAY
-  506 00000426         
-  507 00000426 BD49            POP              {R0,R3,R6,PC}
-  508 00000428         ;*******************************************************
-                       ********************************************
-  509 00000428         ;* Jmeno funkce  : HANDLE_ENTER_BUTTON
-  510 00000428         ;* Popis   : Potvrzuje vybranou hodnotu
-  511 00000428         ;* Vstup   : R3 - inkrementace pocitadla
-  512 00000428         ;* Vystup   : Zadny 
-  513 00000428         ;*******************************************************
+  503 00000428         ;* Jmeno funkce  : HANDLE_ENTER_BUTTON
+  504 00000428         ;* Popis   : Potvrzuje vybranou hodnotu
+  505 00000428         ;* Vstup   : Zadny
+  506 00000428         ;* Vystup   : Zadny 
+  507 00000428         ;*******************************************************
                        ******************************************* 
-  514 00000428         HANDLE_ENTER_BUTTON
-  515 00000428 B549            PUSH             {R0,R3,R6,LR}
-  516 0000042A         
-  517 0000042A 4865            LDR              R0, =GPIOA_IDR
-  518 0000042C         
-  519 0000042C 6806            LDR              R6, [R0]
-  520 0000042E F416 6F00       TST              R6, #0x800
-  521 00000432         
-  522 00000432 D017            BEQ              SKIP_ENTER
-  523 00000434 F000 F95E       BL               DELAY
-  524 00000438         
-  525 00000438 6806            LDR              R6, [R0]
-  526 0000043A F416 6F00       TST              R6, #0x800
-  527 0000043E         
-  528 0000043E D011            BEQ              SKIP_ENTER
-  529 00000440         
-  530 00000440 F85F 60D8       LDR.W            R6, =CURR_VALUE_L
-  531 00000444 7833            LDRB             R3, [R6]
-  532 00000446 F85F 60E8       LDR.W            R6, =INIT_VALUE_L
-  533 0000044A 7033            STRB             R3, [R6]
-  534 0000044C         
-  535 0000044C F85F 60E8       LDR.W            R6, =CURR_VALUE_H
-  536 00000450 7834            LDRB             R4, [R6]
-  537 00000452 F85F 60F0       LDR.W            R6, =INIT_VALUE_H
-  538 00000456 7034            STRB             R4, [R6]
-  539 00000458         
-  540 00000458         WAIT_FOR_RELEASE_ENTER
-  541 00000458 F000 F857       BL               UPDATE_DISPLAY
-  542 0000045C         
-  543 0000045C 6806            LDR              R6, [R0]
-  544 0000045E F416 6F00       TST              R6, #0x800
-  545 00000462         
-  546 00000462 D1F9            BNE              WAIT_FOR_RELEASE_ENTER
-  547 00000464         SKIP_ENTER
-  548 00000464         
-  549 00000464 BD49            POP              {R0,R3,R6,PC}
-  550 00000466         ;*******************************************************
+  508 00000428         HANDLE_ENTER_BUTTON
+  509 00000428 B549            PUSH             {R0,R3,R6,LR}
+  510 0000042A         
+  511 0000042A 4865            LDR              R0, =GPIOA_IDR
+  512 0000042C         
+  513 0000042C 6806            LDR              R6, [R0]
+  514 0000042E F416 6F00       TST              R6, #0x800
+  515 00000432         
+  516 00000432 D017            BEQ              SKIP_ENTER
+  517 00000434 F000 F95E       BL               DELAY
+  518 00000438         
+  519 00000438 6806            LDR              R6, [R0]
+  520 0000043A F416 6F00       TST              R6, #0x800
+  521 0000043E         
+  522 0000043E D011            BEQ              SKIP_ENTER
+  523 00000440         
+  524 00000440 F85F 60D8       LDR.W            R6, =CURR_VALUE_L
+  525 00000444 7833            LDRB             R3, [R6]
+  526 00000446 F85F 60E8       LDR.W            R6, =INIT_VALUE_L
+  527 0000044A 7033            STRB             R3, [R6]
+  528 0000044C         
+  529 0000044C F85F 60E8       LDR.W            R6, =CURR_VALUE_H
+  530 00000450 7834            LDRB             R4, [R6]
+  531 00000452 F85F 60F0       LDR.W            R6, =INIT_VALUE_H
+  532 00000456 7034            STRB             R4, [R6]
+  533 00000458         
+  534 00000458         WAIT_FOR_RELEASE_ENTER
+  535 00000458 F000 F857       BL               UPDATE_DISPLAY
+  536 0000045C         
+  537 0000045C 6806            LDR              R6, [R0]
+  538 0000045E F416 6F00       TST              R6, #0x800
+  539 00000462         
+  540 00000462 D1F9            BNE              WAIT_FOR_RELEASE_ENTER
+  541 00000464         SKIP_ENTER
+  542 00000464         
+  543 00000464 BD49            POP              {R0,R3,R6,PC}
+  544 00000466         ;*******************************************************
                        ********************************************
-  551 00000466         ;* Jmeno funkce  : HANDLE_SUB_BUTTON
-  552 00000466         ;* Popis   : Odecte 1 od display, osetruje preteceni
-  553 00000466         ;* Vstup   : R3 - inkrementace pocitadla
-  554 00000466         ;* Vystup   : Zadny 
-  555 00000466         ;*******************************************************
+  545 00000466         ;* Jmeno funkce  : HANDLE_SUB_BUTTON
+  546 00000466         ;* Popis   : Odecte 1 od display, osetruje preteceni
+  547 00000466         ;* Vstup   : R3 - inkrementace pocitadla
+  548 00000466         ;* Vystup   : Zadny 
+  549 00000466         ;*******************************************************
                        ******************************************* 
+  550 00000466         HANDLE_SUB_BUTTON
+  551 00000466 B559            PUSH             {R0,R3,R4,R6,LR}
+  552 00000468 4856            LDR              R0, =GPIOC_IDR
+  553 0000046A 6806            LDR              R6, [R0]
+  554 0000046C F016 0F80       TST              R6, #0x80
+  555 00000470         
+  556 00000470 D021            BEQ              SKIP_SUB
+  557 00000472         
+  558 00000472 F000 F93F       BL               DELAY
 
 
 
 ARM Macro Assembler    Page 40 
 
 
-  556 00000466         HANDLE_SUB_BUTTON
-  557 00000466 B559            PUSH             {R0,R3,R4,R6,LR}
-  558 00000468 4856            LDR              R0, =GPIOC_IDR
-  559 0000046A 6806            LDR              R6, [R0]
-  560 0000046C F016 0F80       TST              R6, #0x80
-  561 00000470         
-  562 00000470 D021            BEQ              SKIP_SUB
-  563 00000472         
-  564 00000472 F000 F93F       BL               DELAY
-  565 00000476         
-  566 00000476 6806            LDR              R6, [R0]
-  567 00000478 F016 0F80       TST              R6, #0x80
-  568 0000047C         
-  569 0000047C D01B            BEQ              SKIP_SUB
-  570 0000047E         
-  571 0000047E F85F 6114       LDR.W            R6, =CURR_VALUE_L
-  572 00000482 7833            LDRB             R3, [R6]
-  573 00000484 F85F 6120       LDR.W            R6, =CURR_VALUE_H
-  574 00000488 7834            LDRB             R4, [R6]
-  575 0000048A         
-  576 0000048A 2B00            CMP              R3, #0
-  577 0000048C D105            BNE              NO_SUB_LOGIC
-  578 0000048E 2C00            CMP              R4, #0
-  579 00000490 D005            BEQ              SUB_OVERFLOW
-  580 00000492 F1A4 0401       SUB              R4, #1
-  581 00000496 F04F 030A       MOV              R3, #10
-  582 0000049A         
-  583 0000049A         NO_SUB_LOGIC
-  584 0000049A F1A3 0301       SUB              R3, R3, #1
-  585 0000049E         SUB_OVERFLOW
-  586 0000049E F85F 6134       LDR.W            R6, =CURR_VALUE_L
-  587 000004A2 7033            STRB             R3, [R6]
-  588 000004A4 F85F 6140       LDR.W            R6, =CURR_VALUE_H
-  589 000004A8 7034            STRB             R4, [R6]
-  590 000004AA         
-  591 000004AA         
-  592 000004AA         
-  593 000004AA         WAIT_FOR_RELEASE_SUB
-  594 000004AA F000 F82E       BL               UPDATE_DISPLAY
-  595 000004AE         
-  596 000004AE 6806            LDR              R6, [R0]
-  597 000004B0 F016 0F80       TST              R6, #0x80
-  598 000004B4         
-  599 000004B4 D1F9            BNE              WAIT_FOR_RELEASE_SUB
-  600 000004B6         SKIP_SUB
-  601 000004B6         
-  602 000004B6 BD59            POP              {R0,R3,R4,R6,PC}
-  603 000004B8         ;*******************************************************
+  559 00000476         
+  560 00000476 6806            LDR              R6, [R0]
+  561 00000478 F016 0F80       TST              R6, #0x80
+  562 0000047C         
+  563 0000047C D01B            BEQ              SKIP_SUB
+  564 0000047E         
+  565 0000047E F85F 6114       LDR.W            R6, =CURR_VALUE_L
+  566 00000482 7833            LDRB             R3, [R6]
+  567 00000484 F85F 6120       LDR.W            R6, =CURR_VALUE_H
+  568 00000488 7834            LDRB             R4, [R6]
+  569 0000048A         
+  570 0000048A 2B00            CMP              R3, #0
+  571 0000048C D105            BNE              NO_SUB_LOGIC
+  572 0000048E 2C00            CMP              R4, #0
+  573 00000490 D005            BEQ              SUB_OVERFLOW
+  574 00000492 F1A4 0401       SUB              R4, #1
+  575 00000496 F04F 030A       MOV              R3, #10
+  576 0000049A         
+  577 0000049A         NO_SUB_LOGIC
+  578 0000049A F1A3 0301       SUB              R3, R3, #1
+  579 0000049E         SUB_OVERFLOW
+  580 0000049E F85F 6134       LDR.W            R6, =CURR_VALUE_L
+  581 000004A2 7033            STRB             R3, [R6]
+  582 000004A4 F85F 6140       LDR.W            R6, =CURR_VALUE_H
+  583 000004A8 7034            STRB             R4, [R6]
+  584 000004AA         
+  585 000004AA         
+  586 000004AA         
+  587 000004AA         WAIT_FOR_RELEASE_SUB
+  588 000004AA F000 F82E       BL               UPDATE_DISPLAY
+  589 000004AE         
+  590 000004AE 6806            LDR              R6, [R0]
+  591 000004B0 F016 0F80       TST              R6, #0x80
+  592 000004B4         
+  593 000004B4 D1F9            BNE              WAIT_FOR_RELEASE_SUB
+  594 000004B6         SKIP_SUB
+  595 000004B6         
+  596 000004B6 BD59            POP              {R0,R3,R4,R6,PC}
+  597 000004B8         ;*******************************************************
                        ********************************************
-  604 000004B8         ;* Jmeno funkce  : HANDLE_ADD_BUTTON
-  605 000004B8         ;* Popis   : Pricte 1 k display, osetruje preteceni
-  606 000004B8         ;* Vstup   : R3 - inkrementace pocitadla
-  607 000004B8         ;* Vystup   : Zadny 
-  608 000004B8         ;*******************************************************
+  598 000004B8         ;* Jmeno funkce  : HANDLE_ADD_BUTTON
+  599 000004B8         ;* Popis   : Pricte 1 k display, osetruje preteceni
+  600 000004B8         ;* Vstup   : R3 - inkrementace pocitadla
+  601 000004B8         ;* Vystup   : Zadny 
+  602 000004B8         ;*******************************************************
                        ******************************************* 
-  609 000004B8         HANDLE_ADD_BUTTON
-  610 000004B8 B559            PUSH             {R0,R3,R4,R6,LR}
-  611 000004BA 4842            LDR              R0, =GPIOC_IDR
-  612 000004BC 6806            LDR              R6, [R0]
+  603 000004B8         HANDLE_ADD_BUTTON
+  604 000004B8 B559            PUSH             {R0,R3,R4,R6,LR}
+  605 000004BA 4842            LDR              R0, =GPIOC_IDR
+  606 000004BC 6806            LDR              R6, [R0]
+  607 000004BE F016 0F40       TST              R6, #0x40
+  608 000004C2         
+  609 000004C2 D021            BEQ              SKIP_ADD
+  610 000004C4         
+  611 000004C4 F000 F916       BL               DELAY
+  612 000004C8         
+  613 000004C8 6806            LDR              R6, [R0]
+  614 000004CA F016 0F40       TST              R6, #0x40
+  615 000004CE D01B            BEQ              SKIP_ADD
 
 
 
 ARM Macro Assembler    Page 41 
 
 
-  613 000004BE F016 0F40       TST              R6, #0x40
-  614 000004C2         
-  615 000004C2 D021            BEQ              SKIP_ADD
-  616 000004C4         
-  617 000004C4 F000 F916       BL               DELAY
-  618 000004C8         
-  619 000004C8 6806            LDR              R6, [R0]
-  620 000004CA F016 0F40       TST              R6, #0x40
-  621 000004CE D01B            BEQ              SKIP_ADD
-  622 000004D0         
-  623 000004D0 F85F 6168       LDR.W            R6, =CURR_VALUE_L
-  624 000004D4 7833            LDRB             R3, [R6]
-  625 000004D6 F85F 6170       LDR.W            R6, =CURR_VALUE_H
-  626 000004DA 7834            LDRB             R4, [R6]
-  627 000004DC         
-  628 000004DC 2B09            CMP              R3, #9
-  629 000004DE D105            BNE              NO_ADD_LOGIC
-  630 000004E0 2C09            CMP              R4, #9
-  631 000004E2 D005            BEQ              ADD_OVERFLOW
-  632 000004E4 F104 0401       ADD              R4, #1
-  633 000004E8 F04F 33FF       MOV              R3, #-1
-  634 000004EC         
-  635 000004EC         NO_ADD_LOGIC
-  636 000004EC F103 0301       ADD              R3, #1
-  637 000004F0         ADD_OVERFLOW
-  638 000004F0 F85F 6188       LDR.W            R6, =CURR_VALUE_L
-  639 000004F4 7033            STRB             R3, [R6]
-  640 000004F6 F85F 6190       LDR.W            R6, =CURR_VALUE_H
-  641 000004FA 7034            STRB             R4, [R6]
-  642 000004FC         
-  643 000004FC         WAIT_FOR_RELEASE_ADD
-  644 000004FC F000 F805       BL               UPDATE_DISPLAY
-  645 00000500         
-  646 00000500 6806            LDR              R6, [R0]
-  647 00000502 F016 0F40       TST              R6, #0x40
-  648 00000506         
-  649 00000506 D1F9            BNE              WAIT_FOR_RELEASE_ADD
-  650 00000508         SKIP_ADD
-  651 00000508         
-  652 00000508 BD59            POP              {R0,R3,R4,R6,PC}
-  653 0000050A         ;*******************************************************
+  616 000004D0         
+  617 000004D0 F85F 6168       LDR.W            R6, =CURR_VALUE_L
+  618 000004D4 7833            LDRB             R3, [R6]
+  619 000004D6 F85F 6170       LDR.W            R6, =CURR_VALUE_H
+  620 000004DA 7834            LDRB             R4, [R6]
+  621 000004DC         
+  622 000004DC 2B09            CMP              R3, #9
+  623 000004DE D105            BNE              NO_ADD_LOGIC
+  624 000004E0 2C09            CMP              R4, #9
+  625 000004E2 D005            BEQ              ADD_OVERFLOW
+  626 000004E4 F104 0401       ADD              R4, #1
+  627 000004E8 F04F 33FF       MOV              R3, #-1
+  628 000004EC         
+  629 000004EC         NO_ADD_LOGIC
+  630 000004EC F103 0301       ADD              R3, #1
+  631 000004F0         ADD_OVERFLOW
+  632 000004F0 F85F 6188       LDR.W            R6, =CURR_VALUE_L
+  633 000004F4 7033            STRB             R3, [R6]
+  634 000004F6 F85F 6190       LDR.W            R6, =CURR_VALUE_H
+  635 000004FA 7034            STRB             R4, [R6]
+  636 000004FC         
+  637 000004FC         WAIT_FOR_RELEASE_ADD
+  638 000004FC F000 F805       BL               UPDATE_DISPLAY
+  639 00000500         
+  640 00000500 6806            LDR              R6, [R0]
+  641 00000502 F016 0F40       TST              R6, #0x40
+  642 00000506         
+  643 00000506 D1F9            BNE              WAIT_FOR_RELEASE_ADD
+  644 00000508         SKIP_ADD
+  645 00000508         
+  646 00000508 BD59            POP              {R0,R3,R4,R6,PC}
+  647 0000050A         ;*******************************************************
                        ********************************************
-  654 0000050A         ;* Jmeno funkce  : UPDATE_DISPLAY
-  655 0000050A         ;* Popis   : Upraví 7-mi segmentovy display
-  656 0000050A         ;* Vstup   : R3 - jake cislo se ma zobrazit
-  657 0000050A         ;* Vystup   : Zadny
-  658 0000050A         ;*******************************************************
+  648 0000050A         ;* Jmeno funkce  : UPDATE_DISPLAY
+  649 0000050A         ;* Popis   : Upraví 7-mi segmentovy display
+  650 0000050A         ;* Vstup   : R3 - jake cislo se ma zobrazit
+  651 0000050A         ;* Vystup   : Zadny
+  652 0000050A         ;*******************************************************
                        ******************************************* 
-  659 0000050A         UPDATE_DISPLAY
-  660 0000050A B54F            PUSH             {R0,R1,R2,R3,R6,LR}
-  661 0000050C F85F 11A4       LDR.W            R1, =CURR_VALUE_L
-  662 00000510 7808            LDRB             R0, [R1]
-  663 00000512         ;SUB  R0, R0, #1
-  664 00000512 EA4F 0080       LSL              R0, R0, #2
-  665 00000516 F2AF 5118       adr              R1,numbers_L
-  666 0000051A 4408            ADD              R0, R0, R1
-  667 0000051C 6801            LDR              R1, [R0]
-  668 0000051E F04F 0008       MOV              R0, #8
-  669 00000522 F081 01FF       EOR              R1, R1, #0xFF
+  653 0000050A         UPDATE_DISPLAY
+  654 0000050A B54F            PUSH             {R0,R1,R2,R3,R6,LR}
+  655 0000050C F85F 11A4       LDR.W            R1, =CURR_VALUE_L
+  656 00000510 7808            LDRB             R0, [R1]
+  657 00000512         ;SUB  R0, R0, #1
+  658 00000512 EA4F 0080       LSL              R0, R0, #2
+  659 00000516 F2AF 5118       adr              R1,numbers_L
+  660 0000051A 4408            ADD              R0, R0, R1
+  661 0000051C 6801            LDR              R1, [R0]
+  662 0000051E F04F 0008       MOV              R0, #8
+  663 00000522 F081 01FF       EOR              R1, R1, #0xFF
+  664 00000526         
+  665 00000526 4E28            LDR              R6, =GPIOB_ODR
+  666 00000528         
+  667 00000528         DOWHILE
+  668 00000528 F001 0201       AND              R2, R1, #2_00000001
+  669 0000052C EA4F 12C2       LSL              R2, R2, #7
+  670 00000530 F042 027F       ORR              R2, R2, #0x7F
+  671 00000534 F002 02A0       AND              R2, R2, #0xA0
+  672 00000538 F04F 0320       MOV              R3, #0x20
 
 
 
 ARM Macro Assembler    Page 42 
 
 
-  670 00000526         
-  671 00000526 4E28            LDR              R6, =GPIOB_ODR
-  672 00000528         
-  673 00000528         DOWHILE
-  674 00000528 F001 0201       AND              R2, R1, #2_00000001
-  675 0000052C EA4F 12C2       LSL              R2, R2, #7
-  676 00000530 F042 027F       ORR              R2, R2, #0x7F
-  677 00000534 F002 02A0       AND              R2, R2, #0xA0
-  678 00000538 F04F 0320       MOV              R3, #0x20
-  679 0000053C 6033            STR              R3, [R6]
-  680 0000053E EA42 0203       ORR              R2, R2, R3
-  681 00000542 6032            STR              R2, [R6]
-  682 00000544 F042 0240       ORR              R2, R2, #0x40
-  683 00000548 6032            STR              R2, [R6]
-  684 0000054A         
-  685 0000054A 0849            LSRS             R1, R1, #1
-  686 0000054C         
-  687 0000054C 1E40            SUBS             R0, R0, #1
-  688 0000054E D1EB            BNE              DOWHILE
-  689 00000550         
-  690 00000550 F442 7200       ORR              R2, R2, #0x200
-  691 00000554 6032            STR              R2, [R6]
-  692 00000556         
-  693 00000556 F000 F8CD       BL               DELAY
-  694 0000055A         
-  695 0000055A F85F 11F4       LDR.W            R1, =CURR_VALUE_H
-  696 0000055E 7808            LDRB             R0, [R1]
-  697 00000560         ;SUB  R0, R0, #1
-  698 00000560 EA4F 0080       LSL              R0, R0, #2
-  699 00000564 F2AF 5168       adr              R1,numbers_L
-  700 00000568 4408            ADD              R0, R0, R1
-  701 0000056A 6801            LDR              R1, [R0]
-  702 0000056C F04F 0008       MOV              R0, #8
-  703 00000570 F081 01FF       EOR              R1, R1, #0xFF
-  704 00000574         
-  705 00000574 4E14            LDR              R6, =GPIOB_ODR
-  706 00000576         
-  707 00000576         DOWHILE2
-  708 00000576 F001 0201       AND              R2, R1, #2_00000001
-  709 0000057A EA4F 12C2       LSL              R2, R2, #7
-  710 0000057E F042 027F       ORR              R2, R2, #0x7F
-  711 00000582 F002 02A0       AND              R2, R2, #0xA0
-  712 00000586 F04F 0320       MOV              R3, #0x20
-  713 0000058A 6033            STR              R3, [R6]
-  714 0000058C EA42 0203       ORR              R2, R2, R3
-  715 00000590 6032            STR              R2, [R6]
-  716 00000592 F042 0240       ORR              R2, R2, #0x40
-  717 00000596 6032            STR              R2, [R6]
-  718 00000598         
-  719 00000598 0849            LSRS             R1, R1, #1
-  720 0000059A         
-  721 0000059A 1E40            SUBS             R0, R0, #1
-  722 0000059C D1EB            BNE              DOWHILE2
-  723 0000059E         
-  724 0000059E F442 7280       ORR              R2, R2, #0x100
-  725 000005A2 6032            STR              R2, [R6]
-  726 000005A4         
-  727 000005A4 F000 F8A6       BL               DELAY
-  728 000005A8         
+  673 0000053C 6033            STR              R3, [R6]
+  674 0000053E EA42 0203       ORR              R2, R2, R3
+  675 00000542 6032            STR              R2, [R6]
+  676 00000544 F042 0240       ORR              R2, R2, #0x40
+  677 00000548 6032            STR              R2, [R6]
+  678 0000054A         
+  679 0000054A 0849            LSRS             R1, R1, #1
+  680 0000054C         
+  681 0000054C 1E40            SUBS             R0, R0, #1
+  682 0000054E D1EB            BNE              DOWHILE
+  683 00000550         
+  684 00000550 F442 7200       ORR              R2, R2, #0x200
+  685 00000554 6032            STR              R2, [R6]
+  686 00000556         
+  687 00000556 F000 F8CD       BL               DELAY
+  688 0000055A         
+  689 0000055A F85F 11F4       LDR.W            R1, =CURR_VALUE_H
+  690 0000055E 7808            LDRB             R0, [R1]
+  691 00000560         ;SUB  R0, R0, #1
+  692 00000560 EA4F 0080       LSL              R0, R0, #2
+  693 00000564 F2AF 5168       adr              R1,numbers_L
+  694 00000568 4408            ADD              R0, R0, R1
+  695 0000056A 6801            LDR              R1, [R0]
+  696 0000056C F04F 0008       MOV              R0, #8
+  697 00000570 F081 01FF       EOR              R1, R1, #0xFF
+  698 00000574         
+  699 00000574 4E14            LDR              R6, =GPIOB_ODR
+  700 00000576         
+  701 00000576         DOWHILE2
+  702 00000576 F001 0201       AND              R2, R1, #2_00000001
+  703 0000057A EA4F 12C2       LSL              R2, R2, #7
+  704 0000057E F042 027F       ORR              R2, R2, #0x7F
+  705 00000582 F002 02A0       AND              R2, R2, #0xA0
+  706 00000586 F04F 0320       MOV              R3, #0x20
+  707 0000058A 6033            STR              R3, [R6]
+  708 0000058C EA42 0203       ORR              R2, R2, R3
+  709 00000590 6032            STR              R2, [R6]
+  710 00000592 F042 0240       ORR              R2, R2, #0x40
+  711 00000596 6032            STR              R2, [R6]
+  712 00000598         
+  713 00000598 0849            LSRS             R1, R1, #1
+  714 0000059A         
+  715 0000059A 1E40            SUBS             R0, R0, #1
+  716 0000059C D1EB            BNE              DOWHILE2
+  717 0000059E         
+  718 0000059E F442 7280       ORR              R2, R2, #0x100
+  719 000005A2 6032            STR              R2, [R6]
+  720 000005A4         
+  721 000005A4 F000 F8A6       BL               DELAY
+  722 000005A8         
+  723 000005A8 BD4F            POP              {R0,R1,R2,R3,R6,PC}
+  724 000005AA         ;*******************************************************
+                       ********************************************
+  725 000005AA         ;* Jmeno funkce  : RCC_CNF
+  726 000005AA         ;* Popis   : Konfigurace systemovych hodin a hodin perif
+                       erii
+  727 000005AA         ;* Vstup   : Zadny
+  728 000005AA         ;* Vystup   : Zadny
+  729 000005AA         ;* Komentar   : Nastaveni PLL jako zdroj hodin systemu (
 
 
 
 ARM Macro Assembler    Page 43 
 
 
-  729 000005A8 BD4F            POP              {R0,R1,R2,R3,R6,PC}
-  730 000005AA         ;*******************************************************
-                       ********************************************
-  731 000005AA         ;* Jmeno funkce  : RCC_CNF
-  732 000005AA         ;* Popis   : Konfigurace systemovych hodin a hodin perif
-                       erii
-  733 000005AA         ;* Vstup   : Zadny
-  734 000005AA         ;* Vystup   : Zadny
-  735 000005AA         ;* Komentar   : Nastaveni PLL jako zdroj hodin systemu (
                        24MHz),
-  736 000005AA         ;*        a privedeni hodin na branu A, B a C  
-  737 000005AA         ;*******************************************************
+  730 000005AA         ;*        a privedeni hodin na branu A, B a C  
+  731 000005AA         ;*******************************************************
                        *******************************************
-  738 000005AA 00 00 40013800 
+  732 000005AA 00 00 40013800 
               40013804 
               40013808 
               4001380C 
@@ -2755,385 +2746,385 @@ ARM Macro Assembler    Page 43
               40010808 
               40011008 
               40010C0C         LTORG
-  739 000005CC         RCC_CNF
-  740 000005CC 484D            LDR              R0, =RCC_CR ; Kopie adresy RCC_
+  733 000005CC         RCC_CNF
+  734 000005CC 484D            LDR              R0, =RCC_CR ; Kopie adresy RCC_
                                                             CR (Clock Control R
                                                             egister) do R0,
-  741 000005CE         ; RCC_CRje v souboru INI.S   
-  742 000005CE 6801            LDR              R1, [R0]    ; Nacteni obsahu re
+  735 000005CE         ; RCC_CRje v souboru INI.S   
+  736 000005CE 6801            LDR              R1, [R0]    ; Nacteni obsahu re
                                                             gistru na adrese v 
                                                             R0 do R1
-  743 000005D0 F421 21A0       BIC              R1, R1, #0x50000 ; Editace hodn
+  737 000005D0 F421 21A0       BIC              R1, R1, #0x50000 ; Editace hodn
                                                             oty v R1, tj. nulov
                                                             ani hodnoty, kde je
                                                              '1'
-  744 000005D4         ; HSE oscilator OFF (HSEON), ext.oscilator NOT BZPASSED(
+  738 000005D4         ; HSE oscilator OFF (HSEON), ext.oscilator NOT BZPASSED(
                        HSEBYP) 
-  745 000005D4 6001            STR              R1, [R0]    ; Ulozeni editovane
+  739 000005D4 6001            STR              R1, [R0]    ; Ulozeni editovane
                                                              hodnoty v R1 na ad
                                                             resu v R0 
-  746 000005D6         
-  747 000005D6 6801            LDR              R1, [R0]    ; Opet nacteni do R
+  740 000005D6         
+  741 000005D6 6801            LDR              R1, [R0]    ; Opet nacteni do R
                                                             1 stav registru RCC
                                                             _CR
-  748 000005D8 F441 3180       ORR              R1, R1, #0x10000 ; Maska pro za
+  742 000005D8 F441 3180       ORR              R1, R1, #0x10000 ; Maska pro za
                                                             pnuti HSE (krystalo
                                                             vy oscilator) 
-  749 000005DC 6001            STR              R1, [R0]    ; HSE zapnut
-  750 000005DE 6801    NO_HSE_RDY
+  743 000005DC 6001            STR              R1, [R0]    ; HSE zapnut
+  744 000005DE 6801    NO_HSE_RDY
                                LDR              R1, [R0]    ; Nacteni do R1 sta
                                                             v registru RCC_CR
-  751 000005E0 F411 3F00       TST              R1, #0x20000 ; Test stability H
+  745 000005E0 F411 3F00       TST              R1, #0x20000 ; Test stability H
                                                             SE, (R0 & 0x20000)
-  752 000005E4 D0FB            BEQ              NO_HSE_RDY  ; Skok pri nestabil
+  746 000005E4 D0FB            BEQ              NO_HSE_RDY  ; Skok pri nestabil
                                                             ite, pri stabilite 
                                                             se pokracuje v kodu
                                                             
-  753 000005E6         
-  754 000005E6 4848            LDR              R0, =RCC_CFGR ; Nacteni adresy 
+  747 000005E6         
+  748 000005E6 4848            LDR              R0, =RCC_CFGR ; Nacteni adresy 
                                                             RCC_CFGR (Clock Con
                                                             figuration Register
+                                                            ) do R0
+  749 000005E8 6801            LDR              R1, [R0]    ; Nacteni do R1 sta
+                                                            v registru RCC_CFGR
+                                                            
+  750 000005EA F021 01F0       BIC              R1, R1, #0xF0 ; Editace, SCLK n
+                                                            edeleno
+  751 000005EE 6001            STR              R1, [R0]    ; Ulozeni noveho st
+                                                            avu do RCC_CFGR 
+  752 000005F0         
 
 
 
 ARM Macro Assembler    Page 44 
 
 
-                                                            ) do R0
-  755 000005E8 6801            LDR              R1, [R0]    ; Nacteni do R1 sta
-                                                            v registru RCC_CFGR
-                                                            
-  756 000005EA F021 01F0       BIC              R1, R1, #0xF0 ; Editace, SCLK n
-                                                            edeleno
-  757 000005EE 6001            STR              R1, [R0]    ; Ulozeni noveho st
-                                                            avu do RCC_CFGR 
-  758 000005F0         
-  759 000005F0 6801            LDR              R1, [R0]    ; Opet nacteni RCC_
+  753 000005F0 6801            LDR              R1, [R0]    ; Opet nacteni RCC_
                                                             CFGR
-  760 000005F2 F421 5160       BIC              R1, R1, #0x3800 ; Editace, HCLK
+  754 000005F2 F421 5160       BIC              R1, R1, #0x3800 ; Editace, HCLK
                                                              nedeleno (PPRE2)
-  761 000005F6 6001            STR              R1, [R0]    ; Ulozeni nove hodn
+  755 000005F6 6001            STR              R1, [R0]    ; Ulozeni nove hodn
                                                             oty                
                                                                 
-  762 000005F8         
-  763 000005F8 6801            LDR              R1, [R0]    ; Opet nacteni RCC_
+  756 000005F8         
+  757 000005F8 6801            LDR              R1, [R0]    ; Opet nacteni RCC_
                                                             CFGR
-  764 000005FA F421 61E0       BIC              R1, R1, #0x700 ; HCLK nedeleno 
+  758 000005FA F421 61E0       BIC              R1, R1, #0x700 ; HCLK nedeleno 
                                                             (PPRE1)
-  765 000005FE F441 6180       ORR              R1, R1, #0x400 ; Maskovani, kon
+  759 000005FE F441 6180       ORR              R1, R1, #0x400 ; Maskovani, kon
                                                             stanta pro HCLK/2
-  766 00000602 6001            STR              R1, [R0]    ; Ulozeni nove hodn
+  760 00000602 6001            STR              R1, [R0]    ; Ulozeni nove hodn
                                                             oty
-  767 00000604         
-  768 00000604 6801            LDR              R1, [R0]    ; Opet nacteni RCC_
+  761 00000604         
+  762 00000604 6801            LDR              R1, [R0]    ; Opet nacteni RCC_
                                                             CFGR
-  769 00000606 F421 117C       BIC              R1, R1, #0x3F0000 ; Nuluje PLLM
+  763 00000606 F421 117C       BIC              R1, R1, #0x3F0000 ; Nuluje PLLM
                                                             UL, PLLXTPRE, PLLSR
                                                             C
-  770 0000060A 4A40            LDR              R2, =0x50400 ; Maska, PLL x3, H
+  764 0000060A 4A40            LDR              R2, =0x50400 ; Maska, PLL x3, H
                                                             SE jako PLL vstup, 
                                                             HCLK/2 =24MHz Clk
-  771 0000060C EA41 0102       ORR              R1, R1, R2  ; Maskovani, logick
+  765 0000060C EA41 0102       ORR              R1, R1, R2  ; Maskovani, logick
                                                             y soucet R1 a R2 
-  772 00000610 6001            STR              R1, [R0]    ; Ulozeni nove hodn
+  766 00000610 6001            STR              R1, [R0]    ; Ulozeni nove hodn
                                                             oty   
-  773 00000612         
-  774 00000612 483F            LDR              R0, =PLLON  ; Nacteni adresy bi
+  767 00000612         
+  768 00000612 483F            LDR              R0, =PLLON  ; Nacteni adresy bi
                                                             tu PLLON do R0(ADRE
                                                             SA BIT BANDING)
-  775 00000614 F04F 0101       MOV              R1, #0x01   ; Konstanta pro pov
+  769 00000614 F04F 0101       MOV              R1, #0x01   ; Konstanta pro pov
                                                             oleni PLL (fazovy z
                                                             aves) 
-  776 00000618 6001            STR              R1, [R0]    ; Ulozeni nove hodn
+  770 00000618 6001            STR              R1, [R0]    ; Ulozeni nove hodn
                                                             oty
-  777 0000061A         
-  778 0000061A 483A            LDR              R0, =RCC_CR ; Kopie adresy  RCC
+  771 0000061A         
+  772 0000061A 483A            LDR              R0, =RCC_CR ; Kopie adresy  RCC
                                                             _CR do R0
-  779 0000061C 6801    NO_PLL_RDY
+  773 0000061C 6801    NO_PLL_RDY
                                LDR              R1, [R0]    ; Nacteni stavu reg
                                                             istru RCC_CR do R1
-  780 0000061E F011 7F00       TST              R1, #0x2000000 ; Test spusteni 
+  774 0000061E F011 7F00       TST              R1, #0x2000000 ; Test spusteni 
                                                             PLL (test stability
                                                             )
-  781 00000622 D0FB            BEQ              NO_PLL_RDY  ; Skok na navesti N
+  775 00000622 D0FB            BEQ              NO_PLL_RDY  ; Skok na navesti N
                                                             O_PLL_RDY pri nespu
                                                             stene PLL
+  776 00000624         
+  777 00000624 4838            LDR              R0, =RCC_CFGR ; Kopie adresy RC
+                                                            C_CFGR do R0
+  778 00000626 6801            LDR              R1, [R0]    ; Nacteni stavu reg
+                                                            istru RCC_CFGR do R
+                                                            1
+  779 00000628 F021 0103       BIC              R1, R1, #0x3 ; HSI jako hodiny
+  780 0000062C         ; ORR  R1, R1, #0x1 ; Maskovani, HSE jako hodiny
+  781 0000062C F041 0102       ORR              R1, R1, #0x2 ; Maskovani, PLL j
 
 
 
 ARM Macro Assembler    Page 45 
 
 
-  782 00000624         
-  783 00000624 4838            LDR              R0, =RCC_CFGR ; Kopie adresy RC
-                                                            C_CFGR do R0
-  784 00000626 6801            LDR              R1, [R0]    ; Nacteni stavu reg
-                                                            istru RCC_CFGR do R
-                                                            1
-  785 00000628 F021 0103       BIC              R1, R1, #0x3 ; HSI jako hodiny
-  786 0000062C         ; ORR  R1, R1, #0x1 ; Maskovani, HSE jako hodiny
-  787 0000062C F041 0102       ORR              R1, R1, #0x2 ; Maskovani, PLL j
                                                             ako hodiny
-  788 00000630 6001            STR              R1, [R0]    ; PLL je zdroj hodi
+  782 00000630 6001            STR              R1, [R0]    ; PLL je zdroj hodi
                                                             n
-  789 00000632         
-  790 00000632 4838            LDR              R0, =RCC_APB2ENR ; Kopie adresy
+  783 00000632         
+  784 00000632 4838            LDR              R0, =RCC_APB2ENR ; Kopie adresy
                                                              RCC_APB2ENR (APB2 
                                                             peripheral clock en
                                                             able register) do R
                                                             0  
-  791 00000634 6801            LDR              R1, [R0]    ; Nacteni stavu reg
+  785 00000634 6801            LDR              R1, [R0]    ; Nacteni stavu reg
                                                             istru RCC_APB2ENR d
                                                             o R1
-  792 00000636 F244 021D       LDR              R2, =0x401D ; Konstanta pro zap
+  786 00000636 F244 021D       LDR              R2, =0x401D ; Konstanta pro zap
                                                             nuti hodin pro bran
                                                             u A, B a C
-  793 0000063A EA41 0102       ORR              R1, R1, R2  ; Maskovani  
-  794 0000063E 6001            STR              R1, [R0]    ; Ulozeni nove hodn
+  787 0000063A EA41 0102       ORR              R1, R1, R2  ; Maskovani  
+  788 0000063E 6001            STR              R1, [R0]    ; Ulozeni nove hodn
                                                             oty
-  795 00000640         
-  796 00000640 4770            BX               LR          ; Navrat z podprogr
+  789 00000640         
+  790 00000640 4770            BX               LR          ; Navrat z podprogr
                                                             amu, skok na adresu
                                                              v LR
-  797 00000642         
+  791 00000642         
+  792 00000642         ;*******************************************************
+                       *******************************************
+  793 00000642         ;* Jmeno funkce  : GPIO_CNF
+  794 00000642         ;* Popis   : Konfigurace brany A a C
+  795 00000642         ;* Vstup   : Zadny
+  796 00000642         ;* Vystup   : Zadny
+  797 00000642         ;* Komentar   : Nastaveni PC08 a PC09 jako vystup (10MHz
+                       ), PA0 jako vstup push-pull 
   798 00000642         ;*******************************************************
                        *******************************************
-  799 00000642         ;* Jmeno funkce  : GPIO_CNF
-  800 00000642         ;* Popis   : Konfigurace brany A a C
-  801 00000642         ;* Vstup   : Zadny
-  802 00000642         ;* Vystup   : Zadny
-  803 00000642         ;* Komentar   : Nastaveni PC08 a PC09 jako vystup (10MHz
-                       ), PA0 jako vstup push-pull 
-  804 00000642         ;*******************************************************
-                       *******************************************
-  805 00000642         GPIO_CNF                             ; Navesti zacatku p
+  799 00000642         GPIO_CNF                             ; Navesti zacatku p
                                                             odprogramu
-  806 00000642 F04F 02FF       LDR              R2, =0xFF   ; Konstanta pro nul
+  800 00000642 F04F 02FF       LDR              R2, =0xFF   ; Konstanta pro nul
                                                             ovani nastaveni bit
                                                             u 8, 9 
-  807 00000646 4834            LDR              R0, =GPIOC_CRH ; Kopie adresy G
+  801 00000646 4834            LDR              R0, =GPIOC_CRH ; Kopie adresy G
                                                             PIOC_CRH (Port Conf
                                                             iguration Register 
                                                             High)
-  808 00000648         ; do R0, GPIOC_CRH je v souboru INI.S 
-  809 00000648 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
+  802 00000648         ; do R0, GPIOC_CRH je v souboru INI.S 
+  803 00000648 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
                                                              adresy v R0 do R1 
                                                             
-  810 0000064A EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
+  804 0000064A EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
                                                             2 
-  811 0000064E F04F 0211       MOV              R2, #0x11   ; Vlozeni 1 do R2
-  812 00000652 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 8,
+  805 0000064E F04F 0211       MOV              R2, #0x11   ; Vlozeni 1 do R2
+  806 00000652 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 8,
+                                                             9 nastven jako vys
+                                                            tup push-pull v mod
+                                                            u 1 (10MHz)
+  807 00000656 6001            STR              R1, [R0]    ; Ulozeni konfigura
+                                                            ce PCO9 a PC09
+  808 00000658         
+  809 00000658 F04F 020F       LDR              R2, =0xF    ; Konstanta pro nul
+                                                            ovani nastaveni bit
+                                                            u 0 
 
 
 
 ARM Macro Assembler    Page 46 
 
 
-                                                             9 nastven jako vys
-                                                            tup push-pull v mod
-                                                            u 1 (10MHz)
-  813 00000656 6001            STR              R1, [R0]    ; Ulozeni konfigura
-                                                            ce PCO9 a PC09
-  814 00000658         
-  815 00000658 F04F 020F       LDR              R2, =0xF    ; Konstanta pro nul
-                                                            ovani nastaveni bit
-                                                            u 0 
-  816 0000065C 482F            LDR              R0, =GPIOA_CRL ; Kopie adresy G
+  810 0000065C 482F            LDR              R0, =GPIOA_CRL ; Kopie adresy G
                                                             PIOA_CRL (Port Conf
                                                             iguration Register 
                                                             Low)
-  817 0000065E         ; do R0, GPIOA_CRL je v souboru INI.S 
-  818 0000065E 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
+  811 0000065E         ; do R0, GPIOA_CRL je v souboru INI.S 
+  812 0000065E 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
                                                              adresy v R0 do R1 
                                                             
-  819 00000660 EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
+  813 00000660 EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
                                                             2 
-  820 00000664 F04F 0208       MOV              R2, #0x8    ; Vlozeni 1 do R2
-  821 00000668 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 0 
+  814 00000664 F04F 0208       MOV              R2, #0x8    ; Vlozeni 1 do R2
+  815 00000668 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 0 
                                                             nastven jako push-p
                                                             ull vstup
-  822 0000066C 6001            STR              R1, [R0]    ; Ulozeni konfigura
+  816 0000066C 6001            STR              R1, [R0]    ; Ulozeni konfigura
                                                             ce PAO0
-  823 0000066E         
-  824 0000066E F04F 427F       LDR              R2, =0xFF000000 ; Konstanta pro
+  817 0000066E         
+  818 0000066E F04F 427F       LDR              R2, =0xFF000000 ; Konstanta pro
                                                              nulovani nastaveni
                                                              bitu 0 
-  825 00000672 482B            LDR              R0, =GPIOB_CRL ; Kopie adresy G
+  819 00000672 482B            LDR              R0, =GPIOB_CRL ; Kopie adresy G
                                                             PIOB_CRL (Port Conf
                                                             iguration Register 
                                                             Low)
-  826 00000674         ; do R0, GPIOB_CRL je v souboru INI.S 
-  827 00000674 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
+  820 00000674         ; do R0, GPIOB_CRL je v souboru INI.S 
+  821 00000674 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
                                                              adresy v R0 do R1 
                                                             
-  828 00000676 EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
+  822 00000676 EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
                                                             2 
-  829 0000067A F04F 5288       MOV              R2, #0x11000000 ; Vlozeni 11100
+  823 0000067A F04F 5288       MOV              R2, #0x11000000 ; Vlozeni 11100
                                                             000 do R2
-  830 0000067E EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 0 
+  824 0000067E EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 0 
                                                             nastven jako push-p
                                                             ull výstup
-  831 00000682 6001            STR              R1, [R0]    ; Ulozeni konfigura
+  825 00000682 6001            STR              R1, [R0]    ; Ulozeni konfigura
                                                             ce PB05, PB06, PB07
                                                             
-  832 00000684         
-  833 00000684 F44F 0270       LDR              R2, =0xF00000 ; Konstanta pro n
+  826 00000684         
+  827 00000684 F44F 0270       LDR              R2, =0xF00000 ; Konstanta pro n
                                                             ulovani nastaveni b
                                                             itu 0 
-  834 00000688 4825            LDR              R0, =GPIOB_CRL ; Kopie adresy G
+  828 00000688 4825            LDR              R0, =GPIOB_CRL ; Kopie adresy G
                                                             PIOB_CRL (Port Conf
                                                             iguration Register 
                                                             Low)
-  835 0000068A         ; do R0, GPIOB_CRL je v souboru INI.S 
-  836 0000068A 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
+  829 0000068A         ; do R0, GPIOB_CRL je v souboru INI.S 
+  830 0000068A 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
                                                              adresy v R0 do R1 
                                                             
+  831 0000068C EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
+                                                            2 
+  832 00000690 F44F 1280       MOV              R2, #0x100000 ; Vlozeni 1110000
+                                                            0 do R2
+  833 00000694 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 0 
+                                                            nastven jako push-p
+                                                            ull výstup
+  834 00000698 6001            STR              R1, [R0]    ; Ulozeni konfigura
+                                                            ce PB05, PB06, PB07
 
 
 
 ARM Macro Assembler    Page 47 
 
 
-  837 0000068C EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
-                                                            2 
-  838 00000690 F44F 1280       MOV              R2, #0x100000 ; Vlozeni 1110000
-                                                            0 do R2
-  839 00000694 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 0 
-                                                            nastven jako push-p
-                                                            ull výstup
-  840 00000698 6001            STR              R1, [R0]    ; Ulozeni konfigura
-                                                            ce PB05, PB06, PB07
                                                              
-  841 0000069A         
-  842 0000069A F04F 02FF       LDR              R2, =0xFF   ; Konstanta pro nul
+  835 0000069A         
+  836 0000069A F04F 02FF       LDR              R2, =0xFF   ; Konstanta pro nul
                                                             ovani nastaveni bit
                                                             u 0 
-  843 0000069E 4821            LDR              R0, =GPIOB_CRH ; Kopie adresy G
+  837 0000069E 4821            LDR              R0, =GPIOB_CRH ; Kopie adresy G
                                                             PIOB_CRH (Port Conf
                                                             iguration Register 
                                                             High)
-  844 000006A0         ; do R0, GPIOB_CRH je v souboru INI.S 
-  845 000006A0 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
+  838 000006A0         ; do R0, GPIOB_CRH je v souboru INI.S 
+  839 000006A0 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
                                                              adresy v R0 do R1 
                                                             
-  846 000006A2 EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
+  840 000006A2 EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
                                                             2 
-  847 000006A6 F04F 0211       MOV              R2, #0x11   ; Vlozeni 0x88 do R
+  841 000006A6 F04F 0211       MOV              R2, #0x11   ; Vlozeni 0x88 do R
                                                             2
-  848 000006AA EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 8,
+  842 000006AA EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 8,
                                                              9 nastven jako pus
                                                             h-pull vstup
-  849 000006AE 6001            STR              R1, [R0]    ; Ulozeni konfigura
+  843 000006AE 6001            STR              R1, [R0]    ; Ulozeni konfigura
                                                             ce PB08, PB09
-  850 000006B0         
-  851 000006B0 F44F 4270       LDR              R2, =0xF000 ; Konstanta pro nul
+  844 000006B0         
+  845 000006B0 F44F 4270       LDR              R2, =0xF000 ; Konstanta pro nul
                                                             ovani nastaveni bit
                                                             u 0 
-  852 000006B4 481C            LDR              R0, =GPIOA_CRH ; Kopie adresy G
+  846 000006B4 481C            LDR              R0, =GPIOA_CRH ; Kopie adresy G
                                                             PIOA_CRH (Port Conf
                                                             iguration Register 
                                                             High)
-  853 000006B6         ; do R0, GPIOA_CRH je v souboru INI.S 
-  854 000006B6 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
+  847 000006B6         ; do R0, GPIOA_CRH je v souboru INI.S 
+  848 000006B6 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
                                                              adresy v R0 do R1 
                                                             
-  855 000006B8 EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
+  849 000006B8 EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
                                                             2 
-  856 000006BC F44F 4200       MOV              R2, #0x8000 ; Vlozeni 0x800 do 
+  850 000006BC F44F 4200       MOV              R2, #0x8000 ; Vlozeni 0x800 do 
                                                             R2
-  857 000006C0 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 11
+  851 000006C0 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 11
                                                              nastven jako push-
                                                             pull vstup
-  858 000006C4 6001            STR              R1, [R0]    ; Ulozeni konfigura
+  852 000006C4 6001            STR              R1, [R0]    ; Ulozeni konfigura
                                                             ce PB11
-  859 000006C6         
-  860 000006C6 F04F 427F       LDR              R2, =0xFF000000 ; Konstanta pro
+  853 000006C6         
+  854 000006C6 F04F 427F       LDR              R2, =0xFF000000 ; Konstanta pro
                                                              nulovani nastaveni
                                                              bitu 0 
-  861 000006CA 4818            LDR              R0, =GPIOC_CRL ; Kopie adresy G
+  855 000006CA 4818            LDR              R0, =GPIOC_CRL ; Kopie adresy G
                                                             PIOC_CRL (Port Conf
                                                             iguration Register 
+                                                            Low)
+  856 000006CC         ; do R0, GPIOC_CRL je v souboru INI.S 
+  857 000006CC 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
+                                                             adresy v R0 do R1 
+                                                            
+  858 000006CE EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
+                                                            2 
+  859 000006D2 F04F 4208       MOV              R2, #0x88000000 ; Vlozeni 10000
+                                                            000 do R2
 
 
 
 ARM Macro Assembler    Page 48 
 
 
-                                                            Low)
-  862 000006CC         ; do R0, GPIOC_CRL je v souboru INI.S 
-  863 000006CC 6801            LDR              R1, [R0]    ; Nacteni hodnoty z
-                                                             adresy v R0 do R1 
-                                                            
-  864 000006CE EA21 0102       BIC              R1, R1, R2  ; Nulovani bitu v R
-                                                            2 
-  865 000006D2 F04F 4208       MOV              R2, #0x88000000 ; Vlozeni 10000
-                                                            000 do R2
-  866 000006D6 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 0 
+  860 000006D6 EA41 0102       ORR              R1, R1, R2  ; maskovani, bit 0 
                                                             nastven jako push-p
                                                             ull výstup
-  867 000006DA 6001            STR              R1, [R0]    ; Ulozeni konfigura
+  861 000006DA 6001            STR              R1, [R0]    ; Ulozeni konfigura
                                                             ce PB05, PB06, PB07
                                                              
-  868 000006DC         
-  869 000006DC F04F 02F0       LDR              R2, =0xF0   ; konstanta pro nul
+  862 000006DC         
+  863 000006DC F04F 02F0       LDR              R2, =0xF0   ; konstanta pro nul
                                                             ovani nastaveni bit
                                                             u 10 
-  870 000006E0 4811            LDR              R0, =GPIOA_CRH ; konfiguracni r
+  864 000006E0 4811            LDR              R0, =GPIOA_CRH ; konfiguracni r
                                                             egistr
-  871 000006E2 6801            LDR              R1, [R0]
-  872 000006E4 EA21 0102       BIC              R1, R1, R2  ; PA9
-  873 000006E8 F04F 02B0       LDR              R2, =0xB0
-  874 000006EC EA41 0102       ORR              R1, R1, R2  ; PA9 jako vystup a
+  865 000006E2 6801            LDR              R1, [R0]
+  866 000006E4 EA21 0102       BIC              R1, R1, R2  ; PA9
+  867 000006E8 F04F 02B0       LDR              R2, =0xB0
+  868 000006EC EA41 0102       ORR              R1, R1, R2  ; PA9 jako vystup a
                                                             lter. fce push-pull
                                                             
-  875 000006F0 6001            STR              R1, [R0]
-  876 000006F2         
-  877 000006F2         ; PA10 je jiz po resetu nastaven jako plovouci vstup
-  878 000006F2 4770            BX               LR
-  879 000006F4         
+  869 000006F0 6001            STR              R1, [R0]
+  870 000006F2         
+  871 000006F2         ; PA10 je jiz po resetu nastaven jako plovouci vstup
+  872 000006F2 4770            BX               LR
+  873 000006F4         
+  874 000006F4         ;*******************************************************
+                       *******************************************
+  875 000006F4         ;* Jmeno funkce  : DELAY
+  876 000006F4         ;* Popis   : Softwarove zpozdeni procesoru
+  877 000006F4         ;* Vstup   : R0 = pocet opakovani cyklu spozdeni
+  878 000006F4         ;* Vystup   : Zadny
+  879 000006F4         ;* Komentar   : Podprodram zpozdi prubech vykonavani pro
+                       gramu 
   880 000006F4         ;*******************************************************
                        *******************************************
-  881 000006F4         ;* Jmeno funkce  : DELAY
-  882 000006F4         ;* Popis   : Softwarove zpozdeni procesoru
-  883 000006F4         ;* Vstup   : R0 = pocet opakovani cyklu spozdeni
-  884 000006F4         ;* Vystup   : Zadny
-  885 000006F4         ;* Komentar   : Podprodram zpozdi prubech vykonavani pro
-                       gramu 
-  886 000006F4         ;*******************************************************
-                       *******************************************
-  887 000006F4         DELAY                                ; Navesti zacatku p
+  881 000006F4         DELAY                                ; Navesti zacatku p
                                                             odprogramu
-  888 000006F4 B504            PUSH             {R2, LR}    ; Ulozeni hodnoty R
+  882 000006F4 B504            PUSH             {R2, LR}    ; Ulozeni hodnoty R
                                                             2 do zasobniku (R2 
                                                             muze byt editovan)
-  889 000006F6         ; a ulozeni navratove adresy do zasobniku
-  890 000006F6         WAIT1
-  891 000006F6 F44F 627A       LDR              R2, =4000   ; Vlozeni konstanty
+  883 000006F6         ; a ulozeni navratove adresy do zasobniku
+  884 000006F6         WAIT1
+  885 000006F6 F44F 627A       LDR              R2, =4000   ; Vlozeni konstanty
                                                              pro prodlevu do R2
                                                             
-  892 000006FA 1E52    WAIT    SUBS             R2, R2, #1  ; Odecteni 1 od R2,
+  886 000006FA 1E52    WAIT    SUBS             R2, R2, #1  ; Odecteni 1 od R2,
                                                             tj. R2 = R2 - 1 a n
                                                             astaveni priznakove
                                                             ho registru    
-  893 000006FC D1FD            BNE              WAIT        ; Skok na navesti p
+  887 000006FC D1FD            BNE              WAIT        ; Skok na navesti p
                                                             ri nenulovosti R2 (
                                                             skok dle priznaku)
+  888 000006FE         
+  889 000006FE BD04            POP              {R2, PC}    ; Navrat z podprogr
+                                                            amu, obnoveni hodno
+                                                            ty R2 ze zasobniku
+  890 00000700         ; a navratove adresy do PC                
+  891 00000700         ;*******************************************************
+                       *******************************************
+  892 00000700 BF00            NOP
+  893 00000702 00 00           ALIGN
 
 
 
 ARM Macro Assembler    Page 49 
 
 
-  894 000006FE         
-  895 000006FE BD04            POP              {R2, PC}    ; Navrat z podprogr
-                                                            amu, obnoveni hodno
-                                                            ty R2 ze zasobniku
-  896 00000700         ; a navratove adresy do PC                
-  897 00000700         ;*******************************************************
-                       *******************************************
-  898 00000700 BF00            NOP
-  899 00000702 00 00           ALIGN
-  900 00000704                 END
+  894 00000704                 END
               40021000 
               40021004 
               00050400 
@@ -3155,86 +3146,78 @@ sm
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Relocatable symbols
 
-CURR_VALUE_H 00000010
+CURR_VALUE_H 0000000C
 
 Symbol: CURR_VALUE_H
    Definitions
-      At line 21 in file LED_TLC.asm
+      At line 20 in file LED_TLC.asm
    Uses
-      At line 116 in file LED_TLC.asm
-      At line 195 in file LED_TLC.asm
-      At line 294 in file LED_TLC.asm
-      At line 366 in file LED_TLC.asm
-      At line 394 in file LED_TLC.asm
-      At line 471 in file LED_TLC.asm
-      At line 491 in file LED_TLC.asm
-      At line 535 in file LED_TLC.asm
-      At line 573 in file LED_TLC.asm
-      At line 588 in file LED_TLC.asm
-      At line 625 in file LED_TLC.asm
-      At line 640 in file LED_TLC.asm
-      At line 695 in file LED_TLC.asm
+      At line 110 in file LED_TLC.asm
+      At line 189 in file LED_TLC.asm
+      At line 288 in file LED_TLC.asm
+      At line 360 in file LED_TLC.asm
+      At line 388 in file LED_TLC.asm
+      At line 465 in file LED_TLC.asm
+      At line 485 in file LED_TLC.asm
+      At line 529 in file LED_TLC.asm
+      At line 567 in file LED_TLC.asm
+      At line 582 in file LED_TLC.asm
+      At line 619 in file LED_TLC.asm
+      At line 634 in file LED_TLC.asm
+      At line 689 in file LED_TLC.asm
 
-CURR_VALUE_L 0000000C
+CURR_VALUE_L 00000008
 
 Symbol: CURR_VALUE_L
    Definitions
-      At line 20 in file LED_TLC.asm
+      At line 19 in file LED_TLC.asm
    Uses
-      At line 121 in file LED_TLC.asm
-      At line 190 in file LED_TLC.asm
-      At line 244 in file LED_TLC.asm
-      At line 267 in file LED_TLC.asm
-      At line 292 in file LED_TLC.asm
-      At line 361 in file LED_TLC.asm
-      At line 392 in file LED_TLC.asm
-      At line 469 in file LED_TLC.asm
-      At line 489 in file LED_TLC.asm
-      At line 530 in file LED_TLC.asm
-      At line 571 in file LED_TLC.asm
-      At line 586 in file LED_TLC.asm
-      At line 623 in file LED_TLC.asm
-      At line 638 in file LED_TLC.asm
-      At line 661 in file LED_TLC.asm
+      At line 115 in file LED_TLC.asm
+      At line 184 in file LED_TLC.asm
+      At line 238 in file LED_TLC.asm
+      At line 261 in file LED_TLC.asm
+      At line 286 in file LED_TLC.asm
+      At line 355 in file LED_TLC.asm
+      At line 386 in file LED_TLC.asm
+      At line 463 in file LED_TLC.asm
+      At line 483 in file LED_TLC.asm
+      At line 524 in file LED_TLC.asm
+      At line 565 in file LED_TLC.asm
+      At line 580 in file LED_TLC.asm
+      At line 617 in file LED_TLC.asm
+      At line 632 in file LED_TLC.asm
+      At line 655 in file LED_TLC.asm
 
-INIT_VALUE 00000000
-
-Symbol: INIT_VALUE
-   Definitions
-      At line 17 in file LED_TLC.asm
-   Uses
-      None
-Comment: INIT_VALUE unused
-INIT_VALUE_H 00000008
+INIT_VALUE_H 00000004
 
 Symbol: INIT_VALUE_H
    Definitions
-      At line 19 in file LED_TLC.asm
+      At line 18 in file LED_TLC.asm
    Uses
-      At line 103 in file LED_TLC.asm
-      At line 114 in file LED_TLC.asm
-      At line 193 in file LED_TLC.asm
+      At line 97 in file LED_TLC.asm
+      At line 108 in file LED_TLC.asm
+      At line 187 in file LED_TLC.asm
+      At line 362 in file LED_TLC.asm
+      At line 531 in file LED_TLC.asm
+
+INIT_VALUE_L 00000000
+
+Symbol: INIT_VALUE_L
+   Definitions
+      At line 17 in file LED_TLC.asm
 
 
 
 ARM Macro Assembler    Page 2 Alphabetic symbol ordering
 Relocatable symbols
 
-      At line 368 in file LED_TLC.asm
-      At line 537 in file LED_TLC.asm
-
-INIT_VALUE_L 00000004
-
-Symbol: INIT_VALUE_L
-   Definitions
-      At line 18 in file LED_TLC.asm
    Uses
-      At line 99 in file LED_TLC.asm
-      At line 119 in file LED_TLC.asm
-      At line 188 in file LED_TLC.asm
-      At line 242 in file LED_TLC.asm
-      At line 363 in file LED_TLC.asm
-      At line 532 in file LED_TLC.asm
+      At line 93 in file LED_TLC.asm
+      At line 113 in file LED_TLC.asm
+      At line 182 in file LED_TLC.asm
+      At line 236 in file LED_TLC.asm
+      At line 357 in file LED_TLC.asm
+      At line 526 in file LED_TLC.asm
 
 MOJEDATA 00000000
 
@@ -3244,7 +3227,7 @@ Symbol: MOJEDATA
    Uses
       None
 Comment: MOJEDATA unused
-6 symbols
+5 symbols
 
 
 
@@ -3255,7 +3238,7 @@ STM32F1xx 00000000
 
 Symbol: STM32F1xx
    Definitions
-      At line 24 in file LED_TLC.asm
+      At line 23 in file LED_TLC.asm
    Uses
       None
 Comment: STM32F1xx unused
@@ -3270,49 +3253,49 @@ ADD_OVERFLOW 000004F0
 
 Symbol: ADD_OVERFLOW
    Definitions
-      At line 637 in file LED_TLC.asm
-   Uses
       At line 631 in file LED_TLC.asm
+   Uses
+      At line 625 in file LED_TLC.asm
 Comment: ADD_OVERFLOW used once
 ADD_OVERFLOW_U 00000296
 
 Symbol: ADD_OVERFLOW_U
    Definitions
-      At line 309 in file LED_TLC.asm
-   Uses
       At line 303 in file LED_TLC.asm
+   Uses
+      At line 297 in file LED_TLC.asm
 Comment: ADD_OVERFLOW_U used once
 BREAK 00000342
 
 Symbol: BREAK
    Definitions
-      At line 391 in file LED_TLC.asm
+      At line 385 in file LED_TLC.asm
    Uses
-      At line 320 in file LED_TLC.asm
-      At line 345 in file LED_TLC.asm
+      At line 314 in file LED_TLC.asm
+      At line 339 in file LED_TLC.asm
 
 BREAK_AFTER_SAVE 0000034E
 
 Symbol: BREAK_AFTER_SAVE
    Definitions
-      At line 396 in file LED_TLC.asm
+      At line 390 in file LED_TLC.asm
    Uses
-      At line 371 in file LED_TLC.asm
+      At line 365 in file LED_TLC.asm
 Comment: BREAK_AFTER_SAVE used once
 BUTTON_PRESSED 0000021A
 
 Symbol: BUTTON_PRESSED
    Definitions
-      At line 235 in file LED_TLC.asm
+      At line 229 in file LED_TLC.asm
    Uses
-      At line 215 in file LED_TLC.asm
-      At line 272 in file LED_TLC.asm
+      At line 209 in file LED_TLC.asm
+      At line 266 in file LED_TLC.asm
 
 CONTINUE_COUNTING 00000214
 
 Symbol: CONTINUE_COUNTING
    Definitions
-      At line 227 in file LED_TLC.asm
+      At line 221 in file LED_TLC.asm
    Uses
       None
 Comment: CONTINUE_COUNTING unused
@@ -3320,9 +3303,9 @@ CONTINUE_COUNTING_1 00000252
 
 Symbol: CONTINUE_COUNTING_1
    Definitions
-      At line 265 in file LED_TLC.asm
+      At line 259 in file LED_TLC.asm
    Uses
-      At line 262 in file LED_TLC.asm
+      At line 256 in file LED_TLC.asm
 Comment: CONTINUE_COUNTING_1 used once
 COUNTDOWN 000001FA
 
@@ -3334,24 +3317,24 @@ Relocatable symbols
 
 Symbol: COUNTDOWN
    Definitions
-      At line 210 in file LED_TLC.asm
+      At line 204 in file LED_TLC.asm
    Uses
-      At line 233 in file LED_TLC.asm
-      At line 251 in file LED_TLC.asm
+      At line 227 in file LED_TLC.asm
+      At line 245 in file LED_TLC.asm
 
 COUNTDOWN_INIT 000001BC
 
 Symbol: COUNTDOWN_INIT
    Definitions
-      At line 178 in file LED_TLC.asm
+      At line 172 in file LED_TLC.asm
    Uses
-      At line 379 in file LED_TLC.asm
+      At line 373 in file LED_TLC.asm
 Comment: COUNTDOWN_INIT used once
 DATA_TEXT 000000E5
 
 Symbol: DATA_TEXT
    Definitions
-      At line 40 in file LED_TLC.asm
+      At line 34 in file LED_TLC.asm
    Uses
       None
 Comment: DATA_TEXT unused
@@ -3359,100 +3342,100 @@ DELAY 000006F4
 
 Symbol: DELAY
    Definitions
-      At line 887 in file LED_TLC.asm
+      At line 881 in file LED_TLC.asm
    Uses
-      At line 523 in file LED_TLC.asm
-      At line 564 in file LED_TLC.asm
-      At line 617 in file LED_TLC.asm
-      At line 693 in file LED_TLC.asm
-      At line 727 in file LED_TLC.asm
+      At line 517 in file LED_TLC.asm
+      At line 558 in file LED_TLC.asm
+      At line 611 in file LED_TLC.asm
+      At line 687 in file LED_TLC.asm
+      At line 721 in file LED_TLC.asm
 
 DOWHILE 00000528
 
 Symbol: DOWHILE
    Definitions
-      At line 673 in file LED_TLC.asm
+      At line 667 in file LED_TLC.asm
    Uses
-      At line 688 in file LED_TLC.asm
+      At line 682 in file LED_TLC.asm
 Comment: DOWHILE used once
 DOWHILE2 00000576
 
 Symbol: DOWHILE2
    Definitions
-      At line 707 in file LED_TLC.asm
+      At line 701 in file LED_TLC.asm
    Uses
-      At line 722 in file LED_TLC.asm
+      At line 716 in file LED_TLC.asm
 Comment: DOWHILE2 used once
 END_MESSAGE 00000110
 
 Symbol: END_MESSAGE
    Definitions
-      At line 42 in file LED_TLC.asm
+      At line 36 in file LED_TLC.asm
    Uses
-      At line 202 in file LED_TLC.asm
+      At line 196 in file LED_TLC.asm
 
 
 
 ARM Macro Assembler    Page 3 Alphabetic symbol ordering
 Relocatable symbols
 
-      At line 478 in file LED_TLC.asm
+      At line 472 in file LED_TLC.asm
 
 END_SEND 00000394
 
 Symbol: END_SEND
    Definitions
-      At line 416 in file LED_TLC.asm
+      At line 410 in file LED_TLC.asm
    Uses
-      At line 413 in file LED_TLC.asm
+      At line 407 in file LED_TLC.asm
 Comment: END_SEND used once
 GPIO_CNF 00000642
 
 Symbol: GPIO_CNF
    Definitions
-      At line 805 in file LED_TLC.asm
+      At line 799 in file LED_TLC.asm
    Uses
-      At line 70 in file LED_TLC.asm
+      At line 64 in file LED_TLC.asm
 Comment: GPIO_CNF used once
 HANDLE_ADD_BUTTON 000004B8
 
 Symbol: HANDLE_ADD_BUTTON
    Definitions
-      At line 609 in file LED_TLC.asm
+      At line 603 in file LED_TLC.asm
    Uses
-      At line 128 in file LED_TLC.asm
+      At line 122 in file LED_TLC.asm
 Comment: HANDLE_ADD_BUTTON used once
 HANDLE_COUNTDOWN 000003C4
 
 Symbol: HANDLE_COUNTDOWN
    Definitions
-      At line 466 in file LED_TLC.asm
+      At line 460 in file LED_TLC.asm
    Uses
-      At line 225 in file LED_TLC.asm
+      At line 219 in file LED_TLC.asm
 Comment: HANDLE_COUNTDOWN used once
 HANDLE_ENTER_BUTTON 00000428
 
 Symbol: HANDLE_ENTER_BUTTON
    Definitions
-      At line 514 in file LED_TLC.asm
+      At line 508 in file LED_TLC.asm
    Uses
-      At line 132 in file LED_TLC.asm
+      At line 126 in file LED_TLC.asm
 Comment: HANDLE_ENTER_BUTTON used once
 HANDLE_SUB_BUTTON 00000466
 
 Symbol: HANDLE_SUB_BUTTON
    Definitions
-      At line 556 in file LED_TLC.asm
+      At line 550 in file LED_TLC.asm
    Uses
-      At line 130 in file LED_TLC.asm
+      At line 124 in file LED_TLC.asm
 Comment: HANDLE_SUB_BUTTON used once
 INIT_LOOP 0000017A
 
 Symbol: INIT_LOOP
    Definitions
-      At line 125 in file LED_TLC.asm
+      At line 119 in file LED_TLC.asm
    Uses
-      At line 151 in file LED_TLC.asm
+      At line 145 in file LED_TLC.asm
 Comment: INIT_LOOP used once
 INIT_SKIP 0000023E
 
@@ -3464,15 +3447,15 @@ Relocatable symbols
 
 Symbol: INIT_SKIP
    Definitions
-      At line 252 in file LED_TLC.asm
+      At line 246 in file LED_TLC.asm
    Uses
-      At line 240 in file LED_TLC.asm
+      At line 234 in file LED_TLC.asm
 Comment: INIT_SKIP used once
 MAIN 00000128
 
 Symbol: MAIN
    Definitions
-      At line 66 in file LED_TLC.asm
+      At line 60 in file LED_TLC.asm
    Uses
       None
 Comment: MAIN unused
@@ -3480,42 +3463,42 @@ NEXT_B 00000388
 
 Symbol: NEXT_B
    Definitions
-      At line 411 in file LED_TLC.asm
+      At line 405 in file LED_TLC.asm
    Uses
-      At line 415 in file LED_TLC.asm
+      At line 409 in file LED_TLC.asm
 Comment: NEXT_B used once
 NOT_END 000003E2
 
 Symbol: NOT_END
    Definitions
-      At line 481 in file LED_TLC.asm
-   Uses
       At line 475 in file LED_TLC.asm
-      At line 477 in file LED_TLC.asm
+   Uses
+      At line 469 in file LED_TLC.asm
+      At line 471 in file LED_TLC.asm
 
 NOT_MINUS 000002F2
 
 Symbol: NOT_MINUS
    Definitions
-      At line 346 in file LED_TLC.asm
+      At line 340 in file LED_TLC.asm
    Uses
-      At line 323 in file LED_TLC.asm
+      At line 317 in file LED_TLC.asm
 Comment: NOT_MINUS used once
 NOT_PLUS 000002B8
 
 Symbol: NOT_PLUS
    Definitions
-      At line 321 in file LED_TLC.asm
+      At line 315 in file LED_TLC.asm
    Uses
-      At line 298 in file LED_TLC.asm
+      At line 292 in file LED_TLC.asm
 Comment: NOT_PLUS used once
 NOT_SPACE 00000330
 
 Symbol: NOT_SPACE
    Definitions
-      At line 372 in file LED_TLC.asm
+      At line 366 in file LED_TLC.asm
    Uses
-      At line 349 in file LED_TLC.asm
+      At line 343 in file LED_TLC.asm
 Comment: NOT_SPACE used once
 NOT_YET_SECOND 00000218
 
@@ -3527,64 +3510,64 @@ ARM Macro Assembler    Page 5 Alphabetic symbol ordering
 Relocatable symbols
 
    Definitions
-      At line 232 in file LED_TLC.asm
+      At line 226 in file LED_TLC.asm
    Uses
-      At line 222 in file LED_TLC.asm
+      At line 216 in file LED_TLC.asm
 Comment: NOT_YET_SECOND used once
 NOT_YET_SECOND_1 00000260
 
 Symbol: NOT_YET_SECOND_1
    Definitions
-      At line 271 in file LED_TLC.asm
+      At line 265 in file LED_TLC.asm
    Uses
-      At line 259 in file LED_TLC.asm
+      At line 253 in file LED_TLC.asm
 Comment: NOT_YET_SECOND_1 used once
 NOT_ZERO 000001F6
 
 Symbol: NOT_ZERO
    Definitions
-      At line 205 in file LED_TLC.asm
-   Uses
       At line 199 in file LED_TLC.asm
-      At line 201 in file LED_TLC.asm
+   Uses
+      At line 193 in file LED_TLC.asm
+      At line 195 in file LED_TLC.asm
 
 NOT_h 00000342
 
 Symbol: NOT_h
    Definitions
-      At line 386 in file LED_TLC.asm
+      At line 380 in file LED_TLC.asm
    Uses
-      At line 382 in file LED_TLC.asm
+      At line 376 in file LED_TLC.asm
 Comment: NOT_h used once
 NOT_s 00000338
 
 Symbol: NOT_s
    Definitions
-      At line 380 in file LED_TLC.asm
+      At line 374 in file LED_TLC.asm
    Uses
-      At line 375 in file LED_TLC.asm
+      At line 369 in file LED_TLC.asm
 Comment: NOT_s used once
 NO_ADD_LOGIC 000004EC
 
 Symbol: NO_ADD_LOGIC
    Definitions
-      At line 635 in file LED_TLC.asm
-   Uses
       At line 629 in file LED_TLC.asm
+   Uses
+      At line 623 in file LED_TLC.asm
 Comment: NO_ADD_LOGIC used once
 NO_ADD_LOGIC_U 00000292
 
 Symbol: NO_ADD_LOGIC_U
    Definitions
-      At line 307 in file LED_TLC.asm
-   Uses
       At line 301 in file LED_TLC.asm
+   Uses
+      At line 295 in file LED_TLC.asm
 Comment: NO_ADD_LOGIC_U used once
 NO_HANDLE_LOGIC 000003EE
 
 Symbol: NO_HANDLE_LOGIC
    Definitions
-      At line 487 in file LED_TLC.asm
+      At line 481 in file LED_TLC.asm
 
 
 
@@ -3592,63 +3575,63 @@ ARM Macro Assembler    Page 6 Alphabetic symbol ordering
 Relocatable symbols
 
    Uses
-      At line 483 in file LED_TLC.asm
+      At line 477 in file LED_TLC.asm
 Comment: NO_HANDLE_LOGIC used once
 NO_HSE_RDY 000005DE
 
 Symbol: NO_HSE_RDY
    Definitions
-      At line 750 in file LED_TLC.asm
+      At line 744 in file LED_TLC.asm
    Uses
-      At line 752 in file LED_TLC.asm
+      At line 746 in file LED_TLC.asm
 Comment: NO_HSE_RDY used once
 NO_PLL_RDY 0000061C
 
 Symbol: NO_PLL_RDY
    Definitions
-      At line 779 in file LED_TLC.asm
+      At line 773 in file LED_TLC.asm
    Uses
-      At line 781 in file LED_TLC.asm
+      At line 775 in file LED_TLC.asm
 Comment: NO_PLL_RDY used once
 NO_RDY_REC 00000352
 
 Symbol: NO_RDY_REC
    Definitions
-      At line 398 in file LED_TLC.asm
+      At line 392 in file LED_TLC.asm
    Uses
-      At line 286 in file LED_TLC.asm
+      At line 280 in file LED_TLC.asm
 Comment: NO_RDY_REC used once
 NO_RDY_TRAN 00000398
 
 Symbol: NO_RDY_TRAN
    Definitions
-      At line 427 in file LED_TLC.asm
+      At line 421 in file LED_TLC.asm
    Uses
-      At line 431 in file LED_TLC.asm
+      At line 425 in file LED_TLC.asm
 Comment: NO_RDY_TRAN used once
 NO_SUB_LOGIC 0000049A
 
 Symbol: NO_SUB_LOGIC
    Definitions
-      At line 583 in file LED_TLC.asm
-   Uses
       At line 577 in file LED_TLC.asm
+   Uses
+      At line 571 in file LED_TLC.asm
 Comment: NO_SUB_LOGIC used once
 NO_SUB_LOGIC_U 000002CC
 
 Symbol: NO_SUB_LOGIC_U
    Definitions
-      At line 332 in file LED_TLC.asm
-   Uses
       At line 326 in file LED_TLC.asm
+   Uses
+      At line 320 in file LED_TLC.asm
 Comment: NO_SUB_LOGIC_U used once
 RCC_CNF 000005CC
 
 Symbol: RCC_CNF
    Definitions
-      At line 739 in file LED_TLC.asm
+      At line 733 in file LED_TLC.asm
    Uses
-      At line 67 in file LED_TLC.asm
+      At line 61 in file LED_TLC.asm
 Comment: RCC_CNF used once
 
 
@@ -3660,55 +3643,55 @@ REC_USART 00000262
 
 Symbol: REC_USART
    Definitions
-      At line 281 in file LED_TLC.asm
+      At line 275 in file LED_TLC.asm
    Uses
-      At line 126 in file LED_TLC.asm
+      At line 120 in file LED_TLC.asm
 Comment: REC_USART used once
 SKIP_ADD 00000508
 
 Symbol: SKIP_ADD
    Definitions
-      At line 650 in file LED_TLC.asm
+      At line 644 in file LED_TLC.asm
    Uses
+      At line 609 in file LED_TLC.asm
       At line 615 in file LED_TLC.asm
-      At line 621 in file LED_TLC.asm
 
 SKIP_ENTER 00000464
 
 Symbol: SKIP_ENTER
    Definitions
-      At line 547 in file LED_TLC.asm
+      At line 541 in file LED_TLC.asm
    Uses
+      At line 516 in file LED_TLC.asm
       At line 522 in file LED_TLC.asm
-      At line 528 in file LED_TLC.asm
 
 SKIP_SUB 000004B6
 
 Symbol: SKIP_SUB
    Definitions
-      At line 600 in file LED_TLC.asm
+      At line 594 in file LED_TLC.asm
    Uses
-      At line 562 in file LED_TLC.asm
-      At line 569 in file LED_TLC.asm
+      At line 556 in file LED_TLC.asm
+      At line 563 in file LED_TLC.asm
 
 START 00000152
 
 Symbol: START
    Definitions
-      At line 107 in file LED_TLC.asm
+      At line 101 in file LED_TLC.asm
    Uses
-      At line 164 in file LED_TLC.asm
-      At line 204 in file LED_TLC.asm
-      At line 264 in file LED_TLC.asm
-      At line 480 in file LED_TLC.asm
+      At line 158 in file LED_TLC.asm
+      At line 198 in file LED_TLC.asm
+      At line 258 in file LED_TLC.asm
+      At line 474 in file LED_TLC.asm
 
 START_MESSAGE 000000FC
 
 Symbol: START_MESSAGE
    Definitions
-      At line 41 in file LED_TLC.asm
+      At line 35 in file LED_TLC.asm
    Uses
-      At line 179 in file LED_TLC.asm
+      At line 173 in file LED_TLC.asm
 Comment: START_MESSAGE used once
 STM32F10x_INI 00000000
 
@@ -3728,110 +3711,110 @@ SUB_OVERFLOW 0000049E
 
 Symbol: SUB_OVERFLOW
    Definitions
-      At line 585 in file LED_TLC.asm
-   Uses
       At line 579 in file LED_TLC.asm
+   Uses
+      At line 573 in file LED_TLC.asm
 Comment: SUB_OVERFLOW used once
 SUB_OVERFLOW_U 000002D0
 
 Symbol: SUB_OVERFLOW_U
    Definitions
-      At line 334 in file LED_TLC.asm
-   Uses
       At line 328 in file LED_TLC.asm
+   Uses
+      At line 322 in file LED_TLC.asm
 Comment: SUB_OVERFLOW_U used once
 TEST_REALEASE_OF_BUTTON 000001B0
 
 Symbol: TEST_REALEASE_OF_BUTTON
    Definitions
-      At line 166 in file LED_TLC.asm
+      At line 160 in file LED_TLC.asm
    Uses
-      At line 176 in file LED_TLC.asm
+      At line 170 in file LED_TLC.asm
 Comment: TEST_REALEASE_OF_BUTTON used once
 TRAN_USART 00000396
 
 Symbol: TRAN_USART
    Definitions
-      At line 426 in file LED_TLC.asm
+      At line 420 in file LED_TLC.asm
    Uses
+      At line 304 in file LED_TLC.asm
+      At line 307 in file LED_TLC.asm
       At line 310 in file LED_TLC.asm
-      At line 313 in file LED_TLC.asm
-      At line 316 in file LED_TLC.asm
-      At line 318 in file LED_TLC.asm
+      At line 312 in file LED_TLC.asm
+      At line 329 in file LED_TLC.asm
+      At line 332 in file LED_TLC.asm
       At line 335 in file LED_TLC.asm
-      At line 338 in file LED_TLC.asm
-      At line 341 in file LED_TLC.asm
-      At line 343 in file LED_TLC.asm
+      At line 337 in file LED_TLC.asm
+      At line 345 in file LED_TLC.asm
+      At line 348 in file LED_TLC.asm
       At line 351 in file LED_TLC.asm
-      At line 354 in file LED_TLC.asm
-      At line 357 in file LED_TLC.asm
-      At line 359 in file LED_TLC.asm
-      At line 414 in file LED_TLC.asm
+      At line 353 in file LED_TLC.asm
+      At line 408 in file LED_TLC.asm
+      At line 489 in file LED_TLC.asm
+      At line 492 in file LED_TLC.asm
       At line 495 in file LED_TLC.asm
-      At line 498 in file LED_TLC.asm
-      At line 501 in file LED_TLC.asm
-      At line 503 in file LED_TLC.asm
+      At line 497 in file LED_TLC.asm
 
 TRAN_USART_TEXT 00000384
 
 Symbol: TRAN_USART_TEXT
    Definitions
-      At line 409 in file LED_TLC.asm
+      At line 403 in file LED_TLC.asm
    Uses
-      At line 87 in file LED_TLC.asm
-      At line 180 in file LED_TLC.asm
+      At line 81 in file LED_TLC.asm
+      At line 174 in file LED_TLC.asm
 
 
 
 ARM Macro Assembler    Page 9 Alphabetic symbol ordering
 Relocatable symbols
 
-      At line 203 in file LED_TLC.asm
-      At line 384 in file LED_TLC.asm
-      At line 479 in file LED_TLC.asm
+      At line 197 in file LED_TLC.asm
+      At line 378 in file LED_TLC.asm
+      At line 473 in file LED_TLC.asm
 
 UPDATE_DISPLAY 0000050A
 
 Symbol: UPDATE_DISPLAY
    Definitions
-      At line 659 in file LED_TLC.asm
+      At line 653 in file LED_TLC.asm
    Uses
-      At line 123 in file LED_TLC.asm
-      At line 136 in file LED_TLC.asm
-      At line 158 in file LED_TLC.asm
-      At line 168 in file LED_TLC.asm
-      At line 207 in file LED_TLC.asm
-      At line 217 in file LED_TLC.asm
-      At line 246 in file LED_TLC.asm
-      At line 254 in file LED_TLC.asm
-      At line 269 in file LED_TLC.asm
-      At line 397 in file LED_TLC.asm
-      At line 505 in file LED_TLC.asm
-      At line 541 in file LED_TLC.asm
-      At line 594 in file LED_TLC.asm
-      At line 644 in file LED_TLC.asm
+      At line 117 in file LED_TLC.asm
+      At line 130 in file LED_TLC.asm
+      At line 152 in file LED_TLC.asm
+      At line 162 in file LED_TLC.asm
+      At line 201 in file LED_TLC.asm
+      At line 211 in file LED_TLC.asm
+      At line 240 in file LED_TLC.asm
+      At line 248 in file LED_TLC.asm
+      At line 263 in file LED_TLC.asm
+      At line 391 in file LED_TLC.asm
+      At line 499 in file LED_TLC.asm
+      At line 535 in file LED_TLC.asm
+      At line 588 in file LED_TLC.asm
+      At line 638 in file LED_TLC.asm
 
 USART_CNF 000003AA
 
 Symbol: USART_CNF
    Definitions
-      At line 446 in file LED_TLC.asm
+      At line 440 in file LED_TLC.asm
    Uses
-      At line 76 in file LED_TLC.asm
+      At line 70 in file LED_TLC.asm
 Comment: USART_CNF used once
 WAIT 000006FA
 
 Symbol: WAIT
    Definitions
-      At line 892 in file LED_TLC.asm
+      At line 886 in file LED_TLC.asm
    Uses
-      At line 893 in file LED_TLC.asm
+      At line 887 in file LED_TLC.asm
 Comment: WAIT used once
 WAIT1 000006F6
 
 Symbol: WAIT1
    Definitions
-      At line 890 in file LED_TLC.asm
+      At line 884 in file LED_TLC.asm
    Uses
       None
 Comment: WAIT1 unused
@@ -3839,9 +3822,9 @@ WAIT_FOR_RELEASE_ADD 000004FC
 
 Symbol: WAIT_FOR_RELEASE_ADD
    Definitions
-      At line 643 in file LED_TLC.asm
+      At line 637 in file LED_TLC.asm
    Uses
-      At line 649 in file LED_TLC.asm
+      At line 643 in file LED_TLC.asm
 Comment: WAIT_FOR_RELEASE_ADD used once
 WAIT_FOR_RELEASE_ENTER 00000458
 
@@ -3853,48 +3836,48 @@ Relocatable symbols
 
 Symbol: WAIT_FOR_RELEASE_ENTER
    Definitions
-      At line 540 in file LED_TLC.asm
+      At line 534 in file LED_TLC.asm
    Uses
-      At line 546 in file LED_TLC.asm
+      At line 540 in file LED_TLC.asm
 Comment: WAIT_FOR_RELEASE_ENTER used once
 WAIT_FOR_RELEASE_SUB 000004AA
 
 Symbol: WAIT_FOR_RELEASE_SUB
    Definitions
-      At line 593 in file LED_TLC.asm
+      At line 587 in file LED_TLC.asm
    Uses
-      At line 599 in file LED_TLC.asm
+      At line 593 in file LED_TLC.asm
 Comment: WAIT_FOR_RELEASE_SUB used once
 WELCOME_MESSAGE 00000028
 
 Symbol: WELCOME_MESSAGE
    Definitions
-      At line 39 in file LED_TLC.asm
+      At line 33 in file LED_TLC.asm
    Uses
-      At line 86 in file LED_TLC.asm
-      At line 383 in file LED_TLC.asm
+      At line 80 in file LED_TLC.asm
+      At line 377 in file LED_TLC.asm
 
 __main 00000128
 
 Symbol: __main
    Definitions
-      At line 54 in file LED_TLC.asm
+      At line 48 in file LED_TLC.asm
    Uses
-      At line 50 in file LED_TLC.asm
+      At line 44 in file LED_TLC.asm
 Comment: __main used once
 __use_two_region_memory 00000128
 
 Symbol: __use_two_region_memory
    Definitions
-      At line 53 in file LED_TLC.asm
+      At line 47 in file LED_TLC.asm
    Uses
-      At line 51 in file LED_TLC.asm
+      At line 45 in file LED_TLC.asm
 Comment: __use_two_region_memory used once
 initial_counter_value 00000124
 
 Symbol: initial_counter_value
    Definitions
-      At line 46 in file LED_TLC.asm
+      At line 40 in file LED_TLC.asm
    Uses
       None
 Comment: initial_counter_value unused
@@ -3902,10 +3885,10 @@ numbers_L 00000000
 
 Symbol: numbers_L
    Definitions
-      At line 35 in file LED_TLC.asm
+      At line 31 in file LED_TLC.asm
    Uses
-      At line 665 in file LED_TLC.asm
-      At line 699 in file LED_TLC.asm
+      At line 659 in file LED_TLC.asm
+      At line 693 in file LED_TLC.asm
 
 67 symbols
 
@@ -5300,7 +5283,7 @@ DISPLAYABLE_MAX 0000000A
 
 Symbol: DISPLAYABLE_MAX
    Definitions
-      At line 34 in file LED_TLC.asm
+      At line 30 in file LED_TLC.asm
    Uses
       None
 Comment: DISPLAYABLE_MAX unused
@@ -5388,8 +5371,8 @@ Symbol: GPIOA_CRH
    Definitions
       At line 22 in file INI.s
    Uses
-      At line 852 in file LED_TLC.asm
-      At line 870 in file LED_TLC.asm
+      At line 846 in file LED_TLC.asm
+      At line 864 in file LED_TLC.asm
 
 GPIOA_CRL 40010800
 
@@ -5397,7 +5380,7 @@ Symbol: GPIOA_CRL
    Definitions
       At line 20 in file INI.s
    Uses
-      At line 816 in file LED_TLC.asm
+      At line 810 in file LED_TLC.asm
 Comment: GPIOA_CRL used once
 GPIOA_IDR 40010808
 
@@ -5411,9 +5394,9 @@ Absolute symbols
 
       At line 24 in file INI.s
    Uses
-      At line 81 in file LED_TLC.asm
-      At line 147 in file LED_TLC.asm
-      At line 517 in file LED_TLC.asm
+      At line 75 in file LED_TLC.asm
+      At line 141 in file LED_TLC.asm
+      At line 511 in file LED_TLC.asm
 
 GPIOA_LCKR 40010818
 
@@ -5453,7 +5436,7 @@ Symbol: GPIOB_CRH
    Definitions
       At line 134 in file INI.s
    Uses
-      At line 843 in file LED_TLC.asm
+      At line 837 in file LED_TLC.asm
 Comment: GPIOB_CRH used once
 GPIOB_CRL 40010C00
 
@@ -5461,8 +5444,8 @@ Symbol: GPIOB_CRL
    Definitions
       At line 132 in file INI.s
    Uses
-      At line 825 in file LED_TLC.asm
-      At line 834 in file LED_TLC.asm
+      At line 819 in file LED_TLC.asm
+      At line 828 in file LED_TLC.asm
 
 GPIOB_IDR 40010C08
 
@@ -5492,9 +5475,9 @@ Symbol: GPIOB_ODR
    Definitions
       At line 156 in file INI.s
    Uses
-      At line 134 in file LED_TLC.asm
-      At line 671 in file LED_TLC.asm
-      At line 705 in file LED_TLC.asm
+      At line 128 in file LED_TLC.asm
+      At line 665 in file LED_TLC.asm
+      At line 699 in file LED_TLC.asm
 
 GPIOC_BRR 40011014
 
@@ -5518,7 +5501,7 @@ Symbol: GPIOC_CRH
    Definitions
       At line 78 in file INI.s
    Uses
-      At line 807 in file LED_TLC.asm
+      At line 801 in file LED_TLC.asm
 Comment: GPIOC_CRH used once
 GPIOC_CRL 40011000
 
@@ -5526,7 +5509,7 @@ Symbol: GPIOC_CRL
    Definitions
       At line 76 in file INI.s
    Uses
-      At line 861 in file LED_TLC.asm
+      At line 855 in file LED_TLC.asm
 Comment: GPIOC_CRL used once
 GPIOC_IDR 40011008
 
@@ -5540,8 +5523,8 @@ ARM Macro Assembler    Page 26 Alphabetic symbol ordering
 Absolute symbols
 
    Uses
-      At line 558 in file LED_TLC.asm
-      At line 611 in file LED_TLC.asm
+      At line 552 in file LED_TLC.asm
+      At line 605 in file LED_TLC.asm
 
 GPIOC_LCKR 40011018
 
@@ -5557,8 +5540,8 @@ Symbol: GPIOC_ODR
    Definitions
       At line 100 in file INI.s
    Uses
-      At line 79 in file LED_TLC.asm
-      At line 182 in file LED_TLC.asm
+      At line 73 in file LED_TLC.asm
+      At line 176 in file LED_TLC.asm
 
 HPRE 42420090
 
@@ -5844,10 +5827,10 @@ ONE_SECOND_CONST 000003E0
 
 Symbol: ONE_SECOND_CONST
    Definitions
-      At line 30 in file LED_TLC.asm
+      At line 29 in file LED_TLC.asm
    Uses
-      At line 221 in file LED_TLC.asm
-      At line 257 in file LED_TLC.asm
+      At line 215 in file LED_TLC.asm
+      At line 251 in file LED_TLC.asm
 
 OPM_T1 4225800C
 
@@ -5909,7 +5892,7 @@ Symbol: PLLON
    Definitions
       At line 191 in file INI.s
    Uses
-      At line 774 in file LED_TLC.asm
+      At line 768 in file LED_TLC.asm
 Comment: PLLON used once
 PLLRDY 42420064
 
@@ -6009,7 +5992,7 @@ Symbol: RCC_APB2ENR
    Definitions
       At line 232 in file INI.s
    Uses
-      At line 790 in file LED_TLC.asm
+      At line 784 in file LED_TLC.asm
 Comment: RCC_APB2ENR used once
 RCC_APB2RSTR 4002100C
 
@@ -6033,8 +6016,8 @@ Symbol: RCC_CFGR
    Definitions
       At line 201 in file INI.s
    Uses
-      At line 754 in file LED_TLC.asm
-      At line 783 in file LED_TLC.asm
+      At line 748 in file LED_TLC.asm
+      At line 777 in file LED_TLC.asm
 
 RCC_CIR 40021008
 
@@ -6050,8 +6033,8 @@ Symbol: RCC_CR
    Definitions
       At line 188 in file INI.s
    Uses
-      At line 740 in file LED_TLC.asm
-      At line 778 in file LED_TLC.asm
+      At line 734 in file LED_TLC.asm
+      At line 772 in file LED_TLC.asm
 
 
 
@@ -7153,7 +7136,7 @@ Symbol: USART_BRR
    Definitions
       At line 322 in file INI.s
    Uses
-      At line 448 in file LED_TLC.asm
+      At line 442 in file LED_TLC.asm
 Comment: USART_BRR used once
 USART_CR1 4001380C
 
@@ -7167,7 +7150,7 @@ Absolute symbols
    Definitions
       At line 324 in file INI.s
    Uses
-      At line 452 in file LED_TLC.asm
+      At line 446 in file LED_TLC.asm
 Comment: USART_CR1 used once
 USART_CR2 40013810
 
@@ -7191,8 +7174,8 @@ Symbol: USART_DR
    Definitions
       At line 320 in file INI.s
    Uses
-      At line 287 in file LED_TLC.asm
-      At line 432 in file LED_TLC.asm
+      At line 281 in file LED_TLC.asm
+      At line 426 in file LED_TLC.asm
 
 USART_GTPR 40013818
 
@@ -7208,8 +7191,8 @@ Symbol: USART_SR
    Definitions
       At line 318 in file INI.s
    Uses
-      At line 283 in file LED_TLC.asm
-      At line 428 in file LED_TLC.asm
+      At line 277 in file LED_TLC.asm
+      At line 422 in file LED_TLC.asm
 
 USBEN 424203DC
 
@@ -7250,4 +7233,4 @@ Symbol: WWDGEN
       None
 Comment: WWDGEN unused
 377 symbols
-788 symbols in table
+787 symbols in table

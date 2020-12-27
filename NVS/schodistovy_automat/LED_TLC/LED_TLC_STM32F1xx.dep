@@ -1,5 +1,5 @@
 Dependencies for Project 'LED_TLC', Target 'STM32F1xx': (DO NOT MODIFY !)
-F (.\STM32F10x.s)(0x5FD3A602)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F10x--list .\stm32f10x.lst --xref -o .\stm32f10x.o --depend .\stm32f10x.d)
-F (.\LED_TLC.asm)(0x5FE1C5A8)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F10x--list .\led_tlc.lst --xref -o .\led_tlc.o --depend .\led_tlc.d)
+F (.\STM32F10x.s)(0x5FE795E6)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F10x--list .\stm32f10x.lst --xref -o .\stm32f10x.o --depend .\stm32f10x.d)
+F (.\LED_TLC.asm)(0x5FE88902)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F10x--list .\led_tlc.lst --xref -o .\led_tlc.o --depend .\led_tlc.d)
 I (INI.s)(0x5FB3D27D)
 F (.\ReadMe.txt)(0x5FD3AE0C)()

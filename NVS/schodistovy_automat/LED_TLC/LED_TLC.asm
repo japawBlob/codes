@@ -9,12 +9,12 @@
 ;*
 ;* JMÉNO SOUBORU	: LED_TLC.ASM
 ;* AUTOR			: JAKUB JIRA
-;* DATUM			: 10/2020
+;* DATUM			: 12/2020
 ;* POPIS			: Schodistovy automat
 ;*
 ;***************************************************************************************************
+;Prosto pro ulozeni cisel
 		AREA MOJEDATA, DATA, NOINIT, READWRITE
-INIT_VALUE		SPACE 4
 INIT_VALUE_L 	SPACE 4
 INIT_VALUE_H 	SPACE 4
 CURR_VALUE_L 	SPACE 4
@@ -28,13 +28,8 @@ CURR_VALUE_H	SPACE 4
 
 ;++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++										
 ONE_SECOND_CONST EQU  0x3E0			; neni to v zadnem pripade presna hodnota jedne sekundy, udelano zhruba
-;HALF_SECOND_CONST EQU 0x100000		
-;STEADY_LIGHT_CONST EQU	0x5
-;MAX_LIGHT_CONST EQU 	0xF	
 DISPLAYABLE_MAX EQU 0xA
 numbers_L DCD 2_11111100, 2_01100000, 2_11011010, 2_11110010, 2_01100110, 2_10110110, 2_10111111, 2_11100000, 2_11111110, 2_11110111
-;numbers_H DCD 2_11111100, 2_01100000, 2_11011010, 2_11110010, 2_01100110, 2_10110110, 2_10111111, 2_11100000, 2_11111110, 2_11110111
-
 
 WELCOME_MESSAGE	DCB		"\r\nThis is simple countdown program.\r\nControls are:\t\'+\' - Adding one second\r\n\t\t\'-\' - Subtracting one second\r\n\t\t\' \' - Confirming selection\r\n\t\t\'s\' - Starting countdown\r\n\t\t\'h\' - Display help",0xA, 0xD, 0; definovani konstanty retezce
 DATA_TEXT		DCB		" :symbol (RECEIVED) ",0xA, 0xD, 0;
@@ -84,17 +79,7 @@ MAIN									; MAIN navesti hlavni smycky programu
 										
 										
 				LDR		R0, =WELCOME_MESSAGE	; nacteni adresy retezce
-				BL		TRAN_USART_TEXT		; vyslani textoveho retezce
-;LOOP			
-				;BL		REC_USART			; prijem bajtu pres USART
-
-				;BL		TRAN_USART			; vyslani bajtu pres USART
-   
-				;LDR		R0, =DATA_TEXT		; nacteni adresy retezce
-				;BL		TRAN_USART_TEXT		; vyslani textoveho retezce (potvrzovaci hlaska)
-
-				;B		LOOP						
-				
+				BL		TRAN_USART_TEXT		; vyslani textoveho retezce								
 				
 				LDR.W 	R0, =INIT_VALUE_L
 				MOV 	R1, #5
@@ -125,25 +110,16 @@ START
 INIT_LOOP		
 				BL		REC_USART			; prijem bajtu pres USART
 
-				BL HANDLE_ADD_BUTTON
+				BL HANDLE_ADD_BUTTON		; Testovani ADD tlacitka
 				
-				BL HANDLE_SUB_BUTTON			
+				BL HANDLE_SUB_BUTTON		; Testovani SUB tlacitka
 				
-				BL HANDLE_ENTER_BUTTON
+				BL HANDLE_ENTER_BUTTON		; testovani ENTER tlacitka
 				
 				LDR		R5, =GPIOB_ODR
 				
 				BL UPDATE_DISPLAY
-				;ORR		R1, R1, #0x300
-				;MOV 	R0, #0x300
-				;BIC		R1, R1, R0;
-				;MOV		R0, #0x300
-				;ORR		R1, R1, R0
-				;STR		R1, [R5]
-
-				;BL 		UPDATE_DISPLAY
-
-				; Testovani stisku tlacitka
+				
 				LDR		R5, =GPIOA_IDR
 				LDR		R1, [R5]		 
 				TST		R1, #0x1
@@ -225,9 +201,6 @@ COUNTDOWN
 				BL HANDLE_COUNTDOWN
 				
 CONTINUE_COUNTING
-				;LDR.W	R1, =CURR_VALUE_L
-				;STRB	R3, [R1]
-				;BL 		UPDATE_DISPLAY
 				MOV		R4, #0
 NOT_YET_SECOND		
 				B		COUNTDOWN
@@ -295,10 +268,10 @@ REC_USART		PUSH	{R1, R2, LR}
 				LDRB	R4, [R6]
 				
 				CMP		R0, #0x2B
-				BNE	    NOT_PLUS
+				BNE	    NOT_PLUS			; Test zdali prijmuty znak je '+'
 				
 				CMP 	R3, #9
-				BNE		NO_ADD_LOGIC_U
+				BNE		NO_ADD_LOGIC_U		; Test zda je potreba resit preteceni
 				CMP		R4, #9
 				BEQ		ADD_OVERFLOW_U
 				ADD		R4, #1
@@ -307,7 +280,7 @@ REC_USART		PUSH	{R1, R2, LR}
 NO_ADD_LOGIC_U
 				ADD		R3, #1
 ADD_OVERFLOW_U	
-				BL		TRAN_USART
+				BL		TRAN_USART			; Vyslani uzivateli momentalni hodnotu
 				MOV		R0, R4
 				ADD		R0, #0x30
 				BL 		TRAN_USART
@@ -320,7 +293,7 @@ ADD_OVERFLOW_U
 				B 		BREAK
 NOT_PLUS
 				CMP		R0, #0x2D
-				BNE		NOT_MINUS
+				BNE		NOT_MINUS			; Test zdali se jedna o '-'
 				
 				CMP 	R3, #0
 				BNE		NO_SUB_LOGIC_U
@@ -346,7 +319,7 @@ SUB_OVERFLOW_U
 NOT_MINUS
 				
 				CMP		R0, #0x20
-				BNE		NOT_SPACE
+				BNE		NOT_SPACE			; Test zdali se jedna o ' '
 				
 				BL		TRAN_USART
 				MOV		R0, R4
@@ -372,13 +345,13 @@ NOT_MINUS
 NOT_SPACE				
 			
 				CMP		R0, #0x73
-				BNE		NOT_s
+				BNE		NOT_s				; Test zdali se jedna o 's'
 				
 				POP {R1, R2}
 				
 				B COUNTDOWN_INIT
 NOT_s			
-				CMP		R0, #0x68
+				CMP		R0, #0x68			; Test zdali se jedna o 'h'
 				BNE		NOT_h
 				LDR		R0, =WELCOME_MESSAGE
 				BL		TRAN_USART_TEXT
@@ -459,7 +432,8 @@ USART_CNF		PUSH	{LR}
 
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_COUNTDOWN
-;* Popis			: Resi odpocet, odecte jednu sekundu
+;* Popis			: Resi odpocet, odecte jednu sekundu od CURR_VALUE, pripadne resi preteceni a konec odpoctu
+;*					  Upravi vystup na UARTu
 ;* Vstup			: Zadny
 ;* Vystup			: Zadny	
 ;**************************************************************************************************	
@@ -507,8 +481,8 @@ NO_HANDLE_LOGIC
 				POP		{R0,R3,R6,PC}
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_ENTER_BUTTON
-;* Popis			: Potvrzuje vybranou hodnotu
-;* Vstup			: R3 - inkrementace pocitadla
+;* Popis			: Potvrzuje vybranou hodnotu - prekopiruje CURR_VALUE di INIT_VALUE
+;* Vstup			: Zadny
 ;* Vystup			: Zadny	
 ;**************************************************************************************************	
 HANDLE_ENTER_BUTTON
@@ -549,8 +523,8 @@ SKIP_ENTER
 				POP		{R0,R3,R6,PC}	
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_SUB_BUTTON
-;* Popis			: Odecte 1 od display, osetruje preteceni
-;* Vstup			: R3 - inkrementace pocitadla
+;* Popis			: Odecte 1 od CURR_VALUE, osetruje preteceni
+;* Vstup			: Zadny
 ;* Vystup			: Zadny	
 ;**************************************************************************************************	
 HANDLE_SUB_BUTTON
@@ -602,8 +576,8 @@ SKIP_SUB
 				POP		{R0,R3,R4,R6,PC}	
 ;***************************************************************************************************
 ;* Jmeno funkce		: HANDLE_ADD_BUTTON
-;* Popis			: Pricte 1 k display, osetruje preteceni
-;* Vstup			: R3 - inkrementace pocitadla
+;* Popis			: Pricte 1 ke CURR_VALUE, osetruje preteceni
+;* Vstup			: Zadny
 ;* Vystup			: Zadny	
 ;**************************************************************************************************	
 HANDLE_ADD_BUTTON
@@ -652,8 +626,12 @@ SKIP_ADD
 				POP		{R0,R3,R4,R6,PC}
 ;***************************************************************************************************
 ;* Jmeno funkce		: UPDATE_DISPLAY
-;* Popis			: Upraví 7-mi segmentovy display
-;* Vstup			: R3 - jake cislo se ma zobrazit
+;* Popis			: Upraví 7-mi segmentovy display na zaklade CURR_VALUE
+;*					  CURR_VALUE_L pro nizsi rad CURR_VALUE_H pro vyssi rad
+;*					  Cela fce trvá 1 ms  a v kodu se pouziva jakozto substituce za DELAY
+;*					  Nejprve se nacte CURR_VALUE_L a rozsviti se nizsti rad na 0.5ms
+;*					  Pote se nacte CURR_VALUE_H a rozsviti se vyssi rad na 0.5ms
+;* Vstup			: Zadny
 ;* Vystup			: Zadny
 ;**************************************************************************************************	
 UPDATE_DISPLAY
@@ -870,8 +848,8 @@ GPIO_CNF								; Navesti zacatku podprogramu
 				LDR		R0, =GPIOA_CRH	 	; konfiguracni registr
 				LDR		R1, [R0]	   		
 				BIC		R1, R1, R2 			; PA9
-				LDR		R2, =0xB0
-				ORR		R1, R1, R2			; PA9 jako vystup alter. fce push-pull
+				LDR		R2, =0xB0			; PA9 jako vystup alter. fce push-pull
+				ORR		R1, R1, R2			
 				STR		R1, [R0]
 									
 											; PA10 je jiz po resetu nastaven jako plovouci vstup
@@ -880,7 +858,7 @@ GPIO_CNF								; Navesti zacatku podprogramu
 ;**************************************************************************************************
 ;* Jmeno funkce		: DELAY
 ;* Popis			: Softwarove zpozdeni procesoru
-;* Vstup			: R0 = pocet opakovani cyklu spozdeni
+;* Vstup			: Zadny
 ;* Vystup			: Zadny
 ;* Komentar			: Podprodram zpozdi prubech vykonavani programu	
 ;**************************************************************************************************
