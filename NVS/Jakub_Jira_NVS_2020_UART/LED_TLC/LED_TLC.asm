@@ -10,7 +10,7 @@
 ;* JMÉNO SOUBORU	: LED_TLC.ASM
 ;* AUTOR			: JAKUB JIRA
 ;* DATUM			: 12/2020
-;* POPIS			: Schodistovy automat
+;* POPIS			: 7-segment display s UARTem
 ;*
 ;***************************************************************************************************
 ;Prosto pro ulozeni cisel
