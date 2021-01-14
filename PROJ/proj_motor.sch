@@ -5,9 +5,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Pill helper V1.3 (motor approach)"
+Title "Pill helper V1.4 (motor approach)"
 Date "2020-12-27"
-Rev "1.3"
+Rev "1.4"
 Comp "FEL CVUT"
 Comment1 "First ideas about all potential functionalities of Pill helper using motor"
 Comment2 "Most of the functionality is theoretical, implemented features may and will differ"
@@ -135,29 +135,18 @@ Connection ~ 5600 2000
 Text Notes 5450 2150 0    50   ~ 0
 Pull Up resistors
 Text GLabel 2750 2550 0    50   Output ~ 0
-Alarm
-$Comp
-L Device:Buzzer BZ?
-U 1 1 5FDA69A7
-P 9300 3050
-F 0 "BZ?" H 9453 3079 50  0001 L CNN
-F 1 "Buzzer" H 9453 3033 50  0000 L CNN
-F 2 "" V 9275 3150 50  0001 C CNN
-F 3 "~" V 9275 3150 50  0001 C CNN
-	1    9300 3050
-	1    0    0    -1  
-$EndComp
-Text GLabel 8000 2950 0    50   Input ~ 0
-Alarm
+Speaker
+Text GLabel 5200 3950 0    50   Input ~ 0
+Speaker
 $Comp
 L power:GND #PWR?
 U 1 1 5FDA6EF6
-P 9200 3150
-F 0 "#PWR?" H 9200 2900 50  0001 C CNN
-F 1 "GND" V 9205 3022 50  0000 R CNN
-F 2 "" H 9200 3150 50  0001 C CNN
-F 3 "" H 9200 3150 50  0001 C CNN
-	1    9200 3150
+P 5500 4050
+F 0 "#PWR?" H 5500 3800 50  0001 C CNN
+F 1 "GND" V 5505 3922 50  0000 R CNN
+F 2 "" H 5500 4050 50  0001 C CNN
+F 3 "" H 5500 4050 50  0001 C CNN
+	1    5500 4050
 	0    1    1    0   
 $EndComp
 Text GLabel 2750 1650 0    50   Output ~ 0
@@ -170,8 +159,8 @@ Wire Wire Line
 	2750 1650 2950 1650
 Wire Wire Line
 	2750 2550 2950 2550
-Text Notes 8150 3300 0    50   ~ 0
-Buzzer and LED for notifying user
+Text Notes 4950 4300 0    50   ~ 0
+Speaker for notyfing user
 $Comp
 L Display_Character:EA_T123X-I2C U?
 U 1 1 5FDA9357
@@ -223,36 +212,10 @@ F 3 "" H 8950 1800 50  0001 C CNN
 	1    8950 1800
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:LED D?
-U 1 1 5FDAF8D1
-P 8750 2950
-F 0 "D?" H 8741 3166 50  0001 C CNN
-F 1 "RED_LED" H 8742 2786 50  0000 C CNN
-F 2 "" H 8750 2950 50  0001 C CNN
-F 3 "~" H 8750 2950 50  0001 C CNN
-	1    8750 2950
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	2750 2250 2950 2250
 Wire Wire Line
 	2750 2650 2950 2650
-$Comp
-L Device:R R4
-U 1 1 5FDB61AB
-P 8300 2950
-F 0 "R4" V 8507 2950 50  0000 C CNN
-F 1 "470" V 8416 2950 50  0000 C CNN
-F 2 "" V 8230 2950 50  0001 C CNN
-F 3 "~" H 8300 2950 50  0001 C CNN
-	1    8300 2950
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	8000 2950 8150 2950
-Wire Wire Line
-	8450 2950 8600 2950
 Text GLabel 2750 1450 0    50   Output ~ 0
 RX
 Text GLabel 2750 1550 0    50   Output ~ 0
@@ -458,7 +421,7 @@ F 3 "" H 7800 5450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8900 2950 9200 2950
+	5200 3950 5500 3950
 Wire Wire Line
 	4250 2050 3950 2050
 $Comp
@@ -600,4 +563,49 @@ Wire Wire Line
 Wire Wire Line
 	3350 3300 3350 3150
 Connection ~ 1500 3300
+Text GLabel 4250 2250 2    50   Input ~ 0
+Offline-online_switch
+Wire Wire Line
+	4250 2250 3950 2250
+Text GLabel 2100 3950 0    50   Output ~ 0
+Offline-online_switch
+$Comp
+L Switch:SW_DIP_x01 SW?
+U 1 1 6000BC5A
+P 2700 3950
+F 0 "SW?" H 2700 4217 50  0001 C CNN
+F 1 "SW_DIP_x01" H 2700 4125 50  0000 C CNN
+F 2 "" H 2700 3950 50  0001 C CNN
+F 3 "" H 2700 3950 50  0001 C CNN
+	1    2700 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 3950 2100 3950
+Wire Wire Line
+	3000 3950 3300 3950
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60010456
+P 3300 3950
+F 0 "#PWR?" H 3300 3800 50  0001 C CNN
+F 1 "+3V3" V 3315 4078 50  0000 L CNN
+F 2 "" H 3300 3950 50  0001 C CNN
+F 3 "" H 3300 3950 50  0001 C CNN
+	1    3300 3950
+	0    1    1    0   
+$EndComp
+Text Notes 1500 4250 0    50   ~ 0
+Switch for switching between offline and online mode
+$Comp
+L Device:Speaker LS?
+U 1 1 6001063D
+P 5700 3950
+F 0 "LS?" H 5870 3946 50  0001 L CNN
+F 1 "Speaker" H 5870 3900 50  0000 L CNN
+F 2 "" H 5700 3750 50  0001 C CNN
+F 3 "~" H 5690 3900 50  0001 C CNN
+	1    5700 3950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
