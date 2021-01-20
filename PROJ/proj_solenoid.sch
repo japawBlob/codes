@@ -137,7 +137,7 @@ Pull Up resistors
 Text GLabel 2900 1850 0    50   Output ~ 0
 Speaker
 Text GLabel 7300 1000 0    50   Input ~ 0
-Buzz
+Speaker
 Wire Wire Line
 	7300 1000 7550 1000
 $Comp

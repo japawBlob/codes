@@ -5,9 +5,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Pill helper V1.3 (solenoid approach)"
+Title "Pill helper V1.4 (solenoid approach)"
 Date "2020-12-26"
-Rev "1.3"
+Rev "1.4"
 Comp "FEL CVUT"
 Comment1 "First potential implementation of Pill helper"
 Comment2 "Most of the functionality is theoretical, implemented features may and will differ"
@@ -157,7 +157,7 @@ Wire Wire Line
 	2900 1550 3100 1550
 Wire Wire Line
 	2900 2450 3100 2450
-Text Notes 6950 1350 0    50   ~ 0
+Text Notes 7150 1350 0    50   ~ 0
 Speaker for notifying user
 $Comp
 L Display_Character:EA_T123X-I2C U?
@@ -797,8 +797,8 @@ $Comp
 L Device:Speaker LS?
 U 1 1 60008504
 P 7750 1000
-F 0 "LS?" H 7920 996 50  0000 L CNN
-F 1 "Speaker" H 7920 905 50  0000 L CNN
+F 0 "LS?" H 7920 996 50  0001 L CNN
+F 1 "Speaker" H 7920 950 50  0000 L CNN
 F 2 "" H 7750 800 50  0001 C CNN
 F 3 "~" H 7740 950 50  0001 C CNN
 	1    7750 1000
